@@ -8,12 +8,17 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 _inputAxis = Vector2.zero;
 
-    public CharacterController controller;
+    public Rigidbody _rb;
     public Transform cam;
 
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float _turnSmoothVelocity;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>();
+    }
 
     void FixedUpdate()
     {
@@ -31,7 +36,8 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            transform.position += moveDir.normalized * speed * Time.deltaTime;
+            //_rb.MovePosition(transform.position);
         }
     }
 
