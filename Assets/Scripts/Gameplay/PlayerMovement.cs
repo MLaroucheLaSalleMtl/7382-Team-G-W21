@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 _inputAxis = Vector2.zero;
 
-    public Rigidbody _rb;
+    private Rigidbody _rb;
     public Transform cam;
 
     public float speed = 6f;
@@ -36,8 +36,7 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            transform.position += moveDir.normalized * speed * Time.deltaTime;
-            //_rb.MovePosition(transform.position);
+            transform.position += moveDir.normalized * speed * Time.deltaTime;            
         }
     }
 
