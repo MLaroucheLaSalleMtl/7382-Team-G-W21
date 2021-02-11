@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerAttack : MonoBehaviour
+public class CharacterAttack : CharacterAction
 {
     public float attackCD;
     private bool _isAttacking;
-    [SerializeField] private Feedback _feedback;
+    [SerializeField] private ActionTrigger _actionTrigger;
+
+    private Character _character;
+
+    private void Awake()
+    {
+        _character = GetComponent<Character>();
+        _actionTrigger.actionFeedback.AddListener(_character.DoDamage);
+    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -24,9 +32,9 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator AttackRoutine()
     {
         _isAttacking = true;
-        _feedback.gameObject.SetActive(true);
+        _actionTrigger.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.1f);
-        _feedback.gameObject.SetActive(false);
+        _actionTrigger.gameObject.SetActive(false);
         yield return new WaitForSeconds(attackCD - 0.1f);
         _isAttacking = false;
     }
