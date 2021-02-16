@@ -13,13 +13,12 @@ public enum Stats
 [System.Serializable]
 public class BasicStats
 {
-    private Stats _stats;
-    private float _points;
-    public float Points { get { return _points; } set { _points = value; } }
+    public Stats stat;
+    public float points;
 
     public BasicStats(Stats stat, float points)
     {
-        _stats = stat;
-        _points = points;
+        this.stat = stat;
+        this.points = points;
     }
 }

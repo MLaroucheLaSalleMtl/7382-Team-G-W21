@@ -6,11 +6,12 @@ public class CharacterController : MonoBehaviour
 {
     private Character _character;
 
+    public StatsScriptable statsScriptable;
+
     // Start is called before the first frame update
     void Awake()
     {
         _character = GetComponent<Character>();
-        _character.Init(10, 10, 10, 10);
-        _character.damage = 2;
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseEnergy, statsScriptable.BaseDefense);
     }
 }

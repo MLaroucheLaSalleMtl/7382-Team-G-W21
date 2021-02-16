@@ -10,11 +10,14 @@ public class Character : MonoBehaviour
     public float mana;
     public float energy;
     public float damage;
+    public float defense;
 
     private BasicStats _fortitude;
     private BasicStats _strength;
     private BasicStats _agility;
     private BasicStats _intelligence;
+
+    private float _fortitudeP, _strengthP, _agilityP, _intelligenceP;
 
     private float _maxHealth;
 
@@ -23,31 +26,46 @@ public class Character : MonoBehaviour
     public UnityEvent deadFeedback;
 
     /// <summary>
-    /// Init function to set the basic stats
-    /// </summary>    
-    /// <param name="stats">Fortitude, Strength, Agility, Intelligence</param>
-    public virtual void Init(params float[] stats)
+    /// Initializing character with scriptable object data
+    /// </summary>
+    /// <param name="basicStats"></param>
+    /// <param name="level"></param>
+    /// <param name="baseHP"></param>
+    /// <param name="baseMana"></param>
+    /// <param name="BaseEnergy"></param>
+    /// <param name="baseDefense"></param>
+    public virtual void Init(BasicStats[] basicStats, int level, float baseHP, float baseMana, float BaseEnergy, float baseDefense)
     {
-        try
+        for (int i = 0; i < basicStats.Length; i++)
         {
-            _fortitude = new BasicStats(Stats.Fortitude, stats[0]);
-            _strength = new BasicStats(Stats.Strength, stats[1]);
-            _agility = new BasicStats(Stats.Agility, stats[2]);
-            _intelligence = new BasicStats(Stats.Intelligence, stats[3]);
-        }
-        catch
-        {
-            _fortitude = new BasicStats(Stats.Fortitude, 10);
-            _strength = new BasicStats(Stats.Strength, 10);
-            _agility = new BasicStats(Stats.Agility, 10);
-            _intelligence = new BasicStats(Stats.Intelligence, 10);
+            BasicStats stat = basicStats[i];
+            switch (stat.stat)
+            {
+                case Stats.Strength:
+                    _strengthP = stat.points;
+                    break;
+                case Stats.Agility:
+                    _agilityP = stat.points;
+                    break;
+                case Stats.Intelligence:
+                    _intelligenceP = stat.points;
+                    break;
+                case Stats.Fortitude:
+                    _fortitudeP = stat.points;
+                    break;
+                default:
+                    break;
+            }
         }
 
         _isDead = false;
 
-        // TODO::Calculate damage, mana, energy and health correctly
-        this.health = 10;
-        _maxHealth = health;
+        this.health = Mathf.Round(baseHP * Mathf.Log(_fortitudeP * level));
+        this._maxHealth = health;
+        this.damage = (_strengthP * 2) + (_agilityP * 0.4f);
+        this.mana = Mathf.Round(baseMana * Mathf.Log(_intelligenceP * level)); ;
+        this.energy = 100;
+        this.defense = baseDefense;
     }
 
     /// <summary>
@@ -73,8 +91,9 @@ public class Character : MonoBehaviour
     /// <param name="damage"></param>
     public void DoDamage(Character entity)
     {
-        Debug.Log(">>>" + entity.name + " receives the damage");
-        entity.ReceiveDamage(damage);
+        float endDamage = damage / (entity.defense * 0.2f);
+        Debug.Log(">>>" + entity.name + " receives the damage " + endDamage);
+        entity.ReceiveDamage(endDamage);
     }
 
     /// <summary>
