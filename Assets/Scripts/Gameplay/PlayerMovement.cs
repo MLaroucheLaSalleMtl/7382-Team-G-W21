@@ -8,16 +8,23 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 _inputAxis = Vector2.zero;
 
-    private Rigidbody _rb;
     public Transform cam;
 
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float _turnSmoothVelocity;
 
+    private bool _isSprinting;
+    private float _normalSpeed, _sprintSpeed;
+
+    private CharacterController _characterController;
+
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
+        _normalSpeed = speed;
+        _sprintSpeed = 2 * speed;
+
+        _characterController = GetComponent<CharacterController>();
     }
 
     void FixedUpdate()
@@ -25,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         MoveCharacter();
     }
 
+    /// <summary>
+    /// Function to move the character
+    /// </summary>
     private void MoveCharacter()
     {
         Vector3 direction = new Vector3(_inputAxis.x, 0f, _inputAxis.y).normalized;
@@ -36,12 +46,49 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            transform.position += moveDir.normalized * speed * Time.deltaTime;            
+
+            if (_isSprinting)
+            {
+                _characterController.SpendEnergy(speed * Time.deltaTime, null, OnEnergyWasted);
+            }
+
+            transform.position += moveDir.normalized * speed * Time.deltaTime;
         }
     }
 
+    /// <summary>
+    /// Input OnMove event
+    /// </summary>
+    /// <param name="context"></param>
     public void OnMove(InputAction.CallbackContext context)
     {
         _inputAxis = context.ReadValue<Vector2>();
+    }
+
+    /// <summary>
+    /// Input OnSprint event
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _isSprinting = true;
+            speed = _sprintSpeed;
+        }
+        else if (context.canceled)
+        {
+            _isSprinting = false;
+            speed = _normalSpeed;
+        }
+    }
+
+    /// <summary>
+    /// Function triggered when there's no energy to spend
+    /// </summary>
+    private void OnEnergyWasted()
+    {
+        _isSprinting = false;
+        speed = _normalSpeed;
     }
 }

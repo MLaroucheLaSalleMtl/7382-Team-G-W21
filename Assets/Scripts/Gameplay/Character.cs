@@ -20,6 +20,10 @@ public class Character : MonoBehaviour
     private float _fortitudeP, _strengthP, _agilityP, _intelligenceP;
 
     private float _maxHealth;
+    private float _maxEnergy;
+    private float _maxMana;
+
+    public float MaxEnergy { get { return _maxEnergy; } }
 
     private bool _isDead;
 
@@ -61,10 +65,12 @@ public class Character : MonoBehaviour
         _isDead = false;
 
         this.health = Mathf.Round(baseHP * Mathf.Log(_fortitudeP * level));
-        this._maxHealth = health;
+        this._maxHealth = this.health;
         this.damage = (_strengthP * 2) + (_agilityP * 0.4f);
         this.mana = Mathf.Round(baseMana * Mathf.Log(_intelligenceP * level)); ;
+        this._maxMana = this.mana;
         this.energy = 100;
+        this._maxEnergy = this.energy;
         this.defense = baseDefense;
     }
 

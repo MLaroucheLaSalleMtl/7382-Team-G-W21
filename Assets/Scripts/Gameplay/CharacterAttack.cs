@@ -8,27 +8,34 @@ public class CharacterAttack : CharacterAction
     public float attackCD;
     private bool _isAttacking;
     [SerializeField] private ActionTrigger _actionTrigger;
-
-    private Character _character;
+     
+    private CharacterController _characterController;
 
     private void Awake()
     {
-        _character = GetComponent<Character>();
-        _actionTrigger.actionFeedback.AddListener(_character.DoDamage);
+        _characterController = GetComponent<CharacterController>();
+        _actionTrigger.actionFeedback.AddListener(_characterController.Character.DoDamage);
     }
 
+    /// <summary>
+    /// Input OnAttack event
+    /// </summary>
+    /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             if (!_isAttacking)
             {
-                StartCoroutine(AttackRoutine());
+                _characterController.SpendEnergy(5, () => StartCoroutine(AttackRoutine()));
             }
         }
-
     }
 
+    /// <summary>
+    /// Attack delay
+    /// </summary>
+    /// <returns></returns>
     IEnumerator AttackRoutine()
     {
         _isAttacking = true;
