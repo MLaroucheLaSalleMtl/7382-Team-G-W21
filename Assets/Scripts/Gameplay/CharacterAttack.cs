@@ -27,7 +27,7 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isAttacking)
             {
-                _characterController.SpendEnergy(5, () => StartCoroutine(AttackRoutine()));
+                _characterController.SpendStamina(5, () => StartCoroutine(AttackRoutine()));
             }
         }
     }

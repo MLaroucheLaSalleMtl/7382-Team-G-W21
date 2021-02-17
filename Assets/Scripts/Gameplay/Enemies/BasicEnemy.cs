@@ -11,6 +11,6 @@ public class BasicEnemy : MonoBehaviour
     private void Awake()
     {
         _character = GetComponent<Character>();
-        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseEnergy, statsScriptable.BaseDefense);
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
     }
 }

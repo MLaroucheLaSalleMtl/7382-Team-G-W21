@@ -19,35 +19,37 @@ public class CharacterController : MonoBehaviour
     void Awake()
     {
         _character = GetComponent<Character>();
-        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseEnergy, statsScriptable.BaseDefense);
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+        PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
     }
 
     private void FixedUpdate()
     {
-        RecoverEnergy();
+        RecoverStamina();
     }
 
     /// <summary>
     /// Function to recover energy over time
     /// </summary>
-    private void RecoverEnergy()
+    private void RecoverStamina()
     {
-        if (!_isAction && _character.energy < 100)
+        if (!_isAction && _character.stamina < 100)
         {
-            _character.energy += Time.deltaTime * recoverySpeed;
-            if (_character.energy > _character.MaxEnergy)
-                _character.energy = _character.MaxEnergy;
+            _character.stamina += Time.deltaTime * recoverySpeed;
+            if (_character.stamina > _character.MaxStamina)
+                _character.stamina = _character.MaxStamina;
+            PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
         }
     }
 
     /// <summary>
     /// Function to spend energy and do the action related to that
     /// </summary>
-    /// <param name="energy">Amount of energy to spend</param>
+    /// <param name="stamina">Amount of energy to spend</param>
     /// <param name="action">Action feedback</param>
-    public void SpendEnergy(float energy, UnityAction action, UnityAction fail = null)
+    public void SpendStamina(float stamina, UnityAction action, UnityAction fail = null)
     {
-        float remain = _character.energy - energy;
+        float remain = _character.stamina - stamina;
 
         if (remain < 0)
         {
@@ -56,7 +58,8 @@ public class CharacterController : MonoBehaviour
             return;
         }
 
-        _character.energy = remain;
+        _character.stamina = remain;
+        PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
 
         if (action != null)
             action.Invoke();

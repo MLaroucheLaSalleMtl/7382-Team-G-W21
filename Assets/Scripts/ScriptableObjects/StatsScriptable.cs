@@ -7,7 +7,7 @@ public class StatsScriptable : ScriptableObject
 {
     public float BaseHP;
     public float BaseMana;
-    public float BaseEnergy;
+    public float BaseStamina;
     public float BaseDefense;
     public BasicStats[] basicStats;
 }

@@ -14,7 +14,7 @@ namespace LowPolyWater
         public float planeHeight = 1.0f;    
 
         public bool addCollider = false;    //Add box collider?
-        public Material material;           //By default, it is assigned to 'LowPolyWaterMaterial' in the editor
+        public Collectable material;           //By default, it is assigned to 'LowPolyWaterMaterial' in the editor
 
         static Camera cam;
         static Camera lastUsedCam;
@@ -73,7 +73,7 @@ namespace LowPolyWater
             //Create Mesh Filter and Mesh Renderer components
             MeshFilter meshFilter = plane.AddComponent(typeof(MeshFilter)) as MeshFilter;
             MeshRenderer meshRenderer = plane.AddComponent((typeof(MeshRenderer))) as MeshRenderer;
-            meshRenderer.sharedMaterial = material;
+         //   meshRenderer.sharedMaterial = material;
 
             //Generate a name for the mesh that will be created
             string planeMeshAssetName = plane.name + widthSegments + "x" + heightSegments
@@ -160,5 +160,9 @@ namespace LowPolyWater
             
             Selection.activeObject = plane;
         }
+    }
+
+    public class Collectable
+    {
     }
 }

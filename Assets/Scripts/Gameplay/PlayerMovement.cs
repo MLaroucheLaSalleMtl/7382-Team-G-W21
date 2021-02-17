@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (_isSprinting)
             {
-                _characterController.SpendEnergy(speed * Time.deltaTime, null, OnEnergyWasted);
+                _characterController.SpendStamina(speed * Time.deltaTime, null, OnEnergyWasted);
             }
 
             transform.position += moveDir.normalized * speed * Time.deltaTime;
