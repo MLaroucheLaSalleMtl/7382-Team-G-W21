@@ -19,7 +19,11 @@ public class CharacterController : MonoBehaviour
     void Awake()
     {
         _character = GetComponent<Character>();
-        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);        
+    }
+
+    private void Start()
+    {
         PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
     }
 
