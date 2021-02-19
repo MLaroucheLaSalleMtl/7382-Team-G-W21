@@ -16,8 +16,6 @@ public class PickUp : MonoBehaviour
     private int allSlots;
     private int enabledSlots;
     private GameObject[] slot;
-  //  public Sprite woodImage;
- //   private bool canBeSaved;
     Item item;
     public GameObject slotPanel;
 
@@ -26,7 +24,6 @@ public class PickUp : MonoBehaviour
     {
         wood = 0;
         rock = 0;
-     //   canBeSaved = false;
 
         // to check empty
         allSlots = 20;
@@ -37,7 +34,7 @@ public class PickUp : MonoBehaviour
             slot[i].GetComponent<Slot>().item = null;
             slot[i].GetComponent<Slot>().empty = true;
         }
-    
+
     }
 
     // Update is called once per frame
@@ -46,29 +43,28 @@ public class PickUp : MonoBehaviour
         if (canBePickedUp == true)
         {
             // The  pickup action
-            if(Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (Material.tag == "rock" && item != null)
                 {
                     rock += 1;
-                 //   canBeSaved = true;
                     AddItem(Material, item.icon);
                 }
                 if (Material.tag == "wood" && item != null)
                 {
                     wood += 1;
-                  //  canBeSaved = true;
                     AddItem(Material, item.icon);
                 }
                 //  Destroy(Material);
                 Material.SetActive(false);
                 Material = null;
 
+
                 canBePickedUp = false;
             }
         }
-        //PickUp Text
-        if(canBePickedUp == true)
+
+        if (canBePickedUp == true)
         {
             pickUpText.SetActive(true);
         }
@@ -95,7 +91,7 @@ public class PickUp : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         Material = collider.gameObject;
-        Item item = Material.GetComponent<Item>();
+        item = Material.GetComponent<Item>();
 
         if (collider.tag == "rock")
         {
@@ -112,7 +108,7 @@ public class PickUp : MonoBehaviour
     {
         if (collider.tag == "rock")
         {
-            Material = null ;
+            Material = null;
             canBePickedUp = false;
             item = null;
         }
@@ -127,13 +123,13 @@ public class PickUp : MonoBehaviour
 
     void AddItem(GameObject itemObject, Sprite itemIcon)
     {
-   
+
         for (int i = 0; i < allSlots; i++)
         {
             Debug.Log(slot[1].GetComponent<Slot>().empty);
-  
-           if (slot[i].GetComponent<Slot>().empty)
-           {
+            //  Debug.Log(slot[2].GetComponent<Slot>().empty);
+            if (slot[i].GetComponent<Slot>().empty)
+            {
                 Debug.Log("In the if loop");
                 //add item to slot
                 itemObject.GetComponent<Item>().pickup = true;
@@ -150,3 +146,4 @@ public class PickUp : MonoBehaviour
         }
     }
 }
+
