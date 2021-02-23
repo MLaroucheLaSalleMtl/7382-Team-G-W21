@@ -17,14 +17,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSprinting;
     private float _normalSpeed, _sprintSpeed;
 
-    private CharacterController _characterController;
+    private CharacterCtrl _characterCtrl;
 
     private void Awake()
     {
         _normalSpeed = speed;
         _sprintSpeed = 2 * speed;
 
-        _characterController = GetComponent<CharacterController>();
+        _characterCtrl = GetComponent<CharacterCtrl>();
     }
 
     void FixedUpdate()
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (_isSprinting)
             {
-                _characterController.SpendStamina(speed * Time.deltaTime, null, OnEnergyWasted);
+                _characterCtrl.SpendStamina(speed * Time.deltaTime, null, OnEnergyWasted);
             }
 
             transform.position += moveDir.normalized * speed * Time.deltaTime;

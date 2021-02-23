@@ -9,12 +9,16 @@ public class CharacterAttack : CharacterAction
     private bool _isAttacking;
     [SerializeField] private ActionTrigger _actionTrigger;
      
-    private CharacterController _characterController;
+    private CharacterCtrl _characterCtrl;
 
     private void Awake()
     {
-        _characterController = GetComponent<CharacterController>();
-        _actionTrigger.actionFeedback.AddListener(_characterController.Character.DoDamage);
+        _characterCtrl = GetComponent<CharacterCtrl>();        
+    }
+
+    private void Start()
+    {
+        _actionTrigger.actionFeedback.AddListener(_characterCtrl.Character.DoDamage);
     }
 
     /// <summary>
@@ -27,7 +31,7 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isAttacking)
             {
-                _characterController.SpendStamina(5, () => StartCoroutine(AttackRoutine()));
+                _characterCtrl.SpendStamina(5, () => StartCoroutine(AttackRoutine()));
             }
         }
     }

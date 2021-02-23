@@ -6,6 +6,7 @@ TagManager:
   tags:
   - rock
   - wood
+  - Enemy
   layers:
   - Default
   - TransparentFX

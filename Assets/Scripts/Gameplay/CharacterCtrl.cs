@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController : MonoBehaviour
+public class CharacterCtrl : MonoBehaviour
 {
     private Character _character;
     public Character Character { get { return _character; } }
@@ -19,12 +19,13 @@ public class CharacterController : MonoBehaviour
     void Awake()
     {
         _character = GetComponent<Character>();
-        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);        
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
     }
 
     private void Start()
     {
-        PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
+        if (PlayerGUI.instance != null)
+            PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
     }
 
     private void FixedUpdate()
@@ -42,7 +43,9 @@ public class CharacterController : MonoBehaviour
             _character.stamina += Time.deltaTime * recoverySpeed;
             if (_character.stamina > _character.MaxStamina)
                 _character.stamina = _character.MaxStamina;
-            PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
+            
+            if (PlayerGUI.instance != null)
+                PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
         }
     }
 
@@ -63,7 +66,9 @@ public class CharacterController : MonoBehaviour
         }
 
         _character.stamina = remain;
-        PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
+
+        if (PlayerGUI.instance != null)
+            PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
 
         if (action != null)
             action.Invoke();
