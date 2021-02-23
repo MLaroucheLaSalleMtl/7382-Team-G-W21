@@ -30,7 +30,7 @@ public class moveaway : MonoBehaviour
     private void FixedUpdate()
     {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
-        Debug.Log("distance" + distance);
+        //Debug.Log("distance" + distance);
         if (distance < distancetorun)
         {
             Vector3 dirtorun = transform.position - Player.transform.position;

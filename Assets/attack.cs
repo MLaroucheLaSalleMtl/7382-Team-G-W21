@@ -8,7 +8,7 @@ public class attack : Enemy
 {
     NavMeshAgent agent;
     public Transform Target;
-    [SerializeField]private float AttackDistance;
+    [SerializeField] private float AttackDistance;
     [SerializeField] private float Attacktimes;
     private float CoolDown;
     private Animator anim;
@@ -42,7 +42,7 @@ public class attack : Enemy
     {
         //Debug.Log(canattack);
         enemyoffset = Vector3.Distance(this.transform.position, Target.transform.position);
-        if(!canattack)
+        if (!canattack)
         {
             resetattack();
         }
@@ -108,7 +108,7 @@ public class attack : Enemy
     {
         float maginitude;
         maginitude = agent.velocity.magnitude;
-        anim.SetFloat("Magnitude",maginitude);
+        anim.SetFloat("Magnitude", maginitude);
     }
     private void resetattack()
     {
@@ -125,7 +125,7 @@ public class attack : Enemy
         if (other.tag == "Player")
         {
             agent.ResetPath();
-        }   
+        }
     }
 
     //private void Patrol()

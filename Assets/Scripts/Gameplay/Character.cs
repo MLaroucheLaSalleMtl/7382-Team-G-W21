@@ -6,6 +6,7 @@ using UnityEngine.Events;
 /// </summary>
 public class Character : MonoBehaviour
 {
+    [Header("Stats")]
     public float health;
     public float mana;
     public float stamina;
@@ -28,6 +29,10 @@ public class Character : MonoBehaviour
 
     private bool _isDead;
 
+    [Header("Utilities")]
+    [SerializeField] private HealthBar hpBar;
+
+    [Header("Feedback")]
     public UnityEvent deadFeedback;
 
     /// <summary>
@@ -73,6 +78,9 @@ public class Character : MonoBehaviour
         this.stamina = 100;
         this._maxStamina = this.stamina;
         this.defense = baseDefense;
+
+        if (hpBar != null)
+            hpBar.Init(this.health, this._maxHealth);
     }
 
     /// <summary>
@@ -82,7 +90,11 @@ public class Character : MonoBehaviour
     public void ReceiveDamage(float damage)
     {
         if (!_isDead)
+        {
             health -= damage;
+            if (hpBar != null)
+                hpBar.UpdateBar(this.health);
+        }
 
         if (health <= 0)
         {
