@@ -5,59 +5,29 @@ using UnityEngine.UI;
 
 public class PlayerGUI : MonoBehaviour
 {
-    public int healthMax;
-    public int hungerMax;
-    public int staminaMax;
-
     public Image health;
     public Image hunger;
     public Image stamina;
 
-    public float healthIncrease;
-    public float hungerDecrease;
-    public float staminaIncrease;
+    public static PlayerGUI instance;
 
-    public float updatedHealth;
-    public float updatedHunger;
-    public float updatedStamina;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        healthIncrease = 5f;
-        hungerDecrease = -1f;
-        staminaIncrease = 10f;
-
-        healthMax = 100;
-        hungerMax = 100;
-        staminaMax = 100;
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateHealth(float HP, float maxHP)
     {
-        updatedHealth += healthIncrease * Time.deltaTime;
-        health.fillAmount = updatedHealth / healthMax;
+        this.health.fillAmount = HP / maxHP;
+    }
 
-        updatedHunger += hungerDecrease * Time.deltaTime;
-        hunger.fillAmount = updatedHunger / hungerMax;
+    public void UpdateStamina(float stamina, float maxStamina)
+    {
+        this.stamina.fillAmount = stamina / maxStamina;
+    }
 
-        updatedStamina += staminaIncrease * Time.deltaTime;
-        stamina.fillAmount = updatedStamina / staminaMax;
-
-        if(updatedHealth >= healthMax)
-        {
-            updatedHealth = healthMax;
-        }
-
-        if (updatedHunger >= hungerMax)
-        {
-            updatedHunger =hungerMax;
-        }
-
-        if (updatedStamina >= staminaMax)
-        {
-            updatedStamina = staminaMax;
-        }
+    public void UpdateHunger(float hunger, float maxHunger)
+    {
+        this.hunger.fillAmount = hunger / maxHunger;
     }
 }

@@ -7,7 +7,11 @@ TagManager:
   - material
   - rock
   - wood
+
   - apple
+
+  - Enemy
+
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemies
   - 
   - 
   - 
