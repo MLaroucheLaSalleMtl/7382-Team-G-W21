@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - material
   - rock
   - wood
+  - apple
   layers:
   - Default
   - TransparentFX
