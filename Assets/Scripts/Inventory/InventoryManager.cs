@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
 	   return instance;
 	}
 	public GameObject item;
-
+    public Character character;
     //当前背包的所有物品槽
     public List<GameObject> slotBagList = new List<GameObject>();
 	//当前背包内的所有物品Item,包括空的槽内的
@@ -42,16 +42,12 @@ public class InventoryManager : MonoBehaviour
         itemDataList.Add(new ItemData(stone.iD, stone.Name, stone.Desp, "rock"));
 		itemDataList.Add(new ItemData(wood.iD, wood.Name, wood.Desp, "wood"));
         itemDataList.Add(new ItemData(apple.iD, apple.Name, apple.Desp, "apple"));
-
+        //InitItemPrefab();
         InitBag();
 	}
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-			tempItemList.Add(itemDataList[Random.Range(0, itemDataList.Count)]);
-		}
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (slotBagParent.activeSelf)
@@ -65,6 +61,20 @@ public class InventoryManager : MonoBehaviour
             }
         }
 	}
+    //public void InitItemPrefab()
+    //{
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        var id = Random.Range(0, 3);
+    //        string prefabName = "";
+    //        if (id == 0) prefabName = "Cube";
+    //        if (id == 1) prefabName = "Sphere";
+    //        if (id == 2) prefabName = "apple";
+    //        var go = Instantiate(Resources.Load<GameObject>("Item Prefab/"+prefabName));
+    //        go.gameObject.transform.position = new Vector3(Random.Range(130,330),30, Random.Range(190,400));
+    //        Debug.Log("shengcheng"+prefabName);
+    //    }
+    //}
     private void InitBag()
 	{
 		//初始化背包槽位
@@ -159,8 +169,11 @@ public class InventoryManager : MonoBehaviour
 		Debug.Log("使用道具" + goodItem.name);
         if (goodItem.name=="Stone")
         {
-            //
 
+        }
+        if (goodItem.name == "Apple")
+        {
+            character.Recover();
         }
 	}
 }

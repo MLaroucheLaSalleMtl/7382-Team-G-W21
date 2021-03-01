@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
@@ -111,5 +111,13 @@ public class Character : MonoBehaviour
         // TODO::Implement correctly the dead feeback
         //deadFeedback.Invoke();
         Destroy(gameObject);
+    }
+
+    //吃东西恢复血量
+    public void Recover() {
+        Debug.Log(health);
+        health += 5;
+        Debug.Log(health);
+
     }
 }
