@@ -65,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         _inputAxis = context.ReadValue<Vector2>();
     }
 
+
     /// <summary>
     /// Input OnSprint event
     /// </summary>
