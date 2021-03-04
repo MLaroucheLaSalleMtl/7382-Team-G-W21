@@ -18,6 +18,10 @@ public class BasicEnemy : MonoBehaviour
         _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
 
         _stateController = GetComponent<StateController>();
+    }
+
+    private void Start()
+    {
         if (_stateController != null)
             _stateController.SetupAI(activeAI, wayPoints);
     }
