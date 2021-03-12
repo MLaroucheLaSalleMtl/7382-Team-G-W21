@@ -12,6 +12,13 @@ public class CharacterCtrl : MonoBehaviour
 
     public StatsScriptable statsScriptable;
 
+    public Animator anim;
+    public int baseLayer;
+    public int backActionLayer;
+    public int swordShieldLayer;
+
+    public bool isMoving;
+
     private bool _isAction;
     IEnumerator _actionRoutine;
 
@@ -20,6 +27,10 @@ public class CharacterCtrl : MonoBehaviour
     {
         _character = GetComponent<Character>();
         _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+
+        baseLayer = anim.GetLayerIndex("Base Layer");
+        backActionLayer = anim.GetLayerIndex("Back Action");
+        swordShieldLayer = anim.GetLayerIndex("SwordShield");
     }
 
     private void Start()

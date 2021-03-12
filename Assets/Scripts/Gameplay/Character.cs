@@ -42,9 +42,9 @@ public class Character : MonoBehaviour
     /// <param name="level"></param>
     /// <param name="baseHP"></param>
     /// <param name="baseMana"></param>
-    /// <param name="BaseEnergy"></param>
+    /// <param name="baseStamina"></param>
     /// <param name="baseDefense"></param>
-    public virtual void Init(BasicStats[] basicStats, int level, float baseHP, float baseMana, float BaseEnergy, float baseDefense)
+    public virtual void Init(BasicStats[] basicStats, int level, float baseHP, float baseMana, float baseStamina, float baseDefense)
     {
         for (int i = 0; i < basicStats.Length; i++)
         {
@@ -75,7 +75,7 @@ public class Character : MonoBehaviour
         this.damage = (_strengthP * 2) + (_agilityP * 0.4f);
         this.mana = Mathf.Round(baseMana * Mathf.Log(_intelligenceP * level)); ;
         this._maxMana = this.mana;
-        this.stamina = 100;
+        this.stamina = baseStamina;
         this._maxStamina = this.stamina;
         this.defense = baseDefense;
 

@@ -1,6 +1,7 @@
 // Movement solution from Brackeys
 // https://www.youtube.com/watch?v=4HpC--2iowE
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isSprinting;
     private float _normalSpeed, _sprintSpeed;
+
+    private float _dirMagnitude;
 
     private CharacterCtrl _characterCtrl;
 
@@ -39,8 +42,10 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 direction = new Vector3(_inputAxis.x, 0f, _inputAxis.y).normalized;
 
-        if (direction.magnitude >= 0.1f)
+        _dirMagnitude = direction.magnitude;
+        if (_dirMagnitude >= 0.1f)
         {
+            _characterCtrl.isMoving = true;
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -53,7 +58,9 @@ public class PlayerMovement : MonoBehaviour
             }
 
             transform.position += moveDir.normalized * speed * Time.deltaTime;
-        }
+        }        
+
+        _characterCtrl.anim.SetFloat("Move", _dirMagnitude);
     }
 
     /// <summary>
@@ -63,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         _inputAxis = context.ReadValue<Vector2>();
+
+        if (context.canceled)
+        {
+            _characterCtrl.isMoving = false;
+        }
     }
 
 
@@ -82,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
             _isSprinting = false;
             speed = _normalSpeed;
         }
+
+        _characterCtrl.anim.SetBool("Sprint", _isSprinting);
     }
 
     /// <summary>
