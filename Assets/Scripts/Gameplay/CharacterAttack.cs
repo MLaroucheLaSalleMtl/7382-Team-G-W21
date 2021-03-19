@@ -15,10 +15,17 @@ public class CharacterAttack : CharacterAction
     private CharacterCtrl _characterCtrl;
 
     public GameObject swordPrefab, shieldPrefab;
-    
+
+    public static CharacterAttack instance;
+
+    public int combo;
+    float lastActionTime = 0;
+    float comboDelay = 0.5f;
+
     private void Awake()
     {
-        _characterCtrl = GetComponent<CharacterCtrl>();        
+        instance = this;
+        _characterCtrl = GetComponent<CharacterCtrl>();
     }
 
     private void Start()
@@ -26,8 +33,44 @@ public class CharacterAttack : CharacterAction
         _actionTrigger.actionFeedback.AddListener(_characterCtrl.Character.DoDamage);
     }
 
+    private void Update()
+    {
+        if (Time.time - lastActionTime > comboDelay)
+        {
+            combo = 0;
+        }
+    }
+
     private void FixedUpdate()
     {
+        if (!_characterCtrl.isMoving)
+        {
+            if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("IdleBT") && combo > 0)
+            {
+                _characterCtrl.anim.SetTrigger("Attack");
+                _characterCtrl.anim.SetInteger("Sword_Attack", 1);
+            }
+            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo01_SwordShield") && combo > 1)
+            {
+                _characterCtrl.anim.SetTrigger("Attack");
+                _characterCtrl.anim.SetInteger("Sword_Attack", 2);
+            }
+            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo02_SwordShield") && combo > 2)
+            {
+                _characterCtrl.anim.SetTrigger("Attack");
+                _characterCtrl.anim.SetInteger("Sword_Attack", 3);
+            }
+            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo03_SwordShield") && combo > 3)
+            {
+                _characterCtrl.anim.SetTrigger("Attack");
+                _characterCtrl.anim.SetInteger("Sword_Attack", 4);
+            }
+            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo04_SwordShield") && combo > 4)
+            {
+                _characterCtrl.anim.SetTrigger("Attack");
+                _characterCtrl.anim.SetInteger("Sword_Attack", 5);
+            }
+        }
     }
 
     /// <summary>
@@ -38,13 +81,12 @@ public class CharacterAttack : CharacterAction
     {
         if (context.performed)
         {
-            if (!_isAttacking && isWeaponEquipped)
+            if (!_characterCtrl.isMoving && isWeaponEquipped)
             {
-                if (!_characterCtrl.isMoving)
-                {
-                    _isAttacking = true;
-                    _characterCtrl.SpendStamina(5, () => StartCoroutine(AttackRoutine()));
-                }
+                lastActionTime = Time.time;
+                combo++;
+
+                combo = Mathf.Clamp(combo, 0, 5);
             }
         }
     }
@@ -72,14 +114,24 @@ public class CharacterAttack : CharacterAction
         }
     }
 
+    public void TriggerAttack()
+    {
+        _characterCtrl.SpendStamina(2, () => { _actionTrigger.gameObject.SetActive(true); });
+    }
+
+    public void StopTriggerAttack()
+    {
+        _actionTrigger.gameObject.SetActive(false);
+    }
+
     /// <summary>
     /// Attack delay
     /// </summary>
     /// <returns></returns>
     IEnumerator AttackRoutine()
     {
-        _characterCtrl.anim.SetTrigger("Attack");
-        _characterCtrl.anim.SetInteger("Sword_Attack", 1);
+        //_characterCtrl.anim.SetTrigger("Attack");
+        //_characterCtrl.anim.SetInteger("Sword_Attack", 1);
         _isAttacking = true;
         _actionTrigger.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.1f);

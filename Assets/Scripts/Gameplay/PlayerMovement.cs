@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             transform.position += moveDir.normalized * speed * Time.deltaTime;
-        }        
+        }
 
         _characterCtrl.anim.SetFloat("Move", _dirMagnitude);
     }
