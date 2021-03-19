@@ -5,7 +5,8 @@ using System.IO;
 
 public class ItemData{
 	public int ID{ get; set; }
-	public string Name{ get; set; }
+	public int Num{ get; set; }
+    public string Name{ get; set; }
 	public string Desp { get; set; }
 	public Sprite Sprite{ get; set; }
 	
@@ -70,3 +71,26 @@ public class Apple : Goods
         SpriteName = "apple";
     }
 }
+
+public class Sword : Goods
+{
+    public Sword()
+    {
+        iD = 3;
+        Name = "Sword";
+        Desp = "this is a sword";
+        SpriteName = "sword";
+    }
+}
+
+public class Axe : Goods
+{
+        public Axe()
+        {
+            iD = 4;
+            Name = "Axe";
+            Desp = "this is an axe";
+            SpriteName = "axe";
+        }
+}
+

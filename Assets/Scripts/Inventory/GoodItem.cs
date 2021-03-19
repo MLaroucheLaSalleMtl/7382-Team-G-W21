@@ -7,7 +7,6 @@ public class GoodItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	public ItemData itemData;
 	public int slotIndex;
-	public int amount = 1;
 
 	public virtual void OnBeginDrag(PointerEventData eventData){
 		

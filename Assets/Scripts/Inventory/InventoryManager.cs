@@ -37,17 +37,23 @@ public class InventoryManager : MonoBehaviour
         Rock stone = new Rock();
 		Wood wood = new Wood();
         Apple apple = new Apple();
+        Sword sword = new Sword();
+        Axe axe = new Axe();
 
         //添加的物品种类
         itemDataList.Add(new ItemData(stone.iD, stone.Name, stone.Desp, "rock"));
 		itemDataList.Add(new ItemData(wood.iD, wood.Name, wood.Desp, "wood"));
         itemDataList.Add(new ItemData(apple.iD, apple.Name, apple.Desp, "apple"));
+        itemDataList.Add(new ItemData(sword.iD, sword.Name, sword.Desp, "sword"));
+        itemDataList.Add(new ItemData(axe.iD, axe.Name, axe.Desp, "axe"));
+
         //InitItemPrefab();
         InitBag();
 	}
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (slotBagParent.activeSelf)
@@ -60,21 +66,9 @@ public class InventoryManager : MonoBehaviour
                 UpdataBag();
             }
         }
+       
 	}
-    //public void InitItemPrefab()
-    //{
-    //    for (int i = 0; i < 10; i++)
-    //    {
-    //        var id = Random.Range(0, 3);
-    //        string prefabName = "";
-    //        if (id == 0) prefabName = "Cube";
-    //        if (id == 1) prefabName = "Sphere";
-    //        if (id == 2) prefabName = "apple";
-    //        var go = Instantiate(Resources.Load<GameObject>("Item Prefab/"+prefabName));
-    //        go.gameObject.transform.position = new Vector3(Random.Range(130,330),30, Random.Range(190,400));
-    //        Debug.Log("shengcheng"+prefabName);
-    //    }
-    //}
+  
     private void InitBag()
 	{
 		//初始化背包槽位
@@ -85,7 +79,6 @@ public class InventoryManager : MonoBehaviour
 			slotBagList[i].GetComponent<BagSlot>().slotID = i;
 			itemBagList.Add(new ItemData());
 		}
-        
 	}
 	public void UpdataBag()
     {
@@ -115,10 +108,11 @@ public class InventoryManager : MonoBehaviour
 			{
 				if (itemBagList[i].ID == itemId)
 				{
-					GoodItem data = slotBagList[i].transform.GetChild(0).GetComponent<GoodItem>();
+                    itemBagList[i].Num++;
+                    Debug.Log(itemBagList[i].Num);
+                    GoodItem data = slotBagList[i].transform.GetChild(0).GetComponent<GoodItem>();
 
-					data.amount++;
-					data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
+					data.transform.GetChild(0).GetComponent<Text>().text = itemBagList[i].Num.ToString();
 				}
 			}
 		}
@@ -141,8 +135,11 @@ public class InventoryManager : MonoBehaviour
 			if (itemBagList[i].ID == -1)
 			{
 				itemBagList[i] = itemToAdd;
-				GameObject itemObj = Instantiate(item);
-				itemObj.AddComponent<BagItem>();
+                itemBagList[i].Num++;
+
+                GameObject itemObj = Instantiate(item);
+                itemObj.transform.localScale = Vector3.one;
+                itemObj.AddComponent<BagItem>();
 				itemObj.transform.SetParent(slotBagList[i].transform);
 				itemObj.transform.localPosition = Vector2.zero;
 				itemObj.name = itemBagList[i].Name;
@@ -155,17 +152,20 @@ public class InventoryManager : MonoBehaviour
 		}
 	}
 
-	public void UseItem(GoodItem  goodItem)
+	public void UseItem(int slotID)
     {
-		goodItem.amount--;
-		goodItem.transform.GetChild(0).GetComponent<Text>().text = goodItem.amount.ToString();
-		if (goodItem.amount<=0)
+        itemBagList[slotID].Num--;
+        GoodItem goodItem =   slotBagList[slotID].GetComponentInChildren<GoodItem>();
+
+        goodItem.transform.GetChild(0).GetComponent<Text>().text = itemBagList[slotID].Num.ToString();
+		if (itemBagList[slotID].Num <= 0)
         {
 			itemBagList[goodItem.slotIndex].Reset();
 			Destroy(goodItem.gameObject);
 			InventoryManager.GetInstance().descripPanel.GetComponent<DescripPanel>().HidePanel();
 		}
 
+        //道具使用
 		Debug.Log("使用道具" + goodItem.name);
         if (goodItem.name=="Stone")
         {

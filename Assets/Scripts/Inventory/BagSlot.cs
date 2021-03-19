@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BagSlot : MonoBehaviour ,IDropHandler,IPointerEnterHandler, IPointerExitHandler
 {
@@ -13,6 +14,7 @@ public class BagSlot : MonoBehaviour ,IDropHandler,IPointerEnterHandler, IPointe
 		inv = InventoryManager.GetInstance();
 	}
 
+   
 	public void OnDrop(PointerEventData eventData){
 		BagItem droppenItem = eventData.pointerDrag.GetComponent<BagItem> ();
 		if (droppenItem==null)
@@ -56,15 +58,27 @@ public class BagSlot : MonoBehaviour ,IDropHandler,IPointerEnterHandler, IPointe
 				InventoryManager.GetInstance().descripPanel.GetComponent<DescripPanel>().ShowPanel(inv.itemBagList[slotID].Name, inv.itemBagList[slotID].Desp);
 				temp = 1f;
 			}
-   
 		}
+        //点击右键使用道具
         if (Input.GetMouseButtonDown(1)&& isEnter&& transform.childCount>0)
         {
 			isEnter = false;
 			InventoryManager.GetInstance().descripPanel.GetComponent<DescripPanel>().HidePanel();
-			InventoryManager.GetInstance().UseItem(transform.GetChild(0).GetComponent<GoodItem>());
+			InventoryManager.GetInstance().UseItem(slotID);
+
 		}
-	}
+        //刷新num数
+        if (GetComponentInChildren<Text>()!=null)
+        {
+            GetComponentInChildren<Text>().text = inv.itemBagList[slotID].Num+"";
+        }
+        //当前数量为0后 重置此格子
+        if (transform.childCount > 0&&inv.itemBagList[slotID].Num <= 0)
+        {
+            inv.itemBagList[slotID].Reset();
+            Destroy( GetComponentInChildren<GoodItem>().gameObject);
+        }
+    }
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		////Debug.Log("鼠标进入物品槽:"+ slotID);

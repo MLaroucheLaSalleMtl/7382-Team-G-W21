@@ -9,18 +9,34 @@ public class PickUp : MonoBehaviour
     public Item itemType;
     bool canBePickedUp;
     public GameObject pickUpText;
+    GameObject WeaponWindowParent;
 
     // Start is called before the first frame update
     void Start()
     {
-       // Type = item.type;
+        // Type = item.type;
+        WeaponWindowParent = GameObject.Find("Canvas/WeaponWindow");
+        WeaponWindowParent.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if( canBePickedUp == true)
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Debug.Log("C key was pressed.");
+            if (WeaponWindowParent.activeSelf)
+            {
+                WeaponWindowParent.SetActive(false);
+            }
+            else
+            {
+                WeaponWindowParent.gameObject.SetActive(true);
+            }
+        }
+
+        if ( canBePickedUp == true)
         {
             pickUpText.SetActive(true);
         }
@@ -62,7 +78,7 @@ public class PickUp : MonoBehaviour
         if (other.tag == "rock")
         {
             canBePickedUp = true;
-            id = 0;        
+            id = 0;
             TempGo = other.gameObject;
         }
         if (other.tag == "wood")
@@ -77,8 +93,20 @@ public class PickUp : MonoBehaviour
             id = 2;
             TempGo = other.gameObject;
         }
-    }
 
+
+        if (other.name == "enemy1")
+        {
+            //模拟敌人1死亡
+            var item = Instantiate(Resources.Load<GameObject>("Item Prefab/apple"));
+            item.transform.position = other.transform.position;
+            Destroy(other.gameObject);
+        }
+        if (other.name == "enemy2")
+        {
+
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         canBePickedUp = false;
