@@ -111,7 +111,6 @@ public class InventoryManager : MonoBehaviour
                     itemBagList[i].Num++;
                     Debug.Log(itemBagList[i].Num);
                     GoodItem data = slotBagList[i].transform.GetChild(0).GetComponent<GoodItem>();
-
 					data.transform.GetChild(0).GetComponent<Text>().text = itemBagList[i].Num.ToString();
 				}
 			}
@@ -173,7 +172,12 @@ public class InventoryManager : MonoBehaviour
         }
         if (goodItem.name == "Apple")
         {
-            character.Recover();
+            //character.Recover();
+            Invoke("Late", 0.5f);
         }
 	}
+    private void Late()
+    {
+        TaskManager.GetInstance().isEat = true;
+    }
 }
