@@ -215,6 +215,10 @@ MonoBehaviour:
   recoverySpeed: 2
   statsScriptable: {fileID: 11400000, guid: 3ae328bc34a3e3d49957f7894e3fd84d, type: 2}
   anim: {fileID: 8041677409365846789}
+  baseLayer: 0
+  backActionLayer: 0
+  swordShieldLayer: 0
+  isMoving: 0
 --- !u!114 &8275467397025605904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,11 +267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4817b755507fbed4fbee8867f66f85a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCD: 0.2
+  attackCD: 1
   isWeaponEquipped: 0
   _actionTrigger: {fileID: 6411406669760267454}
   swordPrefab: {fileID: 7982824461516117305}
   shieldPrefab: {fileID: 7982827947112947595}
+  combo: 0
 --- !u!114 &1020898274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12035,6 +12040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7987989377732450577}
   - component: {fileID: 8041677409365846789}
+  - component: {fileID: 1469002697}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -12131,6 +12137,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1469002697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984828162724928171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20483c0504146ab42bacb11f6f04920e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7984830114274506383
 GameObject:
   m_ObjectHideFlags: 0
