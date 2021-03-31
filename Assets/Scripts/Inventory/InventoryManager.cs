@@ -175,6 +175,10 @@ public class InventoryManager : MonoBehaviour
             //character.Recover();
             Invoke("Late", 0.5f);
         }
+        if (goodItem.name == "Sword")
+        {
+            WeaponManager.GetInstance().curEquipWeapon = WeaponType.Sword;
+        }
 	}
     private void Late()
     {

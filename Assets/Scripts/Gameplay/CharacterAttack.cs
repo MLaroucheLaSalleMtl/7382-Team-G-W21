@@ -31,7 +31,7 @@ public class CharacterAttack : CharacterAction
     float lastActionTime = 0;
     float comboDelay = 0.5f;
 
-    private WeaponEquipped _weaponEquipped;
+    public  WeaponEquipped _weaponEquipped;
 
     private void Awake()
     {
@@ -50,6 +50,8 @@ public class CharacterAttack : CharacterAction
         {
             meleeCombo = 0;
         }
+
+      
     }
 
     private void FixedUpdate()
@@ -112,21 +114,28 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isEquipping)
             {
-                _isEquipping = true;
-                if (!isWeaponEquipped)
+                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Sword)
                 {
-                    _weaponEquipped = WeaponEquipped.SWORD;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", true);
-                    StartCoroutine(EquipFinishRoutine(0));
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        _weaponEquipped = WeaponEquipped.SWORD;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", true);
+                        StartCoroutine(EquipFinishRoutine(0));
+                    }
+                    else
+                    {
+                        _weaponEquipped = WeaponEquipped.NONE;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", false);
+                        _characterCtrl.anim.SetInteger("WeaponID", 0);
+                        StartCoroutine(UnequipFinishRoutine(0));
+                    }
                 }
                 else
                 {
-                    _weaponEquipped = WeaponEquipped.NONE;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", false);
-                    _characterCtrl.anim.SetInteger("WeaponID", 0);
-                    StartCoroutine(UnequipFinishRoutine(0));
+                    Debug.Log("No equipment");
                 }
             }
         }

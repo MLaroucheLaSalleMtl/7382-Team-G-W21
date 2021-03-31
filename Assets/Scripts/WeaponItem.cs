@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public enum WeaponType
 {
     Sword,
-    Axe
+    Axe,
+    Null
 }
 
 public class WeaponItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

@@ -16,6 +16,8 @@ public class WeaponManager : MonoBehaviour
     {
         instance = this;
     }
+
+    public WeaponType curEquipWeapon = WeaponType.Null;
     public List<GameObject> templist = new List<GameObject>();
     public GameObject info;
     public Text infoText;
