@@ -1,5 +1,5 @@
 {
-    "name": "group g project",
+    "name": "playerinput",
     "maps": [
         {
             "name": "Player",
@@ -25,6 +25,14 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "597466fe-2a93-4848-8260-8aa443fa786d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ESC",
+                    "type": "Button",
+                    "id": "77d631e9-aeee-4544-b14e-7c0a2c14d8b9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -248,6 +256,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "644e8924-2a0e-4c24-a4ba-f1785997f838",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ESC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
