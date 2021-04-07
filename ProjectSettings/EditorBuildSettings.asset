@@ -6,9 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/menu/Main menu.unity
-    guid: 7892cb2d54f10db47bd094fe5df9b4cc
-  - enabled: 1
-    path: Assets/_Scenes/sixiang cai scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+    path: Assets/_Scenes/Tests/TestScene.unity
+    guid: d9c7f26c010e2b14bbee0c5116482b7c
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: fe082b3742e0e4f4bb419bc05cf27eb6, type: 2}
