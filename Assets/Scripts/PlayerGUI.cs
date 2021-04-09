@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +10,8 @@ public class PlayerGUI : MonoBehaviour
     public Image stamina;
     public GameObject tips;
     private float maxHunger = 100;
+    private float maxHealth = 100;
+    private float maxStamina = 100;
     public static PlayerGUI instance;
 
     private void Awake()
@@ -17,14 +19,16 @@ public class PlayerGUI : MonoBehaviour
         instance = this;
     }
 
-    float tempHunger = 1;
+    float tempHunger = 2;
     float curHunger = 100;
+    float curHealth = 100;
+    float curStamina = 100;
     private void Update()
     {
         tempHunger -= Time.deltaTime;
         if (tempHunger<=0)
         {
-            tempHunger = 1;
+            tempHunger = 2;
             curHunger -= 5;
             if (curHunger <= 0)
             {
@@ -32,23 +36,32 @@ public class PlayerGUI : MonoBehaviour
                 tips.SetActive(true);
                 tips.GetComponentInChildren<Text>().text = "GameOver!!";
             }
-
             //maxHunger = maxHunger <= 0 ? 0 : maxHunger;
-            UpdateHunger(curHunger);
         }
+        UpdateHunger();
+        //刷新health 和stamina值
+        UpdateHealth(curHunger);
+        UpdateStamina(curStamina);
     }
-    public void UpdateHealth(float HP, float maxHP)
+    public void UpdateHealth(float HP )
     {
-        this.health.fillAmount = HP / maxHP;
+        this.health.fillAmount = HP / maxHealth;
     }
 
-    public void UpdateStamina(float stamina, float maxStamina)
+    public void UpdateStamina(float stamina)
     {
         this.stamina.fillAmount = stamina / maxStamina;
     }
 
-    public void UpdateHunger(float hunger)
+    public void UpdateHunger()
     {
-        this.hunger.fillAmount = hunger / maxHunger;
+        this.hunger.fillAmount =curHunger / maxHunger;
+    }
+
+    //copy这个方法来做hp stamina
+    public void RecoveryHunger(float food)
+    {
+        curHunger += food;
+        curHunger = curHunger >= 100 ? 100 : curHunger;// to limit the maximum value to 100
     }
 }

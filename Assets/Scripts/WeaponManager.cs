@@ -38,22 +38,7 @@ public class WeaponManager : MonoBehaviour
     {
 
     }
-    public void WeaponCraft(WeaponType weaponType)
-    {
-        //weapon type
-        switch (weaponType)
-        {
-            case WeaponType.Sword:
-
-                break;
-            case WeaponType.Axe:
-
-                break;
-            default:
-                break;
-        }
-    }
-
+   
     public string GetMaterialsData(WeaponType weaponType)
     {
         string dataStr = "";
@@ -73,6 +58,20 @@ public class WeaponManager : MonoBehaviour
                 weaponItemId = 4;
 
                 break;
+
+            case WeaponType.Bow:
+                //一个木头五个石头
+                dataStr = "1_1/0_1";
+                materialsdata = dataStr;
+                weaponItemId = 6;
+                break;
+
+            case WeaponType.Shield:
+                dataStr = "1_3/0_5";
+                materialsdata = dataStr;
+                weaponItemId = 7;
+                break;
+
             default:
                 dataStr = "";
                 break;
@@ -98,6 +97,7 @@ public class WeaponManager : MonoBehaviour
 
         Debug.Log(mId1+ mId2);
         var itemdata1= itemDatas.FirstOrDefault(t=>t.ID == mId1);
+
         var itemdata2= itemDatas.FirstOrDefault(t=>t.ID == mId2);
 
         if (itemdata1 != null && itemdata2 != null && itemdata1.Num >= mNum1 && itemdata2.Num >= mNum2)
@@ -108,6 +108,7 @@ public class WeaponManager : MonoBehaviour
             tips.SetActive(true);
             tips.GetComponentInChildren<Text>().text ="The weapon is made, please check your inventory！";
             InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[weaponItemId]);
+            Debug.Log(InventoryManager.GetInstance().itemDataList[weaponItemId]);
         }
         else
         {

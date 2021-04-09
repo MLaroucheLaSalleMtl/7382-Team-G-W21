@@ -35,8 +35,8 @@ public class CharacterCtrl : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerGUI.instance != null)
-            PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
+        //if (PlayerGUI.instance != null)
+            //PlayerGUI.instance.UpdateHealth(_character.health, _character.MaxHealth);
     }
 
     private void FixedUpdate()
@@ -55,8 +55,8 @@ public class CharacterCtrl : MonoBehaviour
             if (_character.stamina > _character.MaxStamina)
                 _character.stamina = _character.MaxStamina;
             
-            if (PlayerGUI.instance != null)
-                PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
+            //if (PlayerGUI.instance != null)
+                //PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
         }
     }
 
@@ -78,8 +78,8 @@ public class CharacterCtrl : MonoBehaviour
 
         _character.stamina = remain;
 
-        if (PlayerGUI.instance != null)
-            PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
+        //if (PlayerGUI.instance != null)
+        //    PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
 
         if (action != null)
             action.Invoke();
