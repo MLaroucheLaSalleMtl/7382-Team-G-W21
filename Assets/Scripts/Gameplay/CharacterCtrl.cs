@@ -15,12 +15,16 @@ public class CharacterCtrl : MonoBehaviour
     public Animator anim;
     public int baseLayer;
     public int backActionLayer;
-    public int swordShieldLayer;
 
     public bool isMoving;
+    public bool isAiming;
 
     private bool _isAction;
     IEnumerator _actionRoutine;
+
+
+    public WeaponEquipped weaponEquipped;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -30,7 +34,8 @@ public class CharacterCtrl : MonoBehaviour
 
         baseLayer = anim.GetLayerIndex("Base Layer");
         backActionLayer = anim.GetLayerIndex("Back Action");
-        swordShieldLayer = anim.GetLayerIndex("SwordShield");
+
+        weaponEquipped = WeaponEquipped.NONE;
     }
 
     private void Start()
@@ -49,12 +54,12 @@ public class CharacterCtrl : MonoBehaviour
     /// </summary>
     private void RecoverStamina()
     {
-        if (!_isAction && _character.stamina < 100)
+        if (!_isAction && _character.stamina < _character.MaxStamina)
         {
             _character.stamina += Time.deltaTime * recoverySpeed;
             if (_character.stamina > _character.MaxStamina)
                 _character.stamina = _character.MaxStamina;
-            
+
             if (PlayerGUI.instance != null)
                 PlayerGUI.instance.UpdateStamina(_character.stamina, _character.MaxStamina);
         }

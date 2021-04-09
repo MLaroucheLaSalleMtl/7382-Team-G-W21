@@ -35,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
         MoveCharacter();
     }
 
+    Vector3 moveDir;
+
     /// <summary>
     /// Function to move the character
     /// </summary>
@@ -46,11 +48,22 @@ public class PlayerMovement : MonoBehaviour
         if (_dirMagnitude >= 0.1f)
         {
             _characterCtrl.isMoving = true;
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            if (!_characterCtrl.isAiming)
+            {
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            }
+            else
+            {
+                //float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, turnSmoothTime);
+                //transform.rotation = Quaternion.Euler(0f, angle, 0f);                
+                moveDir = cam.transform.TransformDirection(direction);
+            }
 
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            //Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;            
 
             if (_isSprinting)
             {
