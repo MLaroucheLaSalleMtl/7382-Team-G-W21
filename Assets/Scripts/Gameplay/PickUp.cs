@@ -23,9 +23,9 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            Debug.Log("C key was pressed.");
+            Debug.Log("B key was pressed.");
             if (WeaponWindowParent.activeSelf)
             {
                 WeaponWindowParent.SetActive(false);
