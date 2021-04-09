@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-       int id = -1;
+    int id = -1;
     GameObject TempGo;
     public Item itemType;
     bool canBePickedUp;
@@ -16,16 +16,17 @@ public class PickUp : MonoBehaviour
     {
         // Type = item.type;
         WeaponWindowParent = GameObject.Find("Canvas/WeaponWindow");
-        WeaponWindowParent.SetActive(false);
+        if (WeaponWindowParent != null)
+            WeaponWindowParent.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            Debug.Log("B key was pressed.");
+            Debug.Log("C key was pressed.");
             if (WeaponWindowParent.activeSelf)
             {
                 WeaponWindowParent.SetActive(false);
@@ -36,7 +37,7 @@ public class PickUp : MonoBehaviour
             }
         }
 
-        if ( canBePickedUp == true)
+        if (canBePickedUp == true)
         {
             pickUpText.SetActive(true);
         }
