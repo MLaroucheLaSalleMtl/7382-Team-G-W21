@@ -70,6 +70,13 @@ public class PickUp : MonoBehaviour
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
+            if (id == 5)
+            {
+                Debug.Log("get a pear!!");
+                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                Destroy(TempGo);
+                canBePickedUp = false;
+            }
 
             id = -1;
         }
@@ -93,6 +100,12 @@ public class PickUp : MonoBehaviour
         {
             canBePickedUp = true;
             id = 2;
+            TempGo = other.gameObject;
+        }
+        if (other.tag == "pear")
+        {
+            canBePickedUp = true;
+            id = 5;
             TempGo = other.gameObject;
         }
 

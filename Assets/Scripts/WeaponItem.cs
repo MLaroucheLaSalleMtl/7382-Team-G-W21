@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public enum WeaponType
 {
     Sword,
-    Axe
+    Axe,
+    Bow,
+    Shield,
+    Null
 }
 
 public class WeaponItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -52,8 +55,6 @@ public class WeaponItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
             material.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/" + spriteName);
             material.GetComponentInChildren<Text>().text = "*" + materialNum;
         }
-        
-
     }
     public string GetmaterialName(string a)
     {
@@ -80,7 +81,14 @@ public class WeaponItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         {
             WeaponManager.GetInstance().infoText.text = "This is an Axe!";
         }
-
+        if (weaponType == WeaponType.Bow)
+        {
+            WeaponManager.GetInstance().infoText.text = "This is a Bow!";
+        }
+        if (weaponType == WeaponType.Shield)
+        {
+            WeaponManager.GetInstance().infoText.text = "This is a shield!";
+        }
         WeaponManager.GetInstance().info.SetActive(true);
         if (transform.localPosition.x<0)
         {
