@@ -25,6 +25,9 @@ public class CharacterAttack : CharacterAction
     public GameObject swordPrefab, shieldPrefab;
     public GameObject bowPrefab, arrowPrefab;
 
+    public GameObject shottingArrowPrefab;
+    public Transform shootingPoint;
+
     public static CharacterAttack instance;
 
     public int meleeCombo;
@@ -91,7 +94,7 @@ public class CharacterAttack : CharacterAction
         if (context.performed)
         {
             if (!_characterCtrl.isMoving && isWeaponEquipped)
-            {                
+            {
                 if (_characterCtrl.weaponEquipped == WeaponEquipped.SWORD)
                 {
                     lastActionTime = Time.time;
@@ -100,7 +103,9 @@ public class CharacterAttack : CharacterAction
                 }
                 else if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
                 {
-                    _characterCtrl.anim.SetTrigger("Bow_Attack");
+                    _characterCtrl.anim.SetTrigger("Bow_Attack");                    
+                    GameObject arrow = Instantiate(shottingArrowPrefab, shootingPoint.position, shootingPoint.rotation);
+                    arrow.GetComponent<ArrowBehavior>().InitArrow(shootingPoint.forward);
                 }
             }
         }
@@ -175,23 +180,6 @@ public class CharacterAttack : CharacterAction
     {
         _actionTrigger.gameObject.SetActive(false);
     }
-
-    /// <summary>
-    /// Attack delay
-    /// </summary>
-    /// <returns></returns>
-    IEnumerator AttackRoutine()
-    {
-        //_characterCtrl.anim.SetTrigger("Attack");
-        //_characterCtrl.anim.SetInteger("Sword_Attack", 1);
-        _isAttacking = true;
-        _actionTrigger.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        _actionTrigger.gameObject.SetActive(false);
-        yield return new WaitForSeconds(attackCD - 0.1f);
-        _isAttacking = false;
-    }
-
 
     IEnumerator EquipFinishRoutine(float weaponState)
     {
