@@ -7,9 +7,6 @@ public class Back : MonoBehaviour
     public GameObject panel;
     public void closesetting()
     {
-        if (panel != null)
-        {
-            panel.SetActive(false);
-        }
+        panel.SetActive(false);
     }
 }

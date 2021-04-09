@@ -20,6 +20,10 @@ public class attack : Enemy
     int attack_count;
     int max_attack_count;
     private bool IsDead;
+    private bool FindEnemy;
+
+    public bool FindEnemy1 { get => FindEnemy; set => FindEnemy = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -30,6 +34,7 @@ public class attack : Enemy
         set_property();
         Set_Enemy();
         space = false;
+        FindEnemy = false;
 
         attack_count = 0;
         max_attack_count = 3;
@@ -118,6 +123,7 @@ public class attack : Enemy
             transform.LookAt(Target.position);
             if (enemyoffset <= AttackDistance)
             {
+                canattack = true;
                 agent.ResetPath();
                 if (canattack)
                 {
@@ -145,6 +151,7 @@ public class attack : Enemy
         float maginitude;
         maginitude = agent.velocity.magnitude;
         anim.SetFloat("Magnitude", maginitude);
+        anim.SetBool("FindEnemy", FindEnemy);
     }
     private void resetattack()
     {
@@ -162,6 +169,7 @@ public class attack : Enemy
         {
             agent.ResetPath();
         }
+        
 
     }
 }

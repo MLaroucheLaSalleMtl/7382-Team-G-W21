@@ -66,7 +66,6 @@ public class patrol : MonoBehaviour
 
             index++;
             isRandom = false;
-            Debug.Log(isRandom);
         }
     }
 
