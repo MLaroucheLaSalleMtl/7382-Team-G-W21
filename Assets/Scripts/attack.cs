@@ -17,10 +17,13 @@ public class attack : Enemy
     float timer;
     bool space;
     bool IsAttack;
-    public Transform[] Patrol_Positions;
-    public bool IsInPosition;
-    public bool IsPatrol;
-    private float patrolPos_Offset;
+    int attack_count;
+    int max_attack_count;
+    private bool IsDead;
+    private bool FindEnemy;
+
+    public bool FindEnemy1 { get => FindEnemy; set => FindEnemy = value; }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -31,16 +34,39 @@ public class attack : Enemy
         set_property();
         Set_Enemy();
         space = false;
-        //IsInPosition = false;
-        //int index = Random.Range(0, 2);
-        //agent.destination = Patrol_Positions[index].position;
-        //IsPatrol = false;
-    }
+        FindEnemy = false;
 
+        attack_count = 0;
+        max_attack_count = 3;
+        IsDead = false;
+    }
+    void Finish_Attack()
+    {
+        Debug.Log("Finish Attack");
+        {
+            attack_count++;
+            if (attack_count > max_attack_count)
+            {
+                Reset_Attack();
+            }
+        }
+    }
+    void die() 
+    {
+        anim.SetTrigger("IsDead");
+        Destroyself();
+    }
+    void Destroyself()
+    {
+        Destroy(transform.gameObject, 3.0f);
+    }
+    void Reset_Attack()
+    {
+        attack_count = 0;
+    }
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(canattack);
         enemyoffset = Vector3.Distance(this.transform.position, Target.transform.position);
         if (!canattack)
         {
@@ -58,7 +84,15 @@ public class attack : Enemy
         {
             IsAttack = true;
         }
-        //Patrol();
+        if (Hp <= 0)
+        {
+            IsDead = true;
+        }
+        //Debug.Log(IsDead);
+        if (IsDead)
+        {
+            die();
+        }
     }
     public void OnSpace(InputAction.CallbackContext context)
     {
@@ -89,17 +123,25 @@ public class attack : Enemy
             transform.LookAt(Target.position);
             if (enemyoffset <= AttackDistance)
             {
+                canattack = true;
                 agent.ResetPath();
                 if (canattack)
                 {
-                    anim.SetTrigger("Attact");
+                    if (attack_count != 2)
+                    {
+                        anim.SetTrigger("Attact");
+                    }
+                    if (attack_count == 2)
+                    {
+                        anim.SetTrigger("Attack2");
+                    }
                     canattack = false;
                     timer = Attacktimes;
                 }
             }
             if (enemyoffset > AttackDistance)
             {
-                anim.SetBool("Move", true);
+                //anim.SetBool("Move", true);
                 agent.SetDestination(Target.position);
             }
         }
@@ -109,6 +151,7 @@ public class attack : Enemy
         float maginitude;
         maginitude = agent.velocity.magnitude;
         anim.SetFloat("Magnitude", maginitude);
+        anim.SetBool("FindEnemy", FindEnemy);
     }
     private void resetattack()
     {
@@ -126,32 +169,7 @@ public class attack : Enemy
         {
             agent.ResetPath();
         }
+        
+
     }
-
-    //private void Patrol()
-    //{
-
-
-    //    int index = Random_PatrolPos_Index();
-
-
-    //    if (IsInPosition && !IsPatrol)
-    //    {
-    //        agent.destination = Patrol_Positions[index].position;
-    //        patrolPos_Offset = Vector3.Distance(transform.position, agent.destination);
-    //        if (patrolPos_Offset <= 1f)
-    //        {
-    //            IsPatrol = false;
-    //        }
-    //        if (patrolPos_Offset >= 1f)
-    //        {
-    //            IsPatrol = true;
-    //        }
-
-
-    //    }
-
-
-
-    //}
 }
