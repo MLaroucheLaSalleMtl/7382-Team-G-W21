@@ -67,7 +67,7 @@ public class Apple : Goods
     {
         iD = 2;
         Name = "Apple";
-        Desp = "Delicous apple Hp: + 10";
+        Desp = "Delicous apple Hp: + 10 Hunger: + 10";
         SpriteName = "apple";
     }
 }
@@ -100,7 +100,7 @@ public class Pear : Goods
     {
         iD = 5;
         Name = "Pear";
-        Desp = "this is a pear";
+        Desp = "Yummy pear Hp + 20 Hunger +20";
         SpriteName = "pear";
     }
 }
@@ -112,7 +112,7 @@ public class Bow : Goods
     {
         iD = 6;
         Name = "Bow";
-        Desp = "this is a bow";
+        Desp = "Can be used for long distance attack";
         SpriteName = "bow";
     }
 }
@@ -123,7 +123,7 @@ public class Shield : Goods
     {
         iD = 7;
         Name = "Shield";
-        Desp = "this is a shield";
+        Desp = "Protect yourself from attacks";
         SpriteName = "shield";
     }
 }

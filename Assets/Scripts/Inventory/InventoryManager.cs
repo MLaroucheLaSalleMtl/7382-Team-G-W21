@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+//All by Iris
 public class InventoryManager : MonoBehaviour
 {
 	private static InventoryManager instance;
@@ -178,12 +179,12 @@ public class InventoryManager : MonoBehaviour
         }
         if (goodItem.name == "Apple")
         {
-          PlayerGUI.instance.RecoveryHunger(20);
+          PlayerGUI.instance.RecoveryHunger(10);
             Invoke("Late", 0.5f);
         }
         if (goodItem.name == "Pear")
         {
-            PlayerGUI.instance.RecoveryHunger(10);
+            PlayerGUI.instance.RecoveryHunger(20);
             Invoke("Late", 0.5f);
         }
         if (goodItem.name == "Sword")
