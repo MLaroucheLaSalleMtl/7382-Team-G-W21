@@ -20,12 +20,14 @@ public class attack : Enemy
     int attack_count;
     int max_attack_count;
     private bool IsDead;
-    private bool FindEnemy;
+    private bool CanMove;
 
-    public bool FindEnemy1 { get => FindEnemy; set => FindEnemy = value; }
+    private bool CanAttack2;
+
 
     void Start()
     {
+        CanAttack2 = false;
         agent = GetComponent<NavMeshAgent>();
         CoolDown = Attacktimes;
         timer = Attacktimes;
@@ -34,39 +36,47 @@ public class attack : Enemy
         set_property();
         Set_Enemy();
         space = false;
-        FindEnemy = false;
-
-        attack_count = 0;
-        max_attack_count = 3;
+        attack_count = 1;
+        max_attack_count = 4;
         IsDead = false;
+        CanMove = true;
     }
     void Finish_Attack()
     {
         Debug.Log("Finish Attack");
         {
+
             attack_count++;
-            if (attack_count > max_attack_count)
+            if (attack_count == max_attack_count)
             {
+                CanAttack2 = true;
                 Reset_Attack();
             }
         }
     }
-    void die() 
+    void die()
     {
+
         anim.SetTrigger("IsDead");
+
         Destroyself();
     }
     void Destroyself()
     {
-        Destroy(transform.gameObject, 3.0f);
+        Destroy(transform.gameObject, 2.0f);
     }
     void Reset_Attack()
     {
         attack_count = 0;
     }
-    // Update is called once per frame
     void Update()
     {
+        if (!CanMove)
+        {
+            agent.ResetPath();
+        }
+
+        Debug.Log("Attack Count" + attack_count);
         enemyoffset = Vector3.Distance(this.transform.position, Target.transform.position);
         if (!canattack)
         {
@@ -84,13 +94,17 @@ public class attack : Enemy
         {
             IsAttack = true;
         }
-        if (Hp <= 0)
+        if (Hp < 0)
         {
             IsDead = true;
+
         }
-        //Debug.Log(IsDead);
+
         if (IsDead)
         {
+            IsDead = false;
+            Hp = 0f;
+            CanMove = false;
             die();
         }
     }
@@ -103,12 +117,12 @@ public class attack : Enemy
         float damage = 4.0f;
         if (Hp > 0)
         {
+
             Hp -= damage;
+
+
         }
-        if (Hp <= 0)
-        {
-            Hp = 0;
-        }
+
         IsAttack = false;
     }
     private void set_property()
@@ -127,13 +141,14 @@ public class attack : Enemy
                 agent.ResetPath();
                 if (canattack)
                 {
-                    if (attack_count != 2)
+                    if (!CanAttack2)
                     {
-                        anim.SetTrigger("Attact");
+                        anim.SetTrigger("Attack1");
                     }
-                    if (attack_count == 2)
+                    if (CanAttack2)
                     {
                         anim.SetTrigger("Attack2");
+                        CanAttack2 = false;
                     }
                     canattack = false;
                     timer = Attacktimes;
@@ -151,12 +166,10 @@ public class attack : Enemy
         float maginitude;
         maginitude = agent.velocity.magnitude;
         anim.SetFloat("Magnitude", maginitude);
-        anim.SetBool("FindEnemy", FindEnemy);
     }
     private void resetattack()
     {
         timer -= 1.0f * Time.deltaTime;
-        //Debug.Log(timer);
         if (timer <= 0.0f)
         {
             canattack = true;
@@ -169,7 +182,7 @@ public class attack : Enemy
         {
             agent.ResetPath();
         }
-        
+
 
     }
 }
