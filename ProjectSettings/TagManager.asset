@@ -9,6 +9,7 @@ TagManager:
   - wood
   - apple
   - Enemy
+  - Floor
   layers:
   - Default
   - TransparentFX
