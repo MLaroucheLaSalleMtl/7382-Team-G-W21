@@ -29,7 +29,7 @@ public class PlayerGUI : MonoBehaviour
         if (tempHunger<=0)
         {
             tempHunger = 2;
-            curHunger -= 5;
+            curHunger -= 2;
             if (curHunger <= 0)
             {
                 curHunger = 0;
