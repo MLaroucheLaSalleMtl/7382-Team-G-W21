@@ -9,6 +9,7 @@ public enum WeaponEquipped
 {
     BOW,
     SWORD,
+    AXE,
     NONE
 }
 
@@ -24,6 +25,7 @@ public class CharacterAttack : CharacterAction
 
     public GameObject swordPrefab, shieldPrefab;
     public GameObject bowPrefab, arrowPrefab;
+    public GameObject axePrefab;
 
     public GameObject shottingArrowPrefab;
     public Transform shootingPoint;
@@ -95,7 +97,7 @@ public class CharacterAttack : CharacterAction
         {
             if (!_characterCtrl.isMoving && isWeaponEquipped)
             {
-                if (_characterCtrl.weaponEquipped == WeaponEquipped.SWORD)
+                if (_characterCtrl.weaponEquipped == WeaponEquipped.SWORD || _characterCtrl.weaponEquipped == WeaponEquipped.AXE)
                 {
                     lastActionTime = Time.time;
                     meleeCombo++;
@@ -103,17 +105,13 @@ public class CharacterAttack : CharacterAction
                 }
                 else if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
                 {
-                    _characterCtrl.anim.SetTrigger("Bow_Attack");                    
-                    GameObject arrow = Instantiate(shottingArrowPrefab, shootingPoint.position, shootingPoint.rotation);
-                    arrow.GetComponent<ArrowBehavior>().InitArrow(shootingPoint.forward);
+                    if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(2).IsName("Attack01Start_Bow"))
+                    {
+                        _characterCtrl.anim.SetTrigger("Bow_Attack");
+                    }
                 }
             }
         }
-    }
-
-    public void OnPrepareAction(InputAction.CallbackContext context)
-    {
-
     }
 
     public void OnEquip(InputAction.CallbackContext context)
@@ -171,14 +169,53 @@ public class CharacterAttack : CharacterAction
         }
     }
 
+    public void OnEquip3(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (!_isEquipping)
+            {
+                _isEquipping = true;
+                if (!isWeaponEquipped)
+                {
+                    _characterCtrl.weaponEquipped = WeaponEquipped.AXE;
+                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                    _characterCtrl.anim.SetBool("EquipWeapon", true);
+                    StartCoroutine(EquipFinishRoutine(0));
+                }
+                else
+                {
+                    _characterCtrl.isAiming = false;
+                    _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
+                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                    _characterCtrl.anim.SetBool("EquipWeapon", false);
+                    _characterCtrl.anim.SetInteger("WeaponID", 0);
+                    StartCoroutine(UnequipFinishRoutine(0));
+                }
+            }
+        }
+    }
+
     public void TriggerAttack()
     {
+        if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
+        {
+            arrowPrefab.SetActive(false);
+            GameObject arrow = Instantiate(shottingArrowPrefab, shootingPoint.position, shootingPoint.rotation);
+            arrow.GetComponent<ArrowBehavior>().InitArrow(shootingPoint.forward, _characterCtrl.Character);
+        }
+
         _characterCtrl.SpendStamina(2, () => { _actionTrigger.gameObject.SetActive(true); });
     }
 
     public void StopTriggerAttack()
     {
         _actionTrigger.gameObject.SetActive(false);
+    }
+
+    public void ReloadArrow()
+    {
+        arrowPrefab.SetActive(true);
     }
 
     IEnumerator EquipFinishRoutine(float weaponState)
@@ -239,18 +276,28 @@ public class CharacterAttack : CharacterAction
                 shieldPrefab.SetActive(true);
                 bowPrefab.SetActive(false);
                 arrowPrefab.SetActive(false);
+                axePrefab.SetActive(false);
                 break;
             case WeaponEquipped.BOW:
                 swordPrefab.SetActive(false);
                 shieldPrefab.SetActive(false);
                 bowPrefab.SetActive(true);
                 arrowPrefab.SetActive(true);
+                axePrefab.SetActive(false);
+                break;
+            case WeaponEquipped.AXE:
+                swordPrefab.SetActive(false);
+                shieldPrefab.SetActive(true);
+                bowPrefab.SetActive(false);
+                arrowPrefab.SetActive(false);
+                axePrefab.SetActive(true);
                 break;
             case WeaponEquipped.NONE:
                 swordPrefab.SetActive(false);
                 shieldPrefab.SetActive(false);
                 bowPrefab.SetActive(false);
                 arrowPrefab.SetActive(false);
+                axePrefab.SetActive(false);
                 break;
             default:
                 break;

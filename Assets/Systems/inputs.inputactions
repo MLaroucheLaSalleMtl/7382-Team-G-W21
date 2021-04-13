@@ -38,6 +38,14 @@
                     "interactions": "Press"
                 },
                 {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "2b02a854-7ac5-489f-8325-96465f93dab5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
+                },
+                {
                     "name": "Equip",
                     "type": "Button",
                     "id": "1f4b49dd-ed2b-44a6-b889-61766dce44b8",
@@ -54,9 +62,9 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Aim",
+                    "name": "Equip3",
                     "type": "Button",
-                    "id": "2b02a854-7ac5-489f-8325-96465f93dab5",
+                    "id": "ce5ab3da-1ff6-4d09-9e12-5b426fb06eb6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -264,7 +272,7 @@
                 {
                     "name": "",
                     "id": "dc40e711-8f7d-4a94-9beb-4ebde7cf1657",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -280,6 +288,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Equip2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a5a6d4f1-fcd9-46cb-afa4-6f85b592a0f1",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Equip3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

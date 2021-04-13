@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &632342491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 632342492}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &632342492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632342491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.16, z: 0.631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7854012458117408591}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1056122183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056122184}
+  m_Layer: 0
+  m_Name: FollowTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056122184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056122183}
+  m_LocalRotation: {x: 0.2164396, y: 0, z: 0, w: 0.97629607}
+  m_LocalPosition: {x: 0.00000066682696, y: 1.3100004, z: 0.17500003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7854012458117408591}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
 --- !u!1 &2054426862
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054426862}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.17, z: 2.3}
+  m_LocalPosition: {x: 0, y: 1.17, z: 1.89}
   m_LocalScale: {x: 2.818151, y: 2.1115, z: 3.4322789}
   m_Children: []
   m_Father: {fileID: 7854012458117408591}
@@ -147,6 +207,7 @@ GameObject:
   - component: {fileID: 7854012458117408585}
   - component: {fileID: 6221972797409257598}
   - component: {fileID: 1020898274}
+  - component: {fileID: 1020898280}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,6 +228,8 @@ Transform:
   m_Children:
   - {fileID: 7987989377732450577}
   - {fileID: 2054426863}
+  - {fileID: 1056122184}
+  - {fileID: 632342492}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,8 +280,9 @@ MonoBehaviour:
   anim: {fileID: 8041677409365846789}
   baseLayer: 0
   backActionLayer: 0
-  swordShieldLayer: 0
   isMoving: 0
+  isAiming: 0
+  weaponEquipped: 0
 --- !u!114 &8275467397025605904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +336,12 @@ MonoBehaviour:
   _actionTrigger: {fileID: 6411406669760267454}
   swordPrefab: {fileID: 7982824461516117305}
   shieldPrefab: {fileID: 7982827947112947595}
-  combo: 0
+  bowPrefab: {fileID: 7984262892710654089}
+  arrowPrefab: {fileID: 7984097536981074807}
+  axePrefab: {fileID: 7982827386688209513}
+  shottingArrowPrefab: {fileID: 3118010359716730659, guid: e9f5eed4817895f4e903b4765600351b, type: 3}
+  shootingPoint: {fileID: 632342492}
+  meleeCombo: 0
 --- !u!114 &1020898274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +356,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: {fileID: 0}
   pickUpText: {fileID: 0}
+--- !u!114 &1020898280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854012458117408586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e8f36b86d6c0da4e85ce700f6cb0400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7982784358477969157
 GameObject:
   m_ObjectHideFlags: 0
