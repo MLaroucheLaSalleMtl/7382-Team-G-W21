@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class attack : Enemy
 {
@@ -21,6 +22,8 @@ public class attack : Enemy
     int max_attack_count;
     private bool IsDead;
     private bool CanMove;
+    [SerializeField] private Image HPimage;
+    [SerializeField] private Text HPText;
 
     private bool CanAttack2;
 
@@ -54,6 +57,11 @@ public class attack : Enemy
             }
         }
     }
+    private void SetHp()
+    {
+        HPimage.fillAmount = Hp / Max_hp;
+        HPText.text = Hp + "/" + Max_hp;
+    }
     void die()
     {
 
@@ -63,7 +71,7 @@ public class attack : Enemy
     }
     void Destroyself()
     {
-        Destroy(transform.gameObject, 2.0f);
+        Destroy(transform.gameObject, 3.0f);
     }
     void Reset_Attack()
     {
@@ -71,6 +79,7 @@ public class attack : Enemy
     }
     void Update()
     {
+        SetHp();
         if (!CanMove)
         {
             agent.ResetPath();
@@ -87,7 +96,7 @@ public class attack : Enemy
         {
             if (IsAttack)
             {
-                Receivedam();
+                //Receivedam();
             }
         }
         if (!space)
@@ -112,22 +121,22 @@ public class attack : Enemy
     {
         space = context.performed;
     }
-    private void Receivedam()
-    {
-        float damage = 4.0f;
-        if (Hp > 0)
-        {
+    //private void Receivedam()
+    //{
+    //    float damage = 6.0f;
+    //    if (Hp > 0)
+    //    {
 
-            Hp -= damage;
+    //        Hp -= damage;
 
 
-        }
+    //    }
 
-        IsAttack = false;
-    }
+    //    IsAttack = false;
+    //}
     private void set_property()
     {
-        this.Hp = 10;
+
         this.Damage = 1;
     }
     private void OnTriggerStay(Collider other)

@@ -38,17 +38,17 @@ public class boss : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, Target.position);
         //Debug.Log(distance);
-            if (distance > 12.0f && distance < 20.0f)
+            if (distance > 20.0f && distance < 30.0f)
             {
                 magic_list[0].SetActive(true);
                 magic_list[1].SetActive(false);
             }
-            if (distance > 7.0f && distance < 12.0f)
+            if (distance >10.0f && distance < 20.0f)
             {
                 magic_list[1].SetActive(true);
                 magic_list[0].SetActive(false);
             }
-            if (distance > 20.0f)
+            if (distance > 30.0f)
             {
             magic_list[0].SetActive(false);
             magic_list[1].SetActive(false);
