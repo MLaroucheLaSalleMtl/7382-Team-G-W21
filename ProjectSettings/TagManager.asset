@@ -9,10 +9,7 @@ TagManager:
   - wood
   - apple
   - Enemy
-  - pear
-  - deerMeat
-  - wolfMeat
-  - bearMeat
+  - Floor
   layers:
   - Default
   - TransparentFX

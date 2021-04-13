@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "Equip3",
+                    "type": "Button",
+                    "id": "3017f1af-3e51-4090-bb25-ecf7df87f4b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press"
                 }
             ],
             "bindings": [
@@ -264,7 +272,7 @@
                 {
                     "name": "",
                     "id": "dc40e711-8f7d-4a94-9beb-4ebde7cf1657",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -291,6 +299,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "ESC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba2b1e61-f74d-4ffc-bc11-ed7104efb527",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Equip3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

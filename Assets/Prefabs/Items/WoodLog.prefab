@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7524833006107611356}
   - component: {fileID: 8986874300918812147}
   m_Layer: 0
-  m_Name: Log_2
+  m_Name: WoodLog
   m_TagString: wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,9 +29,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7523590459578180566}
-  m_LocalRotation: {x: 0.00000001472987, y: 0.7387676, z: 0.000000016146279, w: 0.67396027}
+  m_LocalRotation: {x: 0, y: 0.73876715, z: 0, w: 0.67396075}
   m_LocalPosition: {x: -15.818813, y: 9.3, z: 78.896576}
-  m_LocalScale: {x: 5.9, y: 5.9, z: 5.9}
+  m_LocalScale: {x: 5.0740004, y: 5.0740004, z: 5.0740004}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

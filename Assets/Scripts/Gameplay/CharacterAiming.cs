@@ -24,6 +24,7 @@ public class CharacterAiming : MonoBehaviour
             if (!_isTargeting)
             {
                 _isTargeting = true;
+                _characterCtrl.anim.SetBool("IsAiming", true);
                 CameraController.instance.CallAimCamera(_characterCtrl.transform.eulerAngles.y);                
             }
 
@@ -32,6 +33,7 @@ public class CharacterAiming : MonoBehaviour
         }
         else
         {
+            _characterCtrl.anim.SetBool("IsAiming", false);
             CameraController.instance.SetCameraToNormal();
         }
     }
