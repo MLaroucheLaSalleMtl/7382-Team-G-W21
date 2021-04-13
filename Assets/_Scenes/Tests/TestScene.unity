@@ -6980,17 +6980,6 @@ Transform:
   m_Father: {fileID: 1262784682}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1020898280 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1020898280, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
-  m_PrefabInstance: {fileID: 7854012457123987907}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8f36b86d6c0da4e85ce700f6cb0400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1031414480
 GameObject:
   m_ObjectHideFlags: 0
@@ -11075,21 +11064,9 @@ MonoBehaviour:
     m_ActionId: db7ac936-9491-41ab-8e32-e4d1df1cf3e7
     m_ActionName: Player/Equip2[/Keyboard/2]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1020898280}
-        m_TargetAssemblyTypeName: CharacterAiming, Assembly-CSharp
-        m_MethodName: OnAim
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 2b02a854-7ac5-489f-8325-96465f93dab5
-    m_ActionName: Player/Aim[/Mouse/rightButton]
+      m_Calls: []
+    m_ActionId: c32a9eac-6881-451b-97f0-f78ea6b91d38
+    m_ActionName: Player/ESC[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4226608444580735421}
@@ -11104,7 +11081,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: ce5ab3da-1ff6-4d09-9e12-5b426fb06eb6
+    m_ActionId: 3017f1af-3e51-4090-bb25-ecf7df87f4b0
     m_ActionName: Player/Equip3[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -15773,10 +15750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 632342492, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.948
-      objectReference: {fileID: 0}
     - target: {fileID: 1020898274, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
       propertyPath: pickUpText
       value: 
