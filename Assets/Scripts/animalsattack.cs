@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class animalsattack : MonoBehaviour
 {
@@ -10,20 +11,28 @@ public class animalsattack : MonoBehaviour
     [SerializeField] GameObject TriggerRange;
     [SerializeField] GameObject AttackRange;
     private float EnemyOffest;
-
+    [SerializeField] Image HPimage;
+    [SerializeField] Text hptext;
+    [SerializeField] private float hp;
     [SerializeField] private float TimesAfterAttack;
     private bool FindPlayer;
     private bool InAttackRange;
     private bool CanAttack;
 
     private bool CanMove;
+    private float max_hp;
 
     [SerializeField] private float AttackRate;
     private float AttackTimer;
 
     private Animator Anim;
+
+    public float Hp { get => hp; set => hp = value; }
+    public float Max_hp { get => max_hp; set => max_hp = value; }
+
     void Start()
     {
+        max_hp = Hp;
         agent = GetComponent<NavMeshAgent>();
         CanMove = true;
         Anim = GetComponent<Animator>();
@@ -32,11 +41,16 @@ public class animalsattack : MonoBehaviour
         CanAttack = true;
 
     }
-
+    private void setHP()
+    {
+        HPimage.fillAmount = Hp / Max_hp;
+        hptext.text = Hp + "/" + Max_hp;
+    }
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CanMove);
+        setHP();
+        //Debug.Log(CanMove);
 
         FindPlayer = TriggerRange.GetComponent<AnimalTriggerRange>().FindPlayer1;
         InAttackRange = AttackRange.GetComponent<AnimalAttackRange>().InAttackRange1;

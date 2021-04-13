@@ -38,14 +38,6 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Aim",
-                    "type": "Button",
-                    "id": "2b02a854-7ac5-489f-8325-96465f93dab5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press"
-                },
-                {
                     "name": "Equip",
                     "type": "Button",
                     "id": "1f4b49dd-ed2b-44a6-b889-61766dce44b8",
@@ -62,9 +54,9 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Equip3",
+                    "name": "ESC",
                     "type": "Button",
-                    "id": "ce5ab3da-1ff6-4d09-9e12-5b426fb06eb6",
+                    "id": "c32a9eac-6881-451b-97f0-f78ea6b91d38",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -272,7 +264,7 @@
                 {
                     "name": "",
                     "id": "dc40e711-8f7d-4a94-9beb-4ebde7cf1657",
-                    "path": "<Keyboard>/1",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -293,23 +285,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a5a6d4f1-fcd9-46cb-afa4-6f85b592a0f1",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Equip3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8a2a1494-8dac-4329-bfd2-ca6fd626bc74",
-                    "path": "<Mouse>/rightButton",
+                    "id": "1113e59e-18eb-42e8-bbf0-fe73b62f6229",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Aim",
+                    "action": "ESC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
