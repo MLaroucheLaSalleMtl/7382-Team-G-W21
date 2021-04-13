@@ -67,7 +67,7 @@ public class Apple : Goods
     {
         iD = 2;
         Name = "Apple";
-        Desp = "Delicous apple Hp: + 10 Hunger: + 10";
+        Desp = "Delicous apple Hp: + 5 Hunger: + 5";
         SpriteName = "apple";
     }
 }
@@ -100,7 +100,7 @@ public class Pear : Goods
     {
         iD = 5;
         Name = "Pear";
-        Desp = "Yummy pear Hp + 20 Hunger +20";
+        Desp = "Yummy pear Hp + 3 Hunger +3";
         SpriteName = "pear";
     }
 }
@@ -125,5 +125,38 @@ public class Shield : Goods
         Name = "Shield";
         Desp = "Protect yourself from attacks";
         SpriteName = "shield";
+    }
+}
+
+public class DeerMeat : Goods
+{
+    public DeerMeat()
+    {
+        iD = 8;
+        Name = "Deer Meat";
+        Desp = "Delicous deer meat Hunger: +20";
+        SpriteName = "deermeat";
+    }
+}
+
+public class WolfMeat : Goods
+{
+    public WolfMeat()
+    {
+        iD = 9;
+        Name = "Wolf Meat";
+        Desp = "Cooked wolf steak Hunger: +30";
+        SpriteName = "wolfmeat";
+    }
+}
+
+public class BearMeat : Goods
+{
+    public BearMeat()
+    {
+        iD = 10;
+        Name = "Bear Meat";
+        Desp = "Raw bear meat Hunger: +45";
+        SpriteName = "bearmeat";
     }
 }
