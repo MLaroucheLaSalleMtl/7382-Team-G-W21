@@ -11,8 +11,6 @@ public class boss : MonoBehaviour
     private bool stop;
     float timer;
     [SerializeField] float Set_RepeatingPertime;
-    [SerializeField] private float hp;
-    private float max_Hp;
 
     // Start is called before the first frame update
     void Start()
