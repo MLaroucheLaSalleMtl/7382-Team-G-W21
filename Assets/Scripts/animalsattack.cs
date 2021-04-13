@@ -36,7 +36,7 @@ public class animalsattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(CanMove);
+        //Debug.Log(CanMove);
 
         FindPlayer = TriggerRange.GetComponent<AnimalTriggerRange>().FindPlayer1;
         InAttackRange = AttackRange.GetComponent<AnimalAttackRange>().InAttackRange1;
