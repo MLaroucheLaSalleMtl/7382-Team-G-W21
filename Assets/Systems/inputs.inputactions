@@ -54,9 +54,9 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "Aim",
+                    "name": "ESC",
                     "type": "Button",
-                    "id": "2b02a854-7ac5-489f-8325-96465f93dab5",
+                    "id": "c32a9eac-6881-451b-97f0-f78ea6b91d38",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
@@ -285,12 +285,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8a2a1494-8dac-4329-bfd2-ca6fd626bc74",
-                    "path": "<Mouse>/rightButton",
+                    "id": "1113e59e-18eb-42e8-bbf0-fe73b62f6229",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Aim",
+                    "action": "ESC",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
