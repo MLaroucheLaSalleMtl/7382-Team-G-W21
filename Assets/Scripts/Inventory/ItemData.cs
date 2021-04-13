@@ -94,3 +94,36 @@ public class Axe : Goods
         }
 }
 
+public class Pear : Goods
+{
+    public Pear()
+    {
+        iD = 5;
+        Name = "Pear";
+        Desp = "this is a pear";
+        SpriteName = "pear";
+    }
+}
+
+
+public class Bow : Goods
+{
+    public Bow()
+    {
+        iD = 6;
+        Name = "Bow";
+        Desp = "this is a bow";
+        SpriteName = "bow";
+    }
+}
+
+public class Shield : Goods
+{
+    public Shield()
+    {
+        iD = 7;
+        Name = "Shield";
+        Desp = "this is a shield";
+        SpriteName = "shield";
+    }
+}

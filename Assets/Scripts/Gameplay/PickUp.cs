@@ -24,9 +24,10 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.B))
+
         {
-            Debug.Log("C key was pressed.");
+            Debug.Log("B key was pressed.");
             if (WeaponWindowParent.activeSelf)
             {
                 WeaponWindowParent.SetActive(false);
@@ -69,6 +70,13 @@ public class PickUp : MonoBehaviour
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
+            if (id == 5)
+            {
+                Debug.Log("get a pear!!");
+                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                Destroy(TempGo);
+                canBePickedUp = false;
+            }
 
             id = -1;
         }
@@ -92,6 +100,12 @@ public class PickUp : MonoBehaviour
         {
             canBePickedUp = true;
             id = 2;
+            TempGo = other.gameObject;
+        }
+        if (other.tag == "pear")
+        {
+            canBePickedUp = true;
+            id = 5;
             TempGo = other.gameObject;
         }
 

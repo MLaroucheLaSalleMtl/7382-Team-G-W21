@@ -39,6 +39,9 @@ public class InventoryManager : MonoBehaviour
         Apple apple = new Apple();
         Sword sword = new Sword();
         Axe axe = new Axe();
+        Pear pear = new Pear();
+        Bow bow = new Bow();
+        Shield shield = new Shield();
 
         //添加的物品种类
         itemDataList.Add(new ItemData(stone.iD, stone.Name, stone.Desp, "rock"));
@@ -46,6 +49,9 @@ public class InventoryManager : MonoBehaviour
         itemDataList.Add(new ItemData(apple.iD, apple.Name, apple.Desp, "apple"));
         itemDataList.Add(new ItemData(sword.iD, sword.Name, sword.Desp, "sword"));
         itemDataList.Add(new ItemData(axe.iD, axe.Name, axe.Desp, "axe"));
+        itemDataList.Add(new ItemData(pear.iD, pear.Name, pear.Desp, "pear"));
+        itemDataList.Add(new ItemData(bow.iD, bow.Name, bow.Desp, "bow"));
+        itemDataList.Add(new ItemData(shield.iD, shield.Name, shield.Desp, "shield"));
 
         //InitItemPrefab();
         InitBag();
@@ -111,9 +117,8 @@ public class InventoryManager : MonoBehaviour
                     itemBagList[i].Num++;
                     Debug.Log(itemBagList[i].Num);
                     GoodItem data = slotBagList[i].transform.GetChild(0).GetComponent<GoodItem>();
-
-					data.transform.GetChild(0).GetComponent<Text>().text = itemBagList[i].Num.ToString();
-				}
+                    data.transform.GetChild(0).GetComponent<Text>().text = itemBagList[i].Num.ToString();
+                }
 			}
 		}
 		else
@@ -143,9 +148,9 @@ public class InventoryManager : MonoBehaviour
 				itemObj.transform.SetParent(slotBagList[i].transform);
 				itemObj.transform.localPosition = Vector2.zero;
 				itemObj.name = itemBagList[i].Name;
-				itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-				itemObj.GetComponentInChildren<Text>().text = "1";
-				itemObj.GetComponent<BagItem>().itemData = itemToAdd;
+                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                itemObj.GetComponentInChildren<Text>().text = "1";
+                itemObj.GetComponent<BagItem>().itemData = itemToAdd;
 				itemObj.GetComponent<BagItem>().slotIndex = i;
 				break;
 			}
@@ -173,7 +178,21 @@ public class InventoryManager : MonoBehaviour
         }
         if (goodItem.name == "Apple")
         {
-            character.Recover();
+          PlayerGUI.instance.RecoveryHunger(20);
+            Invoke("Late", 0.5f);
         }
-	}
+        if (goodItem.name == "Pear")
+        {
+            PlayerGUI.instance.RecoveryHunger(10);
+            Invoke("Late", 0.5f);
+        }
+        if (goodItem.name == "Sword")
+        {
+            WeaponManager.GetInstance().curEquipWeapon = WeaponType.Sword;
+        }
+    }
+    private void Late()
+    {
+        TaskManager.GetInstance().isEat = true;
+    }
 }

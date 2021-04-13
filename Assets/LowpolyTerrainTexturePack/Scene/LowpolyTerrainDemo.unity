@@ -37,11 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_Sun: {fileID: 0}
-=======
   m_Sun: {fileID: 972451717}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -79,18 +75,18 @@ LightmapSettings:
     m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
-    m_PVRSampleCount: 512
+    m_PVRSampleCount: 500
     m_PVRBounces: 2
-    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentSampleCount: 500
     m_PVREnvironmentReferencePointCount: 2048
-    m_PVRFilteringMode: 1
-    m_PVRDenoiserTypeDirect: 1
-    m_PVRDenoiserTypeIndirect: 1
-    m_PVRDenoiserTypeAO: 1
+    m_PVRFilteringMode: 2
+    m_PVRDenoiserTypeDirect: 0
+    m_PVRDenoiserTypeIndirect: 0
+    m_PVRDenoiserTypeAO: 0
     m_PVRFilterTypeDirect: 0
     m_PVRFilterTypeIndirect: 0
     m_PVRFilterTypeAO: 0
-    m_PVREnvironmentMIS: 1
+    m_PVREnvironmentMIS: 0
     m_PVRCulling: 1
     m_PVRFilteringGaussRadiusDirect: 1
     m_PVRFilteringGaussRadiusIndirect: 5
@@ -127,9 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
---- !u!1 &913365761
-=======
 --- !u!1001 &234950135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172,7 +165,6 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5fd911d83e4afc4cbc58250cbf11f5d, type: 3}
 --- !u!1 &972451716
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,13 +172,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  - component: {fileID: 913365763}
-  - component: {fileID: 913365762}
-=======
   - component: {fileID: 972451718}
   - component: {fileID: 972451717}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -194,21 +181,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/menu/Dead.unity
---- !u!108 &913365762
-=======
 --- !u!108 &972451717
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_GameObject: {fileID: 913365761}
-=======
   m_GameObject: {fileID: 972451716}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
@@ -264,27 +243,12 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-<<<<<<< HEAD:Assets/menu/Dead.unity
---- !u!4 &913365763
-=======
 --- !u!4 &972451718
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_GameObject: {fileID: 913365761}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1425412908
-=======
   m_GameObject: {fileID: 972451716}
   m_LocalRotation: {x: 0.23356612, y: 0.75532037, z: -0.35221165, w: 0.50088423}
   m_LocalPosition: {x: -20.19, y: 3, z: 0}
@@ -294,7 +258,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50.000004, y: 112.9, z: 0}
 --- !u!1 &1468272917
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,16 +265,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  - component: {fileID: 1425412911}
-  - component: {fileID: 1425412910}
-  - component: {fileID: 1425412909}
-=======
   - component: {fileID: 1468272922}
   - component: {fileID: 1468272921}
   - component: {fileID: 1468272920}
   - component: {fileID: 1468272918}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -319,21 +276,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/menu/Dead.unity
---- !u!81 &1425412909
-=======
 --- !u!81 &1468272918
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_GameObject: {fileID: 1425412908}
-  m_Enabled: 1
---- !u!20 &1425412910
-=======
   m_GameObject: {fileID: 1468272917}
   m_Enabled: 1
 --- !u!124 &1468272920
@@ -345,17 +293,12 @@ Behaviour:
   m_GameObject: {fileID: 1468272917}
   m_Enabled: 1
 --- !u!20 &1468272921
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_GameObject: {fileID: 1425412908}
-=======
   m_GameObject: {fileID: 1468272917}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -392,25 +335,15 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-<<<<<<< HEAD:Assets/menu/Dead.unity
---- !u!4 &1425412911
-=======
 --- !u!4 &1468272922
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/menu/Dead.unity
-  m_GameObject: {fileID: 1425412908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
-=======
   m_GameObject: {fileID: 1468272917}
   m_LocalRotation: {x: 0.23356612, y: 0.75532037, z: -0.35221165, w: 0.50088423}
   m_LocalPosition: {x: -20.19, y: 3, z: 0}
->>>>>>> development:Assets/LowpolyTerrainTexturePack/Scene/LowpolyTerrainDemo.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
