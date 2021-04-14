@@ -7986,6 +7986,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 596597150}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -8478,6 +8479,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 1050670755}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -8744,6 +8746,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 546414077}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -9934,6 +9937,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 1086282672}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -10036,6 +10040,7 @@ MonoBehaviour:
   hunger: {fileID: 330940719}
   stamina: {fileID: 148303092}
   tips: {fileID: 0}
+  globaltips: {fileID: 0}
 --- !u!1 &1402873364
 GameObject:
   m_ObjectHideFlags: 0
@@ -10508,6 +10513,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 1770675335}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -11518,6 +11524,7 @@ MonoBehaviour:
   damage: 0
   defense: 0
   hpBar: {fileID: 1521419974}
+  characterType: 1
   deadFeedback:
     m_PersistentCalls:
       m_Calls: []
@@ -15682,6 +15689,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: characterType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1070151005655770445, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
       propertyPath: anim
       value: 
@@ -15698,6 +15709,10 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 520129480}
+    - target: {fileID: 1070151005655770451, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1070151005655770451, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
       propertyPath: attackRate
       value: 5
@@ -15817,8 +15832,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7492623355258190549, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190549, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
       propertyPath: attackRange
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: characterType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7492623355258190639, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
       propertyPath: anim
@@ -15912,6 +15935,10 @@ PrefabInstance:
     - target: {fileID: 7854012458117408591, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936791265190088640, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: IsDebugging
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}

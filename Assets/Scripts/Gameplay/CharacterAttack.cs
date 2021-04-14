@@ -33,8 +33,8 @@ public class CharacterAttack : CharacterAction
     public static CharacterAttack instance;
 
     public int meleeCombo;
-    float lastActionTime = 0;
-    float comboDelay = 0.5f;
+    private float _lastActionTime = 0;
+    private const float COMBODELAY = 0.5f;
 
     private void Awake()
     {
@@ -45,48 +45,96 @@ public class CharacterAttack : CharacterAction
     private void Start()
     {
         _actionTrigger.actionFeedback.AddListener(_characterCtrl.Character.DoDamage);
-        Debug.Log("CurEquipment:" + WeaponManager.GetInstance().curEquipWeapon);
+
+        if (WeaponManager.GetInstance() != null)
+            Debug.Log("CurEquipment:" + WeaponManager.GetInstance().curEquipWeapon);
     }
 
     private void Update()
     {
-        if (Time.time - lastActionTime > comboDelay)
-        {
-            meleeCombo = 0;
-        }
+        CheckComboTime();
     }
 
     private void FixedUpdate()
     {
         if (!_characterCtrl.isMoving)
         {
-            if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("IdleBT") && meleeCombo > 0)
+            ComboHandle();
+        }
+    }
+
+    #region Attacking functions
+    /// <summary>
+    /// Function to check the combo time
+    /// </summary>
+    private void CheckComboTime()
+    {
+        if (Time.time - _lastActionTime > COMBODELAY)
+        {
+            meleeCombo = 0;
+        }
+    }
+
+    /// <summary>
+    /// Function to handle the combo
+    /// </summary>
+    private void ComboHandle()
+    {
+        if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("IdleBT") && meleeCombo > 0)
+        {
+            SetAttackAnimation(1);
+        }
+        else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo01_SwordShield") && meleeCombo > 1)
+        {
+            SetAttackAnimation(2);
+        }
+        else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo02_SwordShield") && meleeCombo > 2)
+        {
+            SetAttackAnimation(3);
+        }
+        else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo03_SwordShield") && meleeCombo > 3)
+        {
+            SetAttackAnimation(4);
+        }
+        else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo04_SwordShield") && meleeCombo > 4)
+        {
+            SetAttackAnimation(5);
+        }
+    }
+
+    /// <summary>
+    /// Function to set the attack animation for the combo system
+    /// </summary>
+    /// <param name="id"></param>
+    private void SetAttackAnimation(int id)
+    {
+        _characterCtrl.anim.SetTrigger("Attack");
+        _characterCtrl.anim.SetInteger("Sword_Attack", id);
+    }
+
+    /// <summary>
+    /// Function to handle the player's attack
+    /// </summary>
+    private void HandleAttack()
+    {
+        if (!_characterCtrl.isMoving && isWeaponEquipped)
+        {
+            if (_characterCtrl.weaponEquipped == WeaponEquipped.SWORD || _characterCtrl.weaponEquipped == WeaponEquipped.AXE)
             {
-                _characterCtrl.anim.SetTrigger("Attack");
-                _characterCtrl.anim.SetInteger("Sword_Attack", 1);
+                _lastActionTime = Time.time;
+                meleeCombo++;
+                meleeCombo = Mathf.Clamp(meleeCombo, 0, 5);
             }
-            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo01_SwordShield") && meleeCombo > 1)
+            else if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
             {
-                _characterCtrl.anim.SetTrigger("Attack");
-                _characterCtrl.anim.SetInteger("Sword_Attack", 2);
-            }
-            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo02_SwordShield") && meleeCombo > 2)
-            {
-                _characterCtrl.anim.SetTrigger("Attack");
-                _characterCtrl.anim.SetInteger("Sword_Attack", 3);
-            }
-            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo03_SwordShield") && meleeCombo > 3)
-            {
-                _characterCtrl.anim.SetTrigger("Attack");
-                _characterCtrl.anim.SetInteger("Sword_Attack", 4);
-            }
-            else if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(0).IsName("Combo04_SwordShield") && meleeCombo > 4)
-            {
-                _characterCtrl.anim.SetTrigger("Attack");
-                _characterCtrl.anim.SetInteger("Sword_Attack", 5);
+                if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(2).IsName("Attack01Start_Bow"))
+                {
+                    _characterCtrl.anim.SetTrigger("Bow_Attack");
+                }
             }
         }
     }
+
 
     /// <summary>
     /// Input OnAttack event
@@ -96,130 +144,152 @@ public class CharacterAttack : CharacterAction
     {
         if (context.performed)
         {
-            if (!_characterCtrl.isMoving && isWeaponEquipped)
-            {
-                if (_characterCtrl.weaponEquipped == WeaponEquipped.SWORD || _characterCtrl.weaponEquipped == WeaponEquipped.AXE)
-                {
-                    lastActionTime = Time.time;
-                    meleeCombo++;
-                    meleeCombo = Mathf.Clamp(meleeCombo, 0, 5);
-                }
-                else if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
-                {
-                    if (_characterCtrl.anim.GetCurrentAnimatorStateInfo(2).IsName("Attack01Start_Bow"))
-                    {
-                        _characterCtrl.anim.SetTrigger("Bow_Attack");
-                    }
-                }
-            }
+            HandleAttack();
         }
     }
+    #endregion
 
+    #region Input system behavior for equipping - unequipping the weapons
+    /// <summary>
+    /// Input on equip 1
+    /// </summary>
+    /// <param name="context"></param>
     public void OnEquip(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             if (!_isEquipping)
             {
-                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Sword)
+                if (!_characterCtrl.IsDebugging) // Creating a debugging bool to test this feature in a scene without the WeaponManager
                 {
-                    _isEquipping = true;
-                    if (!isWeaponEquipped)
+                    if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Sword)
                     {
-                        _characterCtrl.weaponEquipped = WeaponEquipped.SWORD;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", true);
-                        StartCoroutine(EquipFinishRoutine(0));
+                        _isEquipping = true;
+                        if (!isWeaponEquipped)
+                        {
+                            EquipWeapon(WeaponEquipped.SWORD, 0);
+                        }
+                        else
+                        {
+                            Unequipping(0, 0);
+                        }
                     }
                     else
                     {
-                        _characterCtrl.isAiming = false;
-                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", false);
-                        _characterCtrl.anim.SetInteger("WeaponID", 0);
-                        StartCoroutine(UnequipFinishRoutine(0));
+                        GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
                 {
-                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        EquipWeapon(WeaponEquipped.SWORD, 0);
+                    }
+                    else
+                    {
+                        Unequipping(0, 0);
+                    }
                 }
             }
         }
     }
 
+    /// <summary>
+    /// On equip2, related to the bow
+    /// </summary>
+    /// <param name="context"></param>
     public void OnEquip2(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             if (!_isEquipping)
             {
-                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Bow)
+                if (!_characterCtrl.IsDebugging) // Creating a debugging bool to test this feature in a scene without the WeaponManager
                 {
-                    _isEquipping = true;
-                    if (!isWeaponEquipped)
+                    if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Bow)
                     {
-                        //_characterCtrl.isAiming = true;
-                        _characterCtrl.weaponEquipped = WeaponEquipped.BOW;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", true);
-                        StartCoroutine(EquipFinishRoutine(1));
+                        _isEquipping = true;
+                        if (!isWeaponEquipped)
+                        {
+                            EquipWeapon(WeaponEquipped.BOW, 1);                            
+                        }
+                        else
+                        {
+                            Unequipping(1, 1);
+                        }
                     }
                     else
                     {
-                        _characterCtrl.isAiming = false;
-                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", false);
-                        _characterCtrl.anim.SetInteger("WeaponID", 1);
-                        StartCoroutine(UnequipFinishRoutine(1));
+                        GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
                 {
-                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
-
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        EquipWeapon(WeaponEquipped.BOW, 1);                        
+                    }
+                    else
+                    {
+                        Unequipping(1, 1);
+                    }
                 }
             }
         }
     }
 
+    /// <summary>
+    /// Equip input for the axe
+    /// </summary>
+    /// <param name="context"></param>
     public void OnEquip3(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
             if (!_isEquipping)
             {
-                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Axe)
+                if (!_characterCtrl.IsDebugging)
                 {
-                    _isEquipping = true;
-                    if (!isWeaponEquipped)
+                    if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Axe)
                     {
-                        _characterCtrl.weaponEquipped = WeaponEquipped.AXE;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", true);
-                        StartCoroutine(EquipFinishRoutine(0));
+                        _isEquipping = true;
+                        if (!isWeaponEquipped)
+                        {
+                            EquipWeapon(WeaponEquipped.AXE, 0);                            
+                        }
+                        else
+                        {
+                            Unequipping(0, 0);
+                        }
                     }
                     else
                     {
-                        _characterCtrl.isAiming = false;
-                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                        _characterCtrl.anim.SetBool("EquipWeapon", false);
-                        _characterCtrl.anim.SetInteger("WeaponID", 0);
-                        StartCoroutine(UnequipFinishRoutine(0));
+                        GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
                 {
-                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
-
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        EquipWeapon(WeaponEquipped.AXE, 0);                        
+                    }
+                    else
+                    {
+                        Unequipping(0, 0);
+                    }
                 }
             }
         }
     }
+    #endregion
 
+    #region Functions to set the animation events
+    /// <summary>
+    /// Function to trigger the attack
+    /// </summary>
     public void TriggerAttack()
     {
         if (_characterCtrl.weaponEquipped == WeaponEquipped.BOW)
@@ -235,22 +305,62 @@ public class CharacterAttack : CharacterAction
         }
     }
 
+    /// <summary>
+    /// Function to stop the action trigger
+    /// </summary>
     public void StopTriggerAttack()
     {
         _actionTrigger.gameObject.SetActive(false);
     }
 
+    /// <summary>
+    /// Function to active again the arrow
+    /// </summary>
     public void ReloadArrow()
     {
         arrowPrefab.SetActive(true);
     }
+    #endregion
 
+    #region Weapon functions
+    #region Equip and Unequip functions  
+    /// <summary>
+    /// Function to equip
+    /// </summary>
+    /// <param name="weapon"></param>
+    /// <param name="weaponState"></param>
+    private void EquipWeapon(WeaponEquipped weapon, float weaponState)
+    {
+        _characterCtrl.weaponEquipped = weapon;
+        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+        _characterCtrl.anim.SetBool("EquipWeapon", true);
+        StartCoroutine(EquipFinishRoutine(weaponState));
+    }
+
+    /// <summary>
+    /// Function to unequip
+    /// </summary>
+    /// <param name="characterState"></param>
+    /// <param name="weaponID"></param>
+    private void Unequipping(float characterState, int weaponID)
+    {
+        _characterCtrl.isAiming = false;
+        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
+        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+        _characterCtrl.anim.SetBool("EquipWeapon", false);
+        _characterCtrl.anim.SetInteger("WeaponID", weaponID);
+        StartCoroutine(UnequipFinishRoutine(characterState));
+    }
+
+    /// <summary>
+    /// Routine to equip the weapon
+    /// </summary>
+    /// <param name="weaponState"></param>
+    /// <returns></returns>
     IEnumerator EquipFinishRoutine(float weaponState)
     {
         yield return new WaitForSeconds(0.5f);
 
-        //swordPrefab.SetActive(true);
-        //shieldPrefab.SetActive(true);
         WeaponStates();
 
         yield return new WaitForSeconds(0.8f);
@@ -264,12 +374,15 @@ public class CharacterAttack : CharacterAction
         _isEquipping = false;
     }
 
+    /// <summary>
+    /// Routine to unequip the weapon
+    /// </summary>
+    /// <param name="weaponState"></param>
+    /// <returns></returns>
     IEnumerator UnequipFinishRoutine(float weaponState)
     {
         yield return new WaitForSeconds(0.35f);
 
-        //swordPrefab.SetActive(false);
-        //shieldPrefab.SetActive(false);
         WeaponStates();
 
         yield return new WaitForSeconds(0.7f);
@@ -293,7 +406,11 @@ public class CharacterAttack : CharacterAction
         _characterCtrl.anim.SetFloat("WeaponState", weaponState);
         _characterCtrl.anim.SetFloat("CharacterState", CharacterState);
     }
+    #endregion
 
+    /// <summary>
+    /// Function to set the weapon states
+    /// </summary>
     private void WeaponStates()
     {
         switch (_characterCtrl.weaponEquipped)
@@ -330,4 +447,5 @@ public class CharacterAttack : CharacterAction
                 break;
         }
     }
+    #endregion
 }

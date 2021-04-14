@@ -37,6 +37,12 @@ public class StateController : MonoBehaviour
         currentState.UpdateState(this);
     }
 
+    /// <summary>
+    /// Initializing StateController
+    /// </summary>
+    /// <param name="aiActivation"></param>
+    /// <param name="wayPoints"></param>
+    /// <param name="enemy"></param>
     public void SetupAI(bool aiActivation, List<Transform> wayPoints, BasicEnemy enemy)
     {
         _enemy = enemy;
@@ -48,6 +54,10 @@ public class StateController : MonoBehaviour
             navMeshAgent.enabled = false;
     }
 
+    /// <summary>
+    /// Function to go to the next state
+    /// </summary>
+    /// <param name="nextState"></param>
     public void TransitionToState(State nextState)
     {
         if (nextState != remainState)
@@ -57,12 +67,20 @@ public class StateController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function to create a delay before starting a new state
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <returns></returns>
     public bool CheckIfCountDownElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
         return (stateTimeElapsed >= duration);
     }
 
+    /// <summary>
+    /// Exit State
+    /// </summary>
     private void OnExitState()
     {
         stateTimeElapsed = 0;

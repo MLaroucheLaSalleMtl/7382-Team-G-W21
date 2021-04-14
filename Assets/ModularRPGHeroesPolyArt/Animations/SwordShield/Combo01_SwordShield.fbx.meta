@@ -537,7 +537,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.92142856
+      - time: 0.67142856
         functionName: StopTrigger
         data: 
         objectReferenceParameter: {instanceID: 0}

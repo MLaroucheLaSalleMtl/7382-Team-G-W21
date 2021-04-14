@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+public enum CharacterType
+{
+    PLAYER,
+    ENEMY,
+    NONE
+}
+
 /// <summary>
 /// Class to manage all the character stats
 /// </summary>
@@ -33,6 +40,7 @@ public class Character : MonoBehaviour
 
     [Header("Utilities")]
     [SerializeField] private HealthBar hpBar;
+    [SerializeField] private CharacterType characterType;
 
     [Header("Feedback")]
     public UnityEvent deadFeedback;
@@ -96,6 +104,12 @@ public class Character : MonoBehaviour
             health -= damage;
             if (hpBar != null)
                 hpBar.UpdateBar(this.health);
+
+            if (characterType == CharacterType.PLAYER)
+            {
+                if (PlayerGUI.instance != null)
+                    PlayerGUI.instance.UpdateHealth(this.health, this._maxHealth);
+            }
         }
 
         if (health <= 0)
@@ -128,7 +142,8 @@ public class Character : MonoBehaviour
     }
 
     //吃东西恢复血量
-    public void Recover() {
+    public void Recover()
+    {
         Debug.Log(health);
         health += 5;
         Debug.Log(health);

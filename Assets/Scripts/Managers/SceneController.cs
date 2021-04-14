@@ -8,7 +8,7 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
 
     public string NextScene;
-
+    
     private void Awake()
     {
         if (instance == null)

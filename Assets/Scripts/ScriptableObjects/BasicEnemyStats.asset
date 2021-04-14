@@ -20,7 +20,7 @@ MonoBehaviour:
   - stat: 3
     points: 10
   - stat: 0
-    points: 10
+    points: 5
   - stat: 1
     points: 10
   - stat: 2

@@ -6,23 +6,14 @@ public class MainMenuManager : MonoBehaviour
 {
     public static MainMenuManager instance;
 
-    public GameObject contents;
-
     void Awake()
     {
         instance = this;
     }
 
-    public void Show()
-    {
-        contents.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        contents.SetActive(false);
-    }
-
+    /// <summary>
+    /// Function to set the start button behavior
+    /// </summary>
     public void OnBtnStartPressed()
     {
         SceneController.instance.NextScene = "TestScene";
