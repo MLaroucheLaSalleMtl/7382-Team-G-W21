@@ -45,6 +45,7 @@ public class CharacterAttack : CharacterAction
     private void Start()
     {
         _actionTrigger.actionFeedback.AddListener(_characterCtrl.Character.DoDamage);
+        Debug.Log("CurEquipment:" + WeaponManager.GetInstance().curEquipWeapon);
     }
 
     private void Update()
@@ -120,22 +121,29 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isEquipping)
             {
-                _isEquipping = true;
-                if (!isWeaponEquipped)
+                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Sword)
                 {
-                    _characterCtrl.weaponEquipped = WeaponEquipped.SWORD;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", true);
-                    StartCoroutine(EquipFinishRoutine(0));
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        _characterCtrl.weaponEquipped = WeaponEquipped.SWORD;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", true);
+                        StartCoroutine(EquipFinishRoutine(0));
+                    }
+                    else
+                    {
+                        _characterCtrl.isAiming = false;
+                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", false);
+                        _characterCtrl.anim.SetInteger("WeaponID", 0);
+                        StartCoroutine(UnequipFinishRoutine(0));
+                    }
                 }
                 else
                 {
-                    _characterCtrl.isAiming = false;
-                    _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", false);
-                    _characterCtrl.anim.SetInteger("WeaponID", 0);
-                    StartCoroutine(UnequipFinishRoutine(0));
+                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
                 }
             }
         }
@@ -147,23 +155,31 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isEquipping)
             {
-                _isEquipping = true;
-                if (!isWeaponEquipped)
+                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Bow)
                 {
-                    //_characterCtrl.isAiming = true;
-                    _characterCtrl.weaponEquipped = WeaponEquipped.BOW;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", true);
-                    StartCoroutine(EquipFinishRoutine(1));
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        //_characterCtrl.isAiming = true;
+                        _characterCtrl.weaponEquipped = WeaponEquipped.BOW;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", true);
+                        StartCoroutine(EquipFinishRoutine(1));
+                    }
+                    else
+                    {
+                        _characterCtrl.isAiming = false;
+                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", false);
+                        _characterCtrl.anim.SetInteger("WeaponID", 1);
+                        StartCoroutine(UnequipFinishRoutine(1));
+                    }
                 }
                 else
                 {
-                    _characterCtrl.isAiming = false;
-                    _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", false);
-                    _characterCtrl.anim.SetInteger("WeaponID", 1);
-                    StartCoroutine(UnequipFinishRoutine(1));
+                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+
                 }
             }
         }
@@ -175,22 +191,30 @@ public class CharacterAttack : CharacterAction
         {
             if (!_isEquipping)
             {
-                _isEquipping = true;
-                if (!isWeaponEquipped)
+                if (WeaponManager.GetInstance().curEquipWeapon == WeaponType.Axe)
                 {
-                    _characterCtrl.weaponEquipped = WeaponEquipped.AXE;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", true);
-                    StartCoroutine(EquipFinishRoutine(0));
+                    _isEquipping = true;
+                    if (!isWeaponEquipped)
+                    {
+                        _characterCtrl.weaponEquipped = WeaponEquipped.AXE;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", true);
+                        StartCoroutine(EquipFinishRoutine(0));
+                    }
+                    else
+                    {
+                        _characterCtrl.isAiming = false;
+                        _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
+                        _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
+                        _characterCtrl.anim.SetBool("EquipWeapon", false);
+                        _characterCtrl.anim.SetInteger("WeaponID", 0);
+                        StartCoroutine(UnequipFinishRoutine(0));
+                    }
                 }
                 else
                 {
-                    _characterCtrl.isAiming = false;
-                    _characterCtrl.weaponEquipped = WeaponEquipped.NONE;
-                    _characterCtrl.anim.SetLayerWeight(_characterCtrl.backActionLayer, 1);
-                    _characterCtrl.anim.SetBool("EquipWeapon", false);
-                    _characterCtrl.anim.SetInteger("WeaponID", 0);
-                    StartCoroutine(UnequipFinishRoutine(0));
+                    GameObject.Find("Player GUI").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+
                 }
             }
         }

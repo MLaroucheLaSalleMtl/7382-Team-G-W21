@@ -107,7 +107,7 @@ public class WeaponManager : MonoBehaviour
             itemdata2.Num -= mNum2;
             tips.SetActive(true);
             tips.GetComponentInChildren<Text>().text ="The weapon is made, please check your inventory！";
-            InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[weaponItemId]);
+            InventoryManager.GetInstance().Additem(weaponItemId);
             Debug.Log(InventoryManager.GetInstance().itemDataList[weaponItemId]);
         }
         else

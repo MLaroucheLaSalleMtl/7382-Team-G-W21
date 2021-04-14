@@ -9,6 +9,7 @@ public class PlayerGUI : MonoBehaviour
     public Image hunger;
     public Image stamina;
     public GameObject tips;
+    public GameObject globaltips;
     private float maxHunger = 100;
     private float maxHealth = 100;
     private float maxStamina = 100;
@@ -34,18 +35,18 @@ public class PlayerGUI : MonoBehaviour
             {
                 curHunger = 0;
                 tips.SetActive(true);
-                tips.GetComponentInChildren<Text>().text = "GameOver!!";
+                tips.GetComponentInChildren<Text>().text = "Game Over!";
             }
             //maxHunger = maxHunger <= 0 ? 0 : maxHunger;
         }
         UpdateHunger();
         //刷新health 和stamina值
-        UpdateHealth(curHunger);
+        UpdateHealth();
         UpdateStamina(curStamina);
     }
-    public void UpdateHealth(float HP )
+    public void UpdateHealth( )
     {
-        this.health.fillAmount = HP / maxHealth;
+        this.health.fillAmount = curHealth / maxHealth;
     }
 
     public void UpdateStamina(float stamina)
@@ -61,8 +62,10 @@ public class PlayerGUI : MonoBehaviour
     //copy这个方法来做hp stamina
     public void RecoveryHunger(float food)
     {
+        Debug.LogError(curHunger);
         curHunger += food;
         curHunger = curHunger >= 100 ? 100 : curHunger;// to limit the maximum value to 100
+        Debug.LogError(curHunger);
     }
 
     public void UpdateHealth(float HP, float maxHP)
@@ -74,9 +77,9 @@ public class PlayerGUI : MonoBehaviour
     {
         this.stamina.fillAmount = stamina / maxStamina;
     }
-
-    public void UpdateHunger(float hunger, float maxHunger)
+    public void Setglobaltips(string content)
     {
-        this.hunger.fillAmount = hunger / maxHunger;
+        globaltips.SetActive(true);
+        globaltips.GetComponentInChildren<Text>().text = content;
     }
 }

@@ -52,49 +52,54 @@ public class PickUp : MonoBehaviour
             if (id == 0)
             {
                 Debug.Log("get a stone!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(0);
+
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 1)
             {
                 Debug.Log("get a wood!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(1);
+
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 2)
             {
                 Debug.Log("get an apple!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(2);
+
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 5)
             {
                 Debug.Log("get a pear!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(5);
+
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 8)
             {
                 Debug.Log("get a deer meat!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(8);
+
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 9)
             {
                 Debug.Log("get a wolf meat!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(9);
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
             if (id == 10)
             {
                 Debug.Log("get a deer meat!!");
-                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                InventoryManager.GetInstance().Additem(10);
                 Destroy(TempGo);
                 canBePickedUp = false;
             }

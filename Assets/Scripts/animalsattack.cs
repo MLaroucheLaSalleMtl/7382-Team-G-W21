@@ -4,8 +4,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+public enum AnimamalType
+{
+    deer,
+    wolf,
+    bear,
+}
 public class animalsattack : MonoBehaviour
 {
+    [SerializeField]
+    AnimamalType animamalType;
     NavMeshAgent agent;
     [SerializeField] Transform Player;
     [SerializeField] GameObject TriggerRange;
@@ -61,18 +69,38 @@ public class animalsattack : MonoBehaviour
             Anim.SetTrigger("IsDead");
             IfDead = true;
             Destroy(this.gameObject, 3f);
+            switch (animamalType)
+            {
+                case AnimamalType.deer:
+                    DropMaterial("deerMeat");
+                   
+                    break;
+                case AnimamalType.wolf:
+                    DropMaterial("wolfMeat");
+                    TaskManager.GetInstance().isKill = true;
+                    break;
+                case AnimamalType.bear:
+                    DropMaterial("bearMeat");
 
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
+    public void DropMaterial(string MaterialName)
+    {
+        var m = Instantiate(Resources.Load<GameObject>("Item Prefab/"+MaterialName));
+        m.transform.position = transform.position;
+        m.name = "MaterialName";
+    }
     // Update is called once per frame
     void Update()
     {
         Dead();
         SetHP();
-
         Debug.Log(CanMove);
-
         FindPlayer = TriggerRange.GetComponent<AnimalTriggerRange>().FindPlayer1;
         InAttackRange = AttackRange.GetComponent<AnimalAttackRange>().InAttackRange1;
 
