@@ -16,12 +16,13 @@ public class StateController : MonoBehaviour
 
     public float lookSphereCastRadius; // This could be set in the basic enemies
     public float lookRange; // This could be set in the basic enemies
-    public float attackRange; // This could be set in the basic enemies
-    public float attackRate; // This could be set in the basic enemies
+    public float attackRange; // This could be set in the basic enemies    
     public float searchingTurnSpeed; // This could be set in the basic enemies
     public float searchDuration; // This could be set in the basic enemies
 
-    private bool _aiActive;
+    private bool _aiActive;    
+
+    [HideInInspector] public BasicEnemy _enemy;
 
     void Awake()
     {
@@ -36,8 +37,9 @@ public class StateController : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    public void SetupAI(bool aiActivation, List<Transform> wayPoints)
+    public void SetupAI(bool aiActivation, List<Transform> wayPoints, BasicEnemy enemy)
     {
+        _enemy = enemy;
         wayPointList = wayPoints;
         _aiActive = aiActivation;
         if (_aiActive)

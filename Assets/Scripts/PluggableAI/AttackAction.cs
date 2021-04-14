@@ -14,11 +14,12 @@ public class AttackAction : Action
     {
         Debug.DrawRay(controller.transform.position, controller.transform.forward.normalized * controller.attackRange, Color.red);
 
-        if (Physics.SphereCast(controller.transform.position, controller.lookSphereCastRadius, controller.transform.forward, out RaycastHit hit, controller.attackRange) && hit.collider.CompareTag("Player"))
+        Collider[] hitColliders = Physics.OverlapSphere(controller.transform.position, 1f);
+        foreach (Collider col in hitColliders)
         {
-            if (controller.CheckIfCountDownElapsed(controller.attackRate))
+            if (col != null && col.CompareTag("Player"))
             {
-                // TODO::ATTACK -- Display attack animation
+                controller._enemy.Attack(col.GetComponent<Character>());
             }
         }
     }

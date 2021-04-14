@@ -203,9 +203,12 @@ public class CharacterAttack : CharacterAction
             arrowPrefab.SetActive(false);
             GameObject arrow = Instantiate(shottingArrowPrefab, shootingPoint.position, shootingPoint.rotation);
             arrow.GetComponent<ArrowBehavior>().InitArrow(shootingPoint.forward, _characterCtrl.Character);
+            _characterCtrl.SpendStamina(2, null);
         }
-
-        _characterCtrl.SpendStamina(2, () => { _actionTrigger.gameObject.SetActive(true); });
+        else
+        {
+            _characterCtrl.SpendStamina(2, () => { _actionTrigger.gameObject.SetActive(true); });
+        }
     }
 
     public void StopTriggerAttack()

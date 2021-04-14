@@ -12,6 +12,11 @@ public class BasicEnemy : MonoBehaviour
     public List<Transform> wayPoints;
     private StateController _stateController;
 
+    public Animator anim;
+
+    public float attackDelay;
+    private bool _isAttacking;
+
     private void Awake()
     {
         _character = GetComponent<Character>();
@@ -23,6 +28,25 @@ public class BasicEnemy : MonoBehaviour
     private void Start()
     {
         if (_stateController != null)
-            _stateController.SetupAI(activeAI, wayPoints);
+            _stateController.SetupAI(activeAI, wayPoints, this);
+    }
+
+    public void Attack(Character entity)
+    {
+        if (!_isAttacking)
+        {
+            _isAttacking = true;
+            _character.DoDamage(entity);
+            if (entity.IsDead)
+                _stateController.chaseTarget = null;
+
+            StartCoroutine(AttackRoutine());
+        }
+    }
+
+    IEnumerator AttackRoutine()
+    {
+        yield return new WaitForSeconds(attackDelay);
+        _isAttacking = false;
     }
 }

@@ -9,19 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fe923dab0076d04e9cbf6cffab9a04d, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: 3750ebf53540b134ab1aaabda7a1a143, type: 3}
+  m_Name: AttackAction
   m_EditorClassIdentifier: 
-  BaseHP: 100
-  BaseMana: 10
-  BaseStamina: 1000
-  BaseDefense: 10
-  basicStats:
-  - stat: 3
-    points: 10
-  - stat: 0
-    points: 10
-  - stat: 1
-    points: 10
-  - stat: 2
-    points: 10

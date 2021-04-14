@@ -29,6 +29,8 @@ public class Character : MonoBehaviour
 
     private bool _isDead;
 
+    public bool IsDead { get { return _isDead; } }
+
     [Header("Utilities")]
     [SerializeField] private HealthBar hpBar;
 

@@ -40,7 +40,7 @@ public class PlayerGUI : MonoBehaviour
         }
         UpdateHunger();
         //刷新health 和stamina值
-        UpdateHealth(curHunger);
+        //UpdateHealth(curHunger);
         UpdateStamina(curStamina);
     }
     public void UpdateHealth(float HP )
