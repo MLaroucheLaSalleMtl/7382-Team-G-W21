@@ -50,8 +50,14 @@ public class SceneController : MonoBehaviour
         async.allowSceneActivation = false;
         while (!async.isDone)
         {
+            if (LoadingPanelManager.instance != null)
+                LoadingPanelManager.instance.UpdateSlider(async.progress);
+
             if (async.progress >= 0.9f)
             {
+                if (LoadingPanelManager.instance != null)
+                    LoadingPanelManager.instance.UpdateSlider(1f);
+
                 async.allowSceneActivation = true;
                 yield return null;
             }
