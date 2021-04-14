@@ -768,10 +768,8 @@ GameObject:
   - component: {fileID: 8797987426506122596}
   - component: {fileID: 8797987426515995350}
   - component: {fileID: 8797987425122820523}
-  - component: {fileID: 8797987425122820518}
   - component: {fileID: 8797987425122820515}
   - component: {fileID: 8797987425122820512}
-  - component: {fileID: 8797987425122820519}
   m_Layer: 0
   m_Name: PolarBear
   m_TagString: Untagged
@@ -833,19 +831,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &8797987425122820518
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797987426506619204}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.3212788
-  m_Center: {x: 0.08094764, y: 0.5650959, z: 0.21926379}
 --- !u!114 &8797987425122820515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,25 +873,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8797987425122820519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797987426506619204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ca804d6b18f6d4db4ebe14203336f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animalSound: {fileID: 0}
-  walking: {fileID: 0}
-  eating: {fileID: 0}
-  running: {fileID: 0}
-  attacking: {fileID: 0}
-  death: {fileID: 0}
-  sleeping: {fileID: 0}
 --- !u!1 &8797987426506619206
 GameObject:
   m_ObjectHideFlags: 0

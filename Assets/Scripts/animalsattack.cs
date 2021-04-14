@@ -61,7 +61,6 @@ public class animalsattack : MonoBehaviour
             Anim.SetTrigger("IsDead");
             IfDead = true;
             Destroy(this.gameObject, 3f);
-
         }
     }
 

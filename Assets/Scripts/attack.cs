@@ -46,9 +46,7 @@ public class attack : Enemy
     }
     void Finish_Attack()
     {
-        Debug.Log("Finish Attack");
         {
-
             attack_count++;
             if (attack_count == max_attack_count)
             {

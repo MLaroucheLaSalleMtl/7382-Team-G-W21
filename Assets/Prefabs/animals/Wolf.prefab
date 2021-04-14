@@ -2241,12 +2241,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5121713490973815973}
   - component: {fileID: 5121713490964716827}
-  - component: {fileID: 5121713491384075320}
   - component: {fileID: 5121713491384075321}
   - component: {fileID: 5121713491384075324}
   - component: {fileID: 5121713491384075326}
   m_Layer: 0
-  m_Name: Wolf_0 1
+  m_Name: Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2290,19 +2289,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &5121713491384075320
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5121713490974105733}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &5121713491384075321
 SphereCollider:
   m_ObjectHideFlags: 0
