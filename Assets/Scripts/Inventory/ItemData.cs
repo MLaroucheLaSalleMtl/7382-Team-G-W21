@@ -133,7 +133,7 @@ public class DeerMeat : Goods
     public DeerMeat()
     {
         iD = 8;
-        Name = "Deer Meat";
+        Name = "DeerMeat";
         Desp = "Delicous deer meat Hunger: +20";
         SpriteName = "deermeat";
     }
@@ -144,7 +144,7 @@ public class WolfMeat : Goods
     public WolfMeat()
     {
         iD = 9;
-        Name = "Wolf Meat";
+        Name = "WolfMeat";
         Desp = "Cooked wolf steak Hunger: +30";
         SpriteName = "wolfmeat";
     }
@@ -155,7 +155,7 @@ public class BearMeat : Goods
     public BearMeat()
     {
         iD = 10;
-        Name = "Bear Meat";
+        Name = "BearMeat";
         Desp = "Raw bear meat Hunger: +45";
         SpriteName = "bearmeat";
     }
