@@ -11,46 +11,67 @@ public class animalsattack : MonoBehaviour
     [SerializeField] GameObject TriggerRange;
     [SerializeField] GameObject AttackRange;
     private float EnemyOffest;
-    [SerializeField] Image HPimage;
-    [SerializeField] Text hptext;
-    [SerializeField] private float hp;
+
+    [SerializeField] private Image HPImage;
+    [SerializeField] private Text HPText;
+
     [SerializeField] private float TimesAfterAttack;
     private bool FindPlayer;
     private bool InAttackRange;
     private bool CanAttack;
 
     private bool CanMove;
-    private float max_hp;
 
     [SerializeField] private float AttackRate;
     private float AttackTimer;
 
+    [SerializeField] private float HP;
+    private float Max_HP;
+
     private Animator Anim;
 
-    public float Hp { get => hp; set => hp = value; }
-    public float Max_hp { get => max_hp; set => max_hp = value; }
+    private bool IfDead;
+
+    public float HP1 { get => HP; set => HP = value; }
+    public float Max_HP1 { get => Max_HP; set => Max_HP = value; }
 
     void Start()
     {
-        max_hp = Hp;
+        Max_HP1 = HP1;
         agent = GetComponent<NavMeshAgent>();
         CanMove = true;
         Anim = GetComponent<Animator>();
         AttackTimer = AttackRate;
 
         CanAttack = true;
+        IfDead = false;
 
     }
-    private void setHP()
+    private void SetHP()
     {
-        HPimage.fillAmount = Hp / Max_hp;
-        hptext.text = Hp + "/" + Max_hp;
+        HPImage.fillAmount = HP1 / Max_HP1;
+        HPText.text = HP1 + "/" + Max_HP1;
+
     }
+    private void Dead()
+    {
+        if (HP1 <= 0f && !IfDead)
+        {
+            CanMove = false;
+            Anim.SetTrigger("IsDead");
+            IfDead = true;
+            Destroy(this.gameObject, 3f);
+
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        setHP();
-        //Debug.Log(CanMove);
+        Dead();
+        SetHP();
+
+        Debug.Log(CanMove);
 
         FindPlayer = TriggerRange.GetComponent<AnimalTriggerRange>().FindPlayer1;
         InAttackRange = AttackRange.GetComponent<AnimalAttackRange>().InAttackRange1;

@@ -77,6 +77,27 @@ public class PickUp : MonoBehaviour
                 Destroy(TempGo);
                 canBePickedUp = false;
             }
+            if (id == 8)
+            {
+                Debug.Log("get a deer meat!!");
+                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                Destroy(TempGo);
+                canBePickedUp = false;
+            }
+            if (id == 9)
+            {
+                Debug.Log("get a wolf meat!!");
+                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                Destroy(TempGo);
+                canBePickedUp = false;
+            }
+            if (id == 10)
+            {
+                Debug.Log("get a deer meat!!");
+                InventoryManager.GetInstance().tempItemList.Add(InventoryManager.GetInstance().itemDataList[id]);
+                Destroy(TempGo);
+                canBePickedUp = false;
+            }
 
             id = -1;
         }
@@ -108,7 +129,24 @@ public class PickUp : MonoBehaviour
             id = 5;
             TempGo = other.gameObject;
         }
-
+        if (other.tag == "deerMeat")
+        {
+            canBePickedUp = true;
+            id = 8;
+            TempGo = other.gameObject;
+        }
+        if (other.tag == "wolfMeat")
+        {
+            canBePickedUp = true;
+            id = 9;
+            TempGo = other.gameObject;
+        }
+        if (other.tag == "bearMeat")
+        {
+            canBePickedUp = true;
+            id = 10;
+            TempGo = other.gameObject;
+        }
 
         if (other.name == "enemy1")
         {
