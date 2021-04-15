@@ -5,6 +5,8 @@ public class ActionTrigger : MonoBehaviour
 {
     public LayerMask layerMask;
 
+    public CharacterType characterType;
+
     public UnityEvent<Character> actionFeedback;
 
     private void OnTriggerEnter(Collider other)
@@ -13,10 +15,27 @@ public class ActionTrigger : MonoBehaviour
         {
             if (other.CompareTag("Enemy") || other.CompareTag("Mob"))
             {
-                Character character = other.GetComponent<Character>();
-                if (character != null && actionFeedback != null)
-                    actionFeedback.Invoke(character);
+                //Character character = other.GetComponent<Character>();
+                //if (character != null && actionFeedback != null)
+                //    actionFeedback.Invoke(character);
+
+                ApplyLogic(other);
             }
         }
+
+        if (characterType == CharacterType.ENEMY)
+        {
+            if (other.CompareTag("Player"))
+            {
+                ApplyLogic(other);
+            }
+        }
+    }
+
+    private void ApplyLogic(Collider other)
+    {
+        Character character = other.GetComponent<Character>();
+        if (character != null && actionFeedback != null)
+            actionFeedback.Invoke(character);
     }
 }

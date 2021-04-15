@@ -44,6 +44,9 @@ public class animalsattack : MonoBehaviour
     public StatsScriptable statsScriptable;
     private Character _character;
 
+    // Variable feedback for action trigger
+    [SerializeField] private ActionTrigger _actionTrigger;
+
     void Start()
     {
         Max_HP1 = HP1;
@@ -58,6 +61,8 @@ public class animalsattack : MonoBehaviour
         // Initialize the character
         _character = GetComponent<Character>();
         _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+
+        _actionTrigger.actionFeedback.AddListener(_character.DoDamage);
     }
 
 
@@ -119,13 +124,16 @@ public class animalsattack : MonoBehaviour
 
     public void DropMaterial(string MaterialName)
     {
-        var m = Instantiate(Resources.Load<GameObject>("Item Prefab/"+MaterialName));
+        var m = Instantiate(Resources.Load<GameObject>("Item Prefab/" + MaterialName));
         m.transform.position = transform.position;
         m.name = "MaterialName";
     }
     // Update is called once per frame
     void Update()
     {
+        if (_character.IsDead)
+            return;
+
         //Dead(); /* This is handle by Character.cs */
         //SetHP();   /* This is handle by Character.cs */
         //Debug.Log(CanMove);
@@ -149,7 +157,7 @@ public class animalsattack : MonoBehaviour
             {
 
                 if (CanAttack)
-                {   
+                {
                     CanMove = false;
                     CanAttack = false;
                     Attack();
@@ -161,11 +169,14 @@ public class animalsattack : MonoBehaviour
     }
     private void Attack()
     {
-
         Anim.SetTrigger("Attack");
-        aniamlsaudio[1].Play();
+        if (aniamlsaudio.Length > 0)
+            aniamlsaudio[1].Play();
+
         Invoke("ResetCanMove", TimesAfterAttack);
 
+        // Calling the coroutine to apply the trigger logic
+        StartCoroutine(AttackRoutine());
     }
     private void ResetCanMove()
     {
@@ -188,5 +199,16 @@ public class animalsattack : MonoBehaviour
     {
         float Magnitude = agent.velocity.magnitude;
         Anim.SetFloat("Magnitude", Magnitude);
+    }
+
+    /// <summary>
+    /// Coroutine to handle the action trigger
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator AttackRoutine()
+    {
+        _actionTrigger.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        _actionTrigger.gameObject.SetActive(false);
     }
 }
