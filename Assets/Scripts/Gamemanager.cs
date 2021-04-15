@@ -8,6 +8,13 @@ public class Gamemanager : MonoBehaviour
     private bool PressESC;
     private bool In_menu;
     [SerializeField] private GameObject Stop_Menu;
+
+    private void Awake()
+    {
+        // Controlling the loading panel at starting scene
+        StartCoroutine(LoadingRoutine());
+    }
+
     void Start()
     {
         PressESC = false;
@@ -29,5 +36,16 @@ public class Gamemanager : MonoBehaviour
         PressESC = context.performed;
     }
 
-
+    /// <summary>
+    /// Function coroutine to set the loading panel
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator LoadingRoutine()
+    {
+        LoadingPanelManager.instance.Show();
+        LoadingPanelManager.instance.HideSlider();
+        LoadingPanelManager.instance.SetContentText("Loading things you can play with");
+        yield return new WaitForSeconds(3f);
+        LoadingPanelManager.instance.Hide();
+    }
 }
