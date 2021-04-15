@@ -19,6 +19,7 @@ public class TaskManager : MonoBehaviour
     public int curtaskId = 0;
     public Dictionary<string,string> taskOkList ;
     public bool isEat;
+    public bool isKill;
     private void Awake()
     {
         instance = this;
@@ -30,6 +31,7 @@ public class TaskManager : MonoBehaviour
         taskOkList.Add("Stone Collector","collect stone *2");
         taskOkList.Add("Weapon Master","Make sword *1");
         taskOkList.Add("Fruit lover","pick apple *1");
+        taskOkList.Add("Hunter","kill wolf *1");
 
         taskView.SetActive(true);
         succesView.SetActive(false);
@@ -68,27 +70,32 @@ public class TaskManager : MonoBehaviour
         }
         if (curtaskId==2)
         {
+            Debug.Log(curtaskId);
             if (isEat)
             {
                 taskView.SetActive(true);
                 succesView.SetActive(true);
+                taskName.text = "Hunter";
+                taskText.text = "Kill wolf *1";
                 curtaskId++;
+                Debug.Log(curtaskId);
             }
-            //var item = InventoryManager.GetInstance().itemBagList.FirstOrDefault(t => t.ID == 2);
-            //if (item != null && item.Num >= 1)
-            //{
-            //    taskView.SetActive(true);
-            //    succesView.SetActive(true);
-
-            //    //taskName.text = "捡果子";
-            //    //taskText.text = "收集 果子 *2";
-            //    curtaskId++;
-            //}
+        }
+        if (curtaskId == 3)
+        {
+            Debug.Log(curtaskId);
+            if (isKill)
+            {
+                taskView.SetActive(true);
+                succesView.SetActive(true);
+                curtaskId++;
+                Debug.Log(curtaskId);
+            }
         }
     }
     public void Overtask()
     {
-        if (curtaskId ==3)
+        if (curtaskId ==4)
         {
             taskView.SetActive(false);
         }

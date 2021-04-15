@@ -25,6 +25,8 @@ public class CharacterCtrl : MonoBehaviour
 
     public WeaponEquipped weaponEquipped;
 
+    public bool IsDebugging;
+
 
     // Start is called before the first frame update
     void Awake()

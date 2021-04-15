@@ -13,4 +13,9 @@ public class AnimationTrigger : MonoBehaviour
     {
         CharacterAttack.instance.StopTriggerAttack();
     }
+
+    public void ReloadArrow()
+    {
+        CharacterAttack.instance.ReloadArrow();
+    }
 }

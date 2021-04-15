@@ -24,6 +24,7 @@ public class attack : Enemy
     private bool CanMove;
     [SerializeField] private Image HPimage;
     [SerializeField] private Text HPText;
+    private AudioSource[] Monsterssound;
 
     private bool CanAttack2;
 
@@ -43,6 +44,7 @@ public class attack : Enemy
         max_attack_count = 4;
         IsDead = false;
         CanMove = true;
+        Monsterssound = GetComponents<AudioSource>();
     }
     void Finish_Attack()
     {
@@ -67,6 +69,21 @@ public class attack : Enemy
 
         Destroyself();
     }
+    public void Attackslime()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
+    }
+    public void Turtleattack()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
+    }
+    public void Turtleattack2()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
+    }
     void Destroyself()
     {
         Destroy(transform.gameObject, 3.0f);
@@ -83,7 +100,7 @@ public class attack : Enemy
             agent.ResetPath();
         }
 
-        Debug.Log("Attack Count" + attack_count);
+        //Debug.Log("Attack Count" + attack_count);
         enemyoffset = Vector3.Distance(this.transform.position, Target.transform.position);
         if (!canattack)
         {
@@ -104,7 +121,6 @@ public class attack : Enemy
         if (Hp < 0)
         {
             IsDead = true;
-
         }
 
         if (IsDead)
@@ -134,7 +150,6 @@ public class attack : Enemy
     //}
     private void set_property()
     {
-
         this.Damage = 1;
     }
     private void OnTriggerStay(Collider other)

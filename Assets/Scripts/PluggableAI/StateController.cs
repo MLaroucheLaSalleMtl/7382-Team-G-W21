@@ -16,12 +16,13 @@ public class StateController : MonoBehaviour
 
     public float lookSphereCastRadius; // This could be set in the basic enemies
     public float lookRange; // This could be set in the basic enemies
-    public float attackRange; // This could be set in the basic enemies
-    public float attackRate; // This could be set in the basic enemies
+    public float attackRange; // This could be set in the basic enemies    
     public float searchingTurnSpeed; // This could be set in the basic enemies
     public float searchDuration; // This could be set in the basic enemies
 
-    private bool _aiActive;
+    private bool _aiActive;    
+
+    [HideInInspector] public BasicEnemy _enemy;
 
     void Awake()
     {
@@ -36,8 +37,15 @@ public class StateController : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    public void SetupAI(bool aiActivation, List<Transform> wayPoints)
+    /// <summary>
+    /// Initializing StateController
+    /// </summary>
+    /// <param name="aiActivation"></param>
+    /// <param name="wayPoints"></param>
+    /// <param name="enemy"></param>
+    public void SetupAI(bool aiActivation, List<Transform> wayPoints, BasicEnemy enemy)
     {
+        _enemy = enemy;
         wayPointList = wayPoints;
         _aiActive = aiActivation;
         if (_aiActive)
@@ -46,6 +54,10 @@ public class StateController : MonoBehaviour
             navMeshAgent.enabled = false;
     }
 
+    /// <summary>
+    /// Function to go to the next state
+    /// </summary>
+    /// <param name="nextState"></param>
     public void TransitionToState(State nextState)
     {
         if (nextState != remainState)
@@ -55,12 +67,20 @@ public class StateController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function to create a delay before starting a new state
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <returns></returns>
     public bool CheckIfCountDownElapsed(float duration)
     {
         stateTimeElapsed += Time.deltaTime;
         return (stateTimeElapsed >= duration);
     }
 
+    /// <summary>
+    /// Exit State
+    /// </summary>
     private void OnExitState()
     {
         stateTimeElapsed = 0;

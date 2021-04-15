@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+//All by Iris
 public class InventoryManager : MonoBehaviour
 {
 	private static InventoryManager instance;
@@ -17,9 +18,6 @@ public class InventoryManager : MonoBehaviour
     public List<GameObject> slotBagList = new List<GameObject>();
 	//当前背包内的所有物品Item,包括空的槽内的
 	public List<ItemData> itemBagList = new List<ItemData>();
-
-	//游戏运行中获取的道具
-	public List<ItemData> tempItemList = new List<ItemData>();
 
 	//配置文件读取到的数据
 	public List<ItemData> itemDataList = new List<ItemData>();
@@ -42,6 +40,9 @@ public class InventoryManager : MonoBehaviour
         Pear pear = new Pear();
         Bow bow = new Bow();
         Shield shield = new Shield();
+        DeerMeat deerMeat = new DeerMeat();
+        WolfMeat wolfMeat = new WolfMeat();
+        BearMeat bearMeat = new BearMeat();
 
         //添加的物品种类
         itemDataList.Add(new ItemData(stone.iD, stone.Name, stone.Desp, "rock"));
@@ -52,6 +53,9 @@ public class InventoryManager : MonoBehaviour
         itemDataList.Add(new ItemData(pear.iD, pear.Name, pear.Desp, "pear"));
         itemDataList.Add(new ItemData(bow.iD, bow.Name, bow.Desp, "bow"));
         itemDataList.Add(new ItemData(shield.iD, shield.Name, shield.Desp, "shield"));
+        itemDataList.Add(new ItemData(deerMeat.iD, deerMeat.Name, deerMeat.Desp, "deermeat"));
+        itemDataList.Add(new ItemData(wolfMeat.iD, wolfMeat.Name, wolfMeat.Desp, "wolfmeat"));
+        itemDataList.Add(new ItemData(bearMeat.iD, bearMeat.Name, bearMeat.Desp, "bearmeat"));
 
         //InitItemPrefab();
         InitBag();
@@ -69,7 +73,7 @@ public class InventoryManager : MonoBehaviour
             else
             {
                 slotBagParent.gameObject.SetActive(true);
-                UpdataBag();
+                ShowBag();
             }
         }
        
@@ -86,76 +90,61 @@ public class InventoryManager : MonoBehaviour
 			itemBagList.Add(new ItemData());
 		}
 	}
-	public void UpdataBag()
+    public void ShowBag()
     {
-        if (tempItemList.Count>0)
+        for (int i = 0; i < itemBagList.Count; i++)
         {
-            foreach (var item in tempItemList)
+            if (itemBagList[i].ID != -1)
             {
-				Additem(item.ID);
-			}
-        }
-		tempItemList.Clear();
-	}
-
-	public void Additem(int itemId)
-	{
-		ItemData tempItem =null;
-		var item = itemDataList.FirstOrDefault(a => a.ID == itemId);
-        if (item != null)
-        {
-			tempItem = new ItemData(item.ID,item.Name,item.Desp,item.Sprite.name);
-		}
-		bool isExist = itemBagList.FirstOrDefault(t => t.ID == itemId) == null ? false : true;
-		//当前背包内是否已经存在同类型
-		if (isExist)
-		{
-			for (int i = 0; i < itemBagList.Count; i++)
-			{
-				if (itemBagList[i].ID == itemId)
-				{
-                    itemBagList[i].Num++;
-                    Debug.Log(itemBagList[i].Num);
-                    GoodItem data = slotBagList[i].transform.GetChild(0).GetComponent<GoodItem>();
-                    data.transform.GetChild(0).GetComponent<Text>().text = itemBagList[i].Num.ToString();
-                }
-			}
-		}
-		else
-		{
-			CreatNewItem(tempItem);
-		}
-	}
-
-	void CreatNewItem(ItemData itemToAdd)
-	{
-		if (itemBagList.FirstOrDefault(t => t.ID == -1) == null)
-		{
-			Debug.LogError("存储已满");
-			return;
-		}
-		Debug.Log("获取物品："+ itemToAdd.Name);
-		for (int i = 0; i < itemBagList.Count; i++)
-		{
-			if (itemBagList[i].ID == -1)
-			{
-				itemBagList[i] = itemToAdd;
-                itemBagList[i].Num++;
-
                 GameObject itemObj = Instantiate(item);
                 itemObj.transform.localScale = Vector3.one;
                 itemObj.AddComponent<BagItem>();
-				itemObj.transform.SetParent(slotBagList[i].transform);
-				itemObj.transform.localPosition = Vector2.zero;
-				itemObj.name = itemBagList[i].Name;
-                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-                itemObj.GetComponentInChildren<Text>().text = "1";
-                itemObj.GetComponent<BagItem>().itemData = itemToAdd;
-				itemObj.GetComponent<BagItem>().slotIndex = i;
-				break;
-			}
-		}
-	}
+                itemObj.transform.SetParent(slotBagList[i].transform);
+                itemObj.transform.localPosition = Vector2.zero;
+                itemObj.name = itemBagList[i].Name;
+                itemObj.GetComponent<Image>().sprite = itemBagList[i].Sprite;
+                itemObj.GetComponentInChildren<Text>().text = itemBagList[i].Num.ToString();
+                itemObj.GetComponent<BagItem>().itemData = itemBagList[i];
+                itemObj.GetComponent<BagItem>().slotIndex = i;
+            }
+        }
+    }
+
+    public void Additem(int itemId)
+    {
+        ItemData tempItem = null;
+        var item = itemDataList.FirstOrDefault(a => a.ID == itemId);
+        if (item != null)
+        {
+            tempItem = new ItemData(item.ID, item.Name, item.Desp, item.Sprite.name);
+        }
+
+        bool isExist = itemBagList.FirstOrDefault(t => t.ID == itemId) == null ? false : true;
+        //当前背包内是否已经存在同类型
+        if (isExist)
+        {
+            itemBagList.FirstOrDefault(t => t.ID == itemId).Num++;
+        }
+        else
+        {
+            if (itemBagList.FirstOrDefault(t => t.ID == -1) == null)
+            {
+                Debug.LogError("存储已满");
+                return;
+            }
+            Debug.Log("获取物品：" + tempItem.Name);
+            for (int i = 0; i < itemBagList.Count; i++)
+            {
+                if (itemBagList[i].ID == -1)
+                {
+                    itemBagList[i] = tempItem;
+                    itemBagList[i].Num++;
+                    break;
+                }
+            }
+        }
+    }
+  
 
 	public void UseItem(int slotID)
     {
@@ -178,17 +167,40 @@ public class InventoryManager : MonoBehaviour
         }
         if (goodItem.name == "Apple")
         {
-          PlayerGUI.instance.RecoveryHunger(20);
+          PlayerGUI.instance.RecoveryHunger(5);
             Invoke("Late", 0.5f);
         }
         if (goodItem.name == "Pear")
         {
-            PlayerGUI.instance.RecoveryHunger(10);
-            Invoke("Late", 0.5f);
+            PlayerGUI.instance.RecoveryHunger(3);
+           
+        }
+        if (goodItem.name == "DeerMeat")
+        {
+            PlayerGUI.instance.RecoveryHunger(20);
+           
+        }
+        if (goodItem.name == "WolfMeat")
+        {
+            PlayerGUI.instance.RecoveryHunger(30);
+          
+        }
+        if (goodItem.name == "BearMeat")
+        {
+            PlayerGUI.instance.RecoveryHunger(45);
+          
         }
         if (goodItem.name == "Sword")
         {
             WeaponManager.GetInstance().curEquipWeapon = WeaponType.Sword;
+        }
+        if (goodItem.name == "Axe")
+        {
+            WeaponManager.GetInstance().curEquipWeapon = WeaponType.Axe;
+        }
+        if (goodItem.name == "Bow")
+        {
+            WeaponManager.GetInstance().curEquipWeapon = WeaponType.Bow;
         }
     }
     private void Late()

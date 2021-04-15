@@ -9,8 +9,11 @@ public class ArrowBehavior : MonoBehaviour
 
     public float moveSpeed;
 
-    public void InitArrow(Vector3 direction)
+    private Character _owner;
+
+    public void InitArrow(Vector3 direction, Character owner)
     {
+        _owner = owner;
         _rigid.AddForce(direction * moveSpeed, ForceMode.Impulse);
         Destroy(gameObject, 5f);
     }
@@ -18,9 +21,13 @@ public class ArrowBehavior : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
-        {            
-            Debug.Log("Hitting an enemy");
-            Destroy(gameObject);
+        {
+            Character enemy = other.GetComponent<Character>();
+            if (enemy != null)
+            {
+                _owner.DoDamage(enemy);                
+                Destroy(gameObject);
+            }
         }
     }
 }
