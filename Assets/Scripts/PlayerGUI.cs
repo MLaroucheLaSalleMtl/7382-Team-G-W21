@@ -20,14 +20,18 @@ public class PlayerGUI : MonoBehaviour
         instance = this;
     }
 
+    /* This is an odd method, PlayerGUI is only for updating the UI, Related to hunger, that ailment is moved to AilmentsManager
+     * Update is not required since PlayerGUI is for updating UI
+     * 
+     
     float tempHunger = 2;
     float curHunger = 100;
     float curHealth = 100;
     float curStamina = 100;
     private void Update()
-    {
-        tempHunger -= Time.deltaTime;
-        if (tempHunger<=0)
+    {        
+       tempHunger -= Time.deltaTime;
+        if (tempHunger <= 0)
         {
             tempHunger = 2;
             curHunger -= 2;
@@ -41,9 +45,11 @@ public class PlayerGUI : MonoBehaviour
         }
         UpdateHunger();
         //刷新health 和stamina值
-        //UpdateHealth();
+        UpdateHealth();
         UpdateStamina(curStamina);
     }
+    
+
     public void UpdateHealth( )
     {
         this.health.fillAmount = curHealth / maxHealth;
@@ -66,7 +72,8 @@ public class PlayerGUI : MonoBehaviour
         curHunger += food;
         curHunger = curHunger >= 100 ? 100 : curHunger;// to limit the maximum value to 100
         Debug.LogError(curHunger);
-    }
+    }        
+    */
 
     public void UpdateHealth(float HP, float maxHP)
     {
@@ -77,6 +84,12 @@ public class PlayerGUI : MonoBehaviour
     {
         this.stamina.fillAmount = stamina / maxStamina;
     }
+
+    public void UpdateHunger(float hunger, float maxHunger)
+    {
+        this.hunger.fillAmount = hunger / maxHunger;
+    }
+
     public void Setglobaltips(string content)
     {
         globaltips.SetActive(true);

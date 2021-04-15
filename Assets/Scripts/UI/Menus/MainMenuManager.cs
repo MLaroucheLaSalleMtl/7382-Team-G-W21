@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
     /// </summary>
     public void OnBtnStartPressed()
     {
-        SceneController.instance.NextScene = "TestScene";
+        SceneController.instance.NextScene = "Gameplay";
         SceneController.instance.LoadScene("LoadingScene");
         //SceneController.instance.LoadSceneAsync("TestScene");
     }

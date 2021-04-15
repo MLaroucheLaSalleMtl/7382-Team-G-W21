@@ -167,28 +167,30 @@ public class InventoryManager : MonoBehaviour
         }
         if (goodItem.name == "Apple")
         {
-          PlayerGUI.instance.RecoveryHunger(5);
+            AilmentsManager.instance.RecoveryHunger(5);
+          //PlayerGUI.instance.RecoveryHunger(5);
             Invoke("Late", 0.5f);
         }
         if (goodItem.name == "Pear")
         {
-            PlayerGUI.instance.RecoveryHunger(3);
-           
+            AilmentsManager.instance.RecoveryHunger(3);
+            //PlayerGUI.instance.RecoveryHunger(3);           
         }
         if (goodItem.name == "DeerMeat")
         {
-            PlayerGUI.instance.RecoveryHunger(20);
+            AilmentsManager.instance.RecoveryHunger(20);
+            //PlayerGUI.instance.RecoveryHunger(20);
            
         }
         if (goodItem.name == "WolfMeat")
         {
-            PlayerGUI.instance.RecoveryHunger(30);
-          
+            AilmentsManager.instance.RecoveryHunger(30);
+            //PlayerGUI.instance.RecoveryHunger(30);          
         }
         if (goodItem.name == "BearMeat")
         {
-            PlayerGUI.instance.RecoveryHunger(45);
-          
+            AilmentsManager.instance.RecoveryHunger(45);
+            //PlayerGUI.instance.RecoveryHunger(45);          
         }
         if (goodItem.name == "Sword")
         {

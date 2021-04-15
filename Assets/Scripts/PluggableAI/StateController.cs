@@ -24,6 +24,8 @@ public class StateController : MonoBehaviour
 
     [HideInInspector] public BasicEnemy _enemy;
 
+    [HideInInspector] public BasicEnemy _enemy;
+
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();

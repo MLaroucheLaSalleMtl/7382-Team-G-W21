@@ -20,17 +20,22 @@ public class CharacterAttack : CharacterAction
     private bool _isAttacking;
     private bool _isEquipping;
     [SerializeField] private ActionTrigger _actionTrigger;
+
     private CharacterCtrl _characterCtrl;
+
     public GameObject swordPrefab, shieldPrefab;
     public GameObject bowPrefab, arrowPrefab;
     public GameObject axePrefab;
+
     public GameObject shottingArrowPrefab;
     public Transform shootingPoint;
+
     public static CharacterAttack instance;
+
     public int meleeCombo;
     private float _lastActionTime = 0;
     private const float COMBODELAY = 0.5f;
-    //private AudioSource[] charactersound;
+
     private void Awake()
     {
         instance = this;
@@ -43,7 +48,6 @@ public class CharacterAttack : CharacterAction
 
         if (WeaponManager.GetInstance() != null)
             Debug.Log("CurEquipment:" + WeaponManager.GetInstance().curEquipWeapon);
-        //charactersound = GetComponents<AudioSource>();
     }
 
     private void Update()

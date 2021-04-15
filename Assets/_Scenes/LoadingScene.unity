@@ -482,6 +482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contents: {fileID: 1453868539}
   loadSlider: {fileID: 1454768530}
+  contentTxt: {fileID: 106781480}
 --- !u!1 &357352485
 GameObject:
   m_ObjectHideFlags: 0

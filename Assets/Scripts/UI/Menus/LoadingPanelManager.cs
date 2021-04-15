@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class LoadingPanelManager : MonoBehaviour
     public GameObject contents;
 
     public Slider loadSlider;
+    public TextMeshProUGUI contentTxt;
 
     private void Awake()
     {
@@ -29,5 +31,15 @@ public class LoadingPanelManager : MonoBehaviour
     public void UpdateSlider(float value)
     {
         loadSlider.value = value;
+    }
+
+    public void HideSlider()
+    {
+        loadSlider.gameObject.SetActive(false);
+    }
+
+    public void SetContentText(string text)
+    {
+        contentTxt.text = text;
     }
 }
