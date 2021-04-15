@@ -28,6 +28,14 @@ public class attack : Enemy
 
     private bool CanAttack2;
 
+    // Variables to handle the character stats
+    public StatsScriptable statsScriptable;
+    private Character _character;
+
+    // Variable feedback for action trigger
+    [SerializeField] private ActionTrigger meleeTrigger;
+    [SerializeField] private ActionTrigger spellTrigger1;
+    [SerializeField] private ActionTrigger spellTrigger2;
 
     void Start()
     {
@@ -45,10 +53,20 @@ public class attack : Enemy
         IsDead = false;
         CanMove = true;
         Monsterssound = GetComponents<AudioSource>();
+
+        // Initialize the character
+        _character = GetComponent<Character>();
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+        meleeTrigger.actionFeedback.AddListener(_character.DoDamage);
+        spellTrigger1.actionFeedback.AddListener(_character.DoDamage);
+        spellTrigger2.actionFeedback.AddListener(_character.DoDamage);
     }
     void Finish_Attack()
     {
         {
+            // Deactivate the action trigger
+            meleeTrigger.gameObject.SetActive(false);
+
             attack_count++;
             if (attack_count == max_attack_count)
             {
@@ -62,7 +80,7 @@ public class attack : Enemy
         HPimage.fillAmount = Hp / Max_hp;
         HPText.text = Hp + "/" + Max_hp;
     }
-    void die()
+    public void die()
     {
 
         anim.SetTrigger("IsDead");
@@ -94,7 +112,7 @@ public class attack : Enemy
     }
     void Update()
     {
-        SetHp();
+        //SetHp(); /* Handle by Character.cs*/
         if (!CanMove)
         {
             agent.ResetPath();
@@ -118,18 +136,21 @@ public class attack : Enemy
         {
             IsAttack = true;
         }
-        if (Hp < 0)
-        {
-            IsDead = true;
-        }
 
-        if (IsDead)
-        {
-            IsDead = false;
-            Hp = 0f;
-            CanMove = false;
-            die();
-        }
+        /* HP is handled by Character.cs */
+        //if (Hp < 0)
+        //{
+        //    IsDead = true;
+        //}
+
+        /* The dead is handle by Character.cs */
+        //if (IsDead)
+        //{
+        //    IsDead = false;
+        //    Hp = 0f;
+        //    CanMove = false;
+        //    die();
+        //}
     }
     public void OnSpace(InputAction.CallbackContext context)
     {
@@ -166,10 +187,12 @@ public class attack : Enemy
                     if (!CanAttack2)
                     {
                         anim.SetTrigger("Attack1");
+                        meleeTrigger.gameObject.SetActive(true);
                     }
                     if (CanAttack2)
                     {
                         anim.SetTrigger("Attack2");
+                        meleeTrigger.gameObject.SetActive(true);
                         CanAttack2 = false;
                     }
                     canattack = false;
