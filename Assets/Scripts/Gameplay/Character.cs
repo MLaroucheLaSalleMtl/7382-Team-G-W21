@@ -136,9 +136,13 @@ public class Character : MonoBehaviour
     /// </summary>
     public void TriggerDeath()
     {
+        Debug.Log(">>>DEATH DEATH");
         // TODO::Implement correctly the dead feeback
         //deadFeedback.Invoke();
-        Destroy(gameObject);
+        if (deadFeedback != null)
+            deadFeedback.Invoke();
+        else
+            Destroy(gameObject);
     }
 
     //吃东西恢复血量

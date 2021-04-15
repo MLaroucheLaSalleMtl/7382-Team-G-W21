@@ -20,7 +20,7 @@ public class ArrowBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") || other.CompareTag("Mob"))
         {
             Character enemy = other.GetComponent<Character>();
             if (enemy != null)

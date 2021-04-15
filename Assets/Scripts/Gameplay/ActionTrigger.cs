@@ -11,7 +11,7 @@ public class ActionTrigger : MonoBehaviour
     {
         if (1 << other.gameObject.layer == layerMask)
         {
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Enemy") || other.CompareTag("Mob"))
             {
                 Character character = other.GetComponent<Character>();
                 if (character != null && actionFeedback != null)
