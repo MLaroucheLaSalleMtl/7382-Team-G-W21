@@ -18132,7 +18132,7 @@ GameObject:
   - component: {fileID: 1833981856}
   - component: {fileID: 1833981857}
   m_Layer: 5
-  m_Name: monsters sound
+  m_Name: slider monsters sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
