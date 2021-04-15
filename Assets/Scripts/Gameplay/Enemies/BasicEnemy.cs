@@ -37,6 +37,7 @@ public class BasicEnemy : MonoBehaviour
         {
             _isAttacking = true;
             _character.DoDamage(entity);
+            anim.SetTrigger("Attack1");
             if (entity.IsDead)
                 _stateController.chaseTarget = null;
 
@@ -48,5 +49,18 @@ public class BasicEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(attackDelay);
         _isAttacking = false;
+    }
+
+    void Finish_Attack()
+    {
+        //Debug.Log("Finish Attack");
+        //{
+        //    attack_count++;
+        //    if (attack_count == max_attack_count)
+        //    {
+        //        CanAttack2 = true;
+        //        Reset_Attack();
+        //    }
+        //}
     }
 }

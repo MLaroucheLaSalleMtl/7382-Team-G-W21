@@ -10,6 +10,7 @@ TagManager:
   - apple
   - Enemy
   - Floor
+  - Mob
   layers:
   - Default
   - TransparentFX

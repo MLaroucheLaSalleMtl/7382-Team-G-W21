@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5121713490471485037}
   - component: {fileID: 5121713490471485036}
   - component: {fileID: 5121713490471485035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: attack range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,8 @@ GameObject:
   - component: {fileID: 5121713490678849560}
   - component: {fileID: 5121713490678849543}
   - component: {fileID: 5121713490678849562}
-  m_Layer: 0
+  - component: {fileID: 7173213010527733806}
+  m_Layer: 6
   m_Name: Wolf hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +188,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7173213010527733806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121713490678849541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd3cf4373af2514fa96a6ccefcc3964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtHP: {fileID: 0}
+  txtMaxHP: {fileID: 0}
+  mySlider: {fileID: 0}
+  hpSlide: {fileID: 1417276807877813723}
+  hpTxt: {fileID: 2213980613682338011}
 --- !u!1 &5121713490974105601
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_leg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815847}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_leg_controls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlockLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlock_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -510,7 +528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815861}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_foot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_foot_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffin_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -605,7 +623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffin_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -635,7 +653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815869}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlock_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffinEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -695,7 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt5Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt4Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasureStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815883}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasureEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +896,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_twistCtrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -939,7 +957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_aimConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_upVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815899}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLeg_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_tipTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_tipToe_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,7 +1266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_toeWiggle_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,7 +1297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815911}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_toe_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815913}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVector_rotGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1340,7 +1358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_pastern_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVectorWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVectorConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,7 +1450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_pastern_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1573,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_leg_controls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1589,7 +1607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hipShift_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1621,7 +1639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815933}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLeg_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1652,7 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_leg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_ctrlGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815683}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_pointGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1743,7 +1761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1804,7 +1822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_footTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1838,7 +1856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1869,7 +1887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815693}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1919,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_constGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1932,7 +1950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlockLift_pointGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1962,7 +1980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlockLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1994,7 +2012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2026,7 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,7 +2075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_controlLeg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2087,7 +2105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_coffinEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2117,7 +2135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlock_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2148,7 +2166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlock_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2209,7 +2227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2241,12 +2259,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5121713490973815973}
   - component: {fileID: 5121713490964716827}
+  - component: {fileID: 5121713491384075320}
   - component: {fileID: 5121713491384075321}
   - component: {fileID: 5121713491384075324}
   - component: {fileID: 5121713491384075326}
-  m_Layer: 0
+  - component: {fileID: 1349670071157895086}
+  m_Layer: 6
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Mob
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2289,6 +2309,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &5121713491384075320
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121713490974105733}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &5121713491384075321
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2314,6 +2347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6e68362a7c47a4eb002d4f34c395c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animamalType: 1
   Player: {fileID: 0}
   TriggerRange: {fileID: 5121713491476704954}
   AttackRange: {fileID: 5121713490471485034}
@@ -2322,6 +2356,7 @@ MonoBehaviour:
   TimesAfterAttack: 3.5
   AttackRate: 3
   HP: 100
+  statsScriptable: {fileID: 11400000, guid: 2ab4b657a877659458bd5549ce5ce0a3, type: 2}
 --- !u!195 &5121713491384075326
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2344,6 +2379,40 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1349670071157895086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5121713490974105733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d460bdf36be075041825e3186f0603ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  mana: 0
+  stamina: 0
+  damage: 0
+  defense: 0
+  hpBar: {fileID: 7173213010527733806}
+  characterType: 1
+  deadFeedback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5121713491384075324}
+        m_TargetAssemblyTypeName: animalsattack, Assembly-CSharp
+        m_MethodName: Dead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5121713490974105735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,7 +2423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5121713490973815975}
   - component: {fileID: 5121713490960507867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2524,7 +2593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_worldSpace_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2554,7 +2623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_pelvisSpace_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2584,7 +2653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_constGrp2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2614,7 +2683,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_constGrp1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2644,7 +2713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815987}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2705,7 +2774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_FollowGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2735,7 +2804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_constGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2766,7 +2835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2797,7 +2866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2828,7 +2897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2859,7 +2928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815999}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tail_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2890,7 +2959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2920,7 +2989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +3019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spineJoints_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2982,7 +3051,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3012,7 +3081,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_controls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3043,7 +3112,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine7_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3103,7 +3172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816015}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_curveWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3133,7 +3202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine4_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3164,7 +3233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine3_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3195,7 +3264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816021}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine6_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3226,7 +3295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine5_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3257,7 +3326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3293,7 +3362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816027}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,7 +3393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3355,7 +3424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816031}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3386,7 +3455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapulaEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3416,7 +3485,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapula_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3447,7 +3516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816037}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3478,7 +3547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapulaRoot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3509,7 +3578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasureStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3539,7 +3608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasureEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3569,7 +3638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_hip_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3602,7 +3671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_hip_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3633,7 +3702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_upVectorCtrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3663,7 +3732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,7 +3763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_upVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3755,7 +3824,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_toeWiggle_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3786,7 +3855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_tipTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3817,7 +3886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_aimConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3848,7 +3917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973816063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3880,7 +3949,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815809}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3910,7 +3979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3943,7 +4012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_tipToe_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3974,7 +4043,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815815}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4005,7 +4074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815817}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaHelperWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4035,7 +4104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815819}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaConst_grp2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,7 +4134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_ctrlGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4096,7 +4165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaIKconst_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4127,7 +4196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4157,7 +4226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4188,7 +4257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaConst_grp1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4218,7 +4287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapula_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4248,7 +4317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pastern_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4279,7 +4348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pastern_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4309,7 +4378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815837}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4340,7 +4409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pasternLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4372,7 +4441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt5Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4403,7 +4472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt4Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4434,7 +4503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ikNeckJoints_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4465,7 +4534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ikNeck_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4498,7 +4567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4529,7 +4598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_head_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4559,7 +4628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4590,7 +4659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4621,7 +4690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4651,7 +4720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: headEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4681,7 +4750,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasureStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,7 +4780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasureEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4741,7 +4810,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_shoulderSpace_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4771,7 +4840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4802,7 +4871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: headConst_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4832,7 +4901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_worldSpace_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4862,7 +4931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: front_legJoints_const_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4896,7 +4965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkNeck_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4927,7 +4996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +5029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4991,7 +5060,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack2_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5021,7 +5090,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack2_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5052,7 +5121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack3_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5082,7 +5151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack3_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5113,7 +5182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_joints_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5145,7 +5214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front3_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5175,7 +5244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack1_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5205,7 +5274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack1_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5236,7 +5305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_back2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5266,7 +5335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_back1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5297,7 +5366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5328,7 +5397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5359,7 +5428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5390,7 +5459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5421,7 +5490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt5Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5452,7 +5521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt4Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5483,7 +5552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: earJoints_const_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5515,7 +5584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ear_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5545,7 +5614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5576,7 +5645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_head_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5607,7 +5676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dontTouch_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5652,7 +5721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: characterScale_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5686,7 +5755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ear_const_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5717,7 +5786,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dontTouchJoints_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5753,7 +5822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: back_legJoints_const_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5787,7 +5856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: animationControls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5825,7 +5894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: character_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5856,7 +5925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5892,7 +5961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlockLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5924,7 +5993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlock_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5955,7 +6024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_foot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5987,7 +6056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_foot_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6019,7 +6088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffin_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6050,7 +6119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffin_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6080,7 +6149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlock_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6110,7 +6179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffinEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6140,7 +6209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6171,7 +6240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6202,7 +6271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt5Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6232,7 +6301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt4Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6263,7 +6332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasureStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6293,7 +6362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasureEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6323,7 +6392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6354,7 +6423,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_twistCtrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6384,7 +6453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6415,7 +6484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_aimConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,7 +6515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6476,7 +6545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_upVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6507,7 +6576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6539,7 +6608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLeg_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6570,7 +6639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6600,7 +6669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6631,7 +6700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_tipTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6662,7 +6731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_tipToe_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6693,7 +6762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_toeWiggle_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6724,7 +6793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_toe_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6754,7 +6823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVector_rotGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6785,7 +6854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_pastern_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6816,7 +6885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVectorWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6846,7 +6915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVectorConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6877,7 +6946,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6908,7 +6977,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6940,7 +7009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_pastern_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6970,7 +7039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7000,7 +7069,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815657}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_leg_controls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7034,7 +7103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hipShift_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7066,7 +7135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLeg_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7097,7 +7166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_leg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7127,7 +7196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815665}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_ctrlGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7158,7 +7227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_pointGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7188,7 +7257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7218,7 +7287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815671}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7249,7 +7318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815673}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_footTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7283,7 +7352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7314,7 +7383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7346,7 +7415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_constGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7377,7 +7446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlockLift_pointGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7407,7 +7476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlockLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7439,7 +7508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7471,7 +7540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_ctrlJntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7502,7 +7571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_controlLeg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7532,7 +7601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_coffinEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7562,7 +7631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlock_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7593,7 +7662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlock_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7623,7 +7692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7653,7 +7722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7683,7 +7752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_coffin_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7713,7 +7782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_autoHeel_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7744,7 +7813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7775,7 +7844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7806,7 +7875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7836,7 +7905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7866,7 +7935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7896,7 +7965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7926,7 +7995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_coffin_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7956,7 +8025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_autoHeel_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7987,7 +8056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pelvis_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8018,7 +8087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neckJoints_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8049,7 +8118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8079,7 +8148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pelvis_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8113,7 +8182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt4Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8144,7 +8213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8175,7 +8244,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_worldSpace_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8205,7 +8274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt5Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8236,7 +8305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8266,7 +8335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt3Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8296,7 +8365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8327,7 +8396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8358,7 +8427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_curveWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8388,7 +8457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8419,7 +8488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8449,7 +8518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8479,7 +8548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_constGrp1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8509,7 +8578,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_const_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8541,7 +8610,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_ctrl_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8572,7 +8641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_constGrp2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8602,7 +8671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapulaEnd_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8632,7 +8701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapula_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8663,7 +8732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: main_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8696,7 +8765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815767}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapulaRoot_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8727,7 +8796,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasureStart_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8757,7 +8826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasureEnd_locWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8787,7 +8856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_hip_jnt2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8820,7 +8889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_hip_jnt1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8851,7 +8920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_upVectorCtrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8881,7 +8950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8912,7 +8981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasure_distWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8942,7 +9011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_upVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8973,7 +9042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815785}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_toeWiggle_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9004,7 +9073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_tipTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9035,7 +9104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_aimConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9066,7 +9135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9098,7 +9167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815793}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9128,7 +9197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815795}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_ctrlWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9161,7 +9230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_tipToe_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9192,7 +9261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9223,7 +9292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaHelperWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9253,7 +9322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815803}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaConst_grp2Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9283,7 +9352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815805}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_ctrlGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9314,7 +9383,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815807}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaIKconst_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9345,7 +9414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9375,7 +9444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9406,7 +9475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaConst_grp1Wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9436,7 +9505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapula_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9466,7 +9535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pastern_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9497,7 +9566,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pastern_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9527,7 +9596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorConstGrpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9558,7 +9627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pasternLift_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9590,7 +9659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLeg_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9622,7 +9691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_leg_IKhandleWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9652,7 +9721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLegTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9682,7 +9751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLegTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9713,7 +9782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist2_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9743,7 +9812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist1_jntWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9774,7 +9843,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_leg_controls_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9808,7 +9877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5121713490973815583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist_grpWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9844,7 +9913,7 @@ GameObject:
   - component: {fileID: 5121713491476704957}
   - component: {fileID: 5121713491476704956}
   - component: {fileID: 5121713491476704955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wolf triggrt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9913,9 +9982,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5121713490678849542}
     m_Modifications:
+    - target: {fileID: 1708989671094081059, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3316245081142539162, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Name
       value: Hp bar for wolf
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316245081142539162, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3796483491309105325, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Pivot.x
@@ -10032,6 +10109,10 @@ PrefabInstance:
     - target: {fileID: 6461074385208864154, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825110107785640171, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8494023768643659643, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_LocalScale.x
