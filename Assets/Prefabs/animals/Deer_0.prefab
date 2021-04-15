@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 864581415375246636}
   - component: {fileID: 864581415375246639}
   - component: {fileID: 864581415375246634}
-  m_Layer: 0
+  - component: {fileID: 6442171287715760801}
+  m_Layer: 6
   m_Name: deer hp bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +114,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6442171287715760801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864581415375246545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd3cf4373af2514fa96a6ccefcc3964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txtHP: {fileID: 0}
+  txtMaxHP: {fileID: 0}
+  mySlider: {fileID: 0}
+  hpSlide: {fileID: 6865538348835459400}
+  hpTxt: {fileID: 5932864537362377800}
 --- !u!1 &864581415524091521
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front3_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_joints_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack1_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605225}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt4Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_back1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_back2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605231}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_spine_front1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack3_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +417,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605235}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkNeck_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +448,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: front_legJoints_const_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack1_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack2_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack2_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fkBack3_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +635,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: headConst_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605123}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: headEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -707,7 +725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605127}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasureEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_shoulderSpace_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +849,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_worldSpace_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -892,7 +910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605139}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt4Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +941,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ikNeck_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -956,7 +974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ikNeckJoints_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -987,7 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605145}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: heightMeasureStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1035,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_head_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,7 +1096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: IK_neck_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: characterScale_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1144,7 +1162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864581415523605187}
   - component: {fileID: 864581415518817257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1329,8 @@ GameObject:
   - component: {fileID: 864581415446687259}
   - component: {fileID: 864581415446687257}
   - component: {fileID: 864581415446687254}
-  m_Layer: 0
+  - component: {fileID: 1829800489413458531}
+  m_Layer: 6
   m_Name: Deer_0
   m_TagString: Mob
   m_Icon: {fileID: 0}
@@ -1380,11 +1399,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18a9fadf19645643b5d73ce0dea3176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animamalType: 0
   HPImage: {fileID: 6865538348835459400}
   HPText: {fileID: 5932864537362377800}
   Player: {fileID: 0}
   distancetorun: 10
   HP: 100
+  statsScriptable: {fileID: 11400000, guid: b8d4a982e1a96ad42b410cb073924cd7, type: 2}
 --- !u!195 &864581415446687257
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1422,6 +1443,40 @@ MonoBehaviour:
   HPImage: {fileID: 6865538348835459400}
   HPText: {fileID: 5932864537362377800}
   HP: 100
+--- !u!114 &1829800489413458531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864581415524091621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d460bdf36be075041825e3186f0603ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  mana: 0
+  stamina: 0
+  damage: 0
+  defense: 0
+  hpBar: {fileID: 6442171287715760801}
+  characterType: 1
+  deadFeedback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 864581415446687259}
+        m_TargetAssemblyTypeName: moveaway, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &864581415524091623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605191}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dontTouch_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1476,7 +1531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605193}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: animationControls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1514,7 +1569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: back_legJoints_const_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1548,7 +1603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605197}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1584,7 +1639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: character_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1615,7 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_head_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1731,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FK_neck_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605209}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dontTouchJoints_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,7 +1829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ear_const_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +1860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ear_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1835,7 +1890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: earJoints_const_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +1922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVectorDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1897,7 +1952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_tipToe_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +1983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_tipTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1959,7 +2014,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_toe_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1989,7 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_pastern_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2019,7 +2074,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_pastern_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,7 +2105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVector_rotGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2081,7 +2136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605359}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_poleVectorConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605361}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_aimConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2173,7 +2228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605365}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2204,7 +2259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist_upVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2235,7 +2290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_toeWiggle_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2266,7 +2321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLeg_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2297,7 +2352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605373}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2329,7 +2384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_upLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2360,7 +2415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605249}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2391,7 +2446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2422,7 +2477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2453,7 +2508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt4Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2484,7 +2539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2514,7 +2569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasureEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2544,7 +2599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_stretchMeasureStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2574,7 +2629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_backLeg_twistCtrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2604,7 +2659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605265}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlock_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2634,7 +2689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlock_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2665,7 +2720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_fetlockLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2697,7 +2752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_foot_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2729,7 +2784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_ear_jnt5Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2759,7 +2814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffin_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,7 +2844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffin_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2820,7 +2875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_coffinEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,7 +2905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2880,7 +2935,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2910,7 +2965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_autoHeelStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2940,7 +2995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605159}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_autoHeel_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2971,7 +3026,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3002,7 +3057,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3033,7 +3088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605165}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3064,7 +3119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605167}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3094,7 +3149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlock_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3125,7 +3180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlockLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3157,7 +3212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlockLift_pointGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3187,7 +3242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3219,7 +3274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_coffin_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3249,7 +3304,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_coffinEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3279,7 +3334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_controlLeg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3309,7 +3364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_fetlock_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3339,7 +3394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3371,7 +3426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_pointGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3401,7 +3456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605317}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3432,7 +3487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_ctrlGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3463,7 +3518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3494,7 +3549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605323}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_foot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3525,7 +3580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_footTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3559,7 +3614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605327}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_heelLift_constGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3590,7 +3645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLeg_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,7 +3676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3653,7 +3708,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605333}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3684,7 +3739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605335}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_lowLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3714,7 +3769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605337}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hip_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3744,7 +3799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_hipShift_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3776,7 +3831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_leg_controls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3810,7 +3865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_back_leg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_hip_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3873,7 +3928,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapula_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3904,7 +3959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapulaEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3934,7 +3989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_scapulaRoot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3965,7 +4020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3995,7 +4050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasureEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4025,7 +4080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_frontLeg_stretchMeasureStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4055,7 +4110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_hip_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4086,7 +4141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605489}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4117,7 +4172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4148,7 +4203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_curveDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4178,7 +4233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605495}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4208,7 +4263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: main_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4241,7 +4296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_const_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4273,7 +4328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_constGrp1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4303,7 +4358,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_constGrp2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4333,7 +4388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4364,7 +4419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605379}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4395,7 +4450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt4Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4426,7 +4481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605383}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_worldSpace_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4456,7 +4511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605385}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4486,7 +4541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IK_bind_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4516,7 +4571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4546,7 +4601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neck_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4577,7 +4632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4607,7 +4662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605395}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4637,7 +4692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_autoHeel_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4668,7 +4723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_coffin_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4698,7 +4753,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: neckJoints_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4729,7 +4784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pelvis_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4760,7 +4815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pelvis_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4793,7 +4848,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_autoHeelEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_leg_controls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4857,7 +4912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_leg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4942,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605285}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4919,7 +4974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4950,7 +5005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_foot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4982,7 +5037,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5013,7 +5068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605293}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5043,7 +5098,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605295}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_footTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5076,7 +5131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5107,7 +5162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5137,7 +5192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_poleVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5168,7 +5223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapula_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5198,7 +5253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605305}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_lowLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5228,7 +5283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pastern_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5258,7 +5313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605309}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pastern_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5289,7 +5344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605311}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_pasternLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5321,7 +5376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5354,7 +5409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_ctrlGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5385,7 +5440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5415,7 +5470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605447}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_shoulder_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5446,7 +5501,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaConst_grp1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5476,7 +5531,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaConst_grp2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5506,7 +5561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaHelperDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5536,7 +5591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_scapulaIKconst_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5567,7 +5622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_aimConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5598,7 +5653,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5629,7 +5684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_upVectorCtrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5659,7 +5714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLegTwist_upVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5690,7 +5745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_tipToe_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5721,7 +5776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_tipTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5752,7 +5807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_toeWiggle_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5783,7 +5838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L_front_upLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5815,7 +5870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_aimConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5846,7 +5901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5877,7 +5932,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist_upVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5908,7 +5963,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5938,7 +5993,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLeg_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5969,7 +6024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6001,7 +6056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6032,7 +6087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605615}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_upLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6062,7 +6117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6093,7 +6148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605619}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6124,7 +6179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt4Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt5Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6185,7 +6240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605625}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasureEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6215,7 +6270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605627}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_stretchMeasureStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6245,7 +6300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_backLeg_twistCtrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6275,7 +6330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_ear_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6306,7 +6361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlock_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6337,7 +6392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605507}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlockLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6369,7 +6424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_foot_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6401,7 +6456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_foot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6433,7 +6488,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffin_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6463,7 +6518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffin_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6494,7 +6549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_coffinEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6524,7 +6579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_fetlock_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6554,7 +6609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605521}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_leg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6584,7 +6639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605523}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6616,7 +6671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6647,7 +6702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_lowLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6677,7 +6732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6708,7 +6763,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605531}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6738,7 +6793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_footTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6771,7 +6826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_leg_controls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6805,7 +6860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlockLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6837,7 +6892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlockLift_pointGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6867,7 +6922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6899,7 +6954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6930,7 +6985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_coffinEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6960,7 +7015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_controlLeg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6990,7 +7045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlock_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7020,7 +7075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_fetlock_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7051,7 +7106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_pointGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7081,7 +7136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7112,7 +7167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_ctrlGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7143,7 +7198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hip_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7173,7 +7228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_foot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7204,7 +7259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605435}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_footTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7238,7 +7293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_constGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7269,7 +7324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605439}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_heelLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7301,7 +7356,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605569}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7333,7 +7388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605571}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLegTwist1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7364,7 +7419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605573}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLegTwist2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7394,7 +7449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_pastern_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7424,7 +7479,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_hipShift_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7456,7 +7511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_leg_controls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7490,7 +7545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_leg_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7520,7 +7575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_lowLeg_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7551,7 +7606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605585}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_tipToe_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7582,7 +7637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605587}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_tipTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7613,7 +7668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605589}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_toe_ctrlJntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7643,7 +7698,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_toeWiggle_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7674,7 +7729,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_pastern_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7705,7 +7760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVector_rotGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7736,7 +7791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVectorConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7767,7 +7822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_back_poleVectorDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7797,7 +7852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine3_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7828,7 +7883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605731}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine4_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7859,7 +7914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine5_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7889,7 +7944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605735}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_controls_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7920,7 +7975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7951,7 +8006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shoulder_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7987,7 +8042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605741}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine1_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8018,7 +8073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine2_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8049,7 +8104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8079,7 +8134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spineJoints_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8111,7 +8166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_constGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8142,7 +8197,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_FollowGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8172,7 +8227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605753}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_curveDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8202,7 +8257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605755}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8232,7 +8287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8262,7 +8317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spine_IK_bind_jnt3Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8292,7 +8347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605633}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_ctrl_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8323,7 +8378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605635}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8354,7 +8409,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_pelvisSpace_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8384,7 +8439,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tail_worldSpace_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8414,7 +8469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_constGrp1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8444,7 +8499,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: torso_constGrp2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8474,7 +8529,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8504,7 +8559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8535,7 +8590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapula_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8565,7 +8620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605543}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaConst_grp1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8595,7 +8650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pastern_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8625,7 +8680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pastern_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8656,7 +8711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_pasternLift_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8688,7 +8743,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605551}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_poleVectorConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8719,7 +8774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605553}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_ctrlGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8750,7 +8805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605555}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_IKhandleDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8780,7 +8835,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8811,7 +8866,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_tipToe_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8842,7 +8897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaConst_grp2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8872,7 +8927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605563}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaHelperDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8902,7 +8957,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605565}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_scapulaIKconst_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8933,7 +8988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_shoulder_ctrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8966,7 +9021,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8997,7 +9052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_upVectorCtrlDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9027,7 +9082,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_upVectorGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9058,7 +9113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasure_distDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9088,7 +9143,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_tipTwist_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9119,7 +9174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605707}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_toeWiggle_grpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9150,7 +9205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLeg_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9182,7 +9237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_front_upLegTwist_aimConstGrpDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9213,7 +9268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapula_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9244,7 +9299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapulaEnd_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9274,7 +9329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605717}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_scapulaRoot_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9305,7 +9360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605719}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root_jntDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9337,7 +9392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605721}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasureEnd_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9367,7 +9422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_frontLeg_stretchMeasureStart_locDeer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9397,7 +9452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605725}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_hip_jnt1Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9428,7 +9483,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864581415523605727}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R_hip_jnt2Deer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9459,9 +9514,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 864581415375246638}
     m_Modifications:
+    - target: {fileID: 1708989671094081059, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3316245081142539162, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Name
       value: Hp bar for deer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316245081142539162, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3796483491309105325, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Pivot.x
@@ -9578,6 +9641,10 @@ PrefabInstance:
     - target: {fileID: 6461074385208864154, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825110107785640171, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8494023768643659643, guid: 7a5ef8217f4f05b478d038852b851317, type: 3}
       propertyPath: m_LocalScale.x

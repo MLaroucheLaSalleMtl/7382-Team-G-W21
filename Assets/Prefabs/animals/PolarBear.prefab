@@ -885,6 +885,7 @@ MonoBehaviour:
   TimesAfterAttack: 3.5
   AttackRate: 4
   HP: 100
+  statsScriptable: {fileID: 11400000, guid: a5c1269e20fc66340b5b2e90474b200f, type: 2}
 --- !u!195 &8797987425122820512
 NavMeshAgent:
   m_ObjectHideFlags: 0

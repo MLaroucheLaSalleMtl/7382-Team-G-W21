@@ -136,7 +136,6 @@ public class Character : MonoBehaviour
     /// </summary>
     public void TriggerDeath()
     {
-        Debug.Log(">>>DEATH DEATH");
         // TODO::Implement correctly the dead feeback
         //deadFeedback.Invoke();
         if (deadFeedback != null)
