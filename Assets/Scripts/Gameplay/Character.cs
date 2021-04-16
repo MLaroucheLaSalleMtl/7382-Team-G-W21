@@ -91,6 +91,9 @@ public class Character : MonoBehaviour
 
         if (hpBar != null)
             hpBar.Init(this.health, this._maxHealth);
+
+        if (deadFeedback != null)
+            Debug.Log("Something here");
     }
 
     /// <summary>
@@ -139,12 +142,13 @@ public class Character : MonoBehaviour
     /// </summary>
     public void TriggerDeath()
     {
-        // TODO::Implement correctly the dead feeback
-        //deadFeedback.Invoke();
         if (deadFeedback != null)
-            deadFeedback.Invoke();
-        else
-            Destroy(gameObject);
+            deadFeedback.Invoke();        
+    }
+
+    public void InstaKill()
+    {
+        Destroy(gameObject);
     }
 
     //吃东西恢复血量

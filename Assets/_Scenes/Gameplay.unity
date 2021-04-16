@@ -2341,6 +2341,7 @@ GameObject:
   - component: {fileID: 91151798}
   - component: {fileID: 91151797}
   - component: {fileID: 91151795}
+  - component: {fileID: 91151800}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -2446,6 +2447,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &91151800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91151794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &93262469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2562,7 @@ GameObject:
   - component: {fileID: 96433283}
   - component: {fileID: 96433282}
   - component: {fileID: 96433280}
+  - component: {fileID: 96433285}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -2654,6 +2668,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &96433285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96433279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97920407
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,13 +5204,13 @@ MonoBehaviour:
   deadFeedback:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 287392338}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 287392342}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7641,6 +7667,34 @@ PrefabInstance:
       propertyPath: characterType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1192371061}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InstaKill
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Character, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1070151005655770445, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
       propertyPath: anim
       value: 
@@ -9040,6 +9094,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7493414094228404855, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
   m_PrefabInstance: {fileID: 750238732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &477171937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+  m_PrefabInstance: {fileID: 750238732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477171933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d460bdf36be075041825e3186f0603ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &477171941
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10145,6 +10210,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &534824433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070151004909927600, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+  m_PrefabInstance: {fileID: 383292429}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &534824434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534824433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &535702558
 GameObject:
   m_ObjectHideFlags: 0
@@ -12195,6 +12277,7 @@ GameObject:
   - component: {fileID: 613583220}
   - component: {fileID: 613583219}
   - component: {fileID: 613583217}
+  - component: {fileID: 613583222}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -12300,6 +12383,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &613583222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613583216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619803655
 GameObject:
   m_ObjectHideFlags: 0
@@ -12791,7 +12886,19 @@ MonoBehaviour:
   characterType: 1
   deadFeedback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 630795661}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &630795662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14680,6 +14787,34 @@ PrefabInstance:
     - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
       propertyPath: characterType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 477171937}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InstaKill
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Character, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492623355258190636, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7492623355258190638, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
       propertyPath: m_Speed
@@ -20943,6 +21078,17 @@ Transform:
   m_Father: {fileID: 319378340}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192371061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1070151005655770444, guid: a8066880ca2d5ba42bb4ef3fda24e69e, type: 3}
+  m_PrefabInstance: {fileID: 383292429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d460bdf36be075041825e3186f0603ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1198562758
 GameObject:
   m_ObjectHideFlags: 0
@@ -25304,6 +25450,7 @@ GameObject:
   - component: {fileID: 1463928743}
   - component: {fileID: 1463928742}
   - component: {fileID: 1463928740}
+  - component: {fileID: 1463928745}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -25409,6 +25556,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1463928745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463928739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1472505238
 GameObject:
   m_ObjectHideFlags: 0
@@ -26275,7 +26434,19 @@ MonoBehaviour:
   characterType: 1
   deadFeedback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1526453904}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &1526453905
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -30652,6 +30823,7 @@ GameObject:
   - component: {fileID: 1862911627}
   - component: {fileID: 1862911626}
   - component: {fileID: 1862911624}
+  - component: {fileID: 1862911629}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -30757,6 +30929,35 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1862911629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862911623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1872228606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7492623353405352522, guid: eb961f147716c4c429f9c82cf43328e0, type: 3}
+  m_PrefabInstance: {fileID: 750238732}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1872228607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872228606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1873322845
 GameObject:
   m_ObjectHideFlags: 0
@@ -33026,7 +33227,19 @@ MonoBehaviour:
   characterType: 1
   deadFeedback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2042980887}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2042980888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33810,6 +34023,7 @@ GameObject:
   - component: {fileID: 2098720695}
   - component: {fileID: 2098720694}
   - component: {fileID: 2098720692}
+  - component: {fileID: 2098720697}
   m_Layer: 6
   m_Name: HPBar
   m_TagString: Untagged
@@ -33915,6 +34129,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &2098720697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098720691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac68050954faef44b52f8d69aa1f3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2108131291
 GameObject:
   m_ObjectHideFlags: 0
@@ -34448,7 +34674,19 @@ MonoBehaviour:
   characterType: 1
   deadFeedback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2135302899}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!135 &2135302900
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34770,7 +35008,19 @@ MonoBehaviour:
   characterType: 1
   deadFeedback:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2138930248}
+        m_TargetAssemblyTypeName: Character, Assembly-CSharp
+        m_MethodName: InstaKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2138930249
 MonoBehaviour:
   m_ObjectHideFlags: 0
