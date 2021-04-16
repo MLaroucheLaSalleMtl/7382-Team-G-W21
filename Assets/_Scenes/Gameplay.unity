@@ -8087,6 +8087,34 @@ PrefabInstance:
       propertyPath: IsDebugging
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 512273967}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CharacterCtrl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275467397025605904, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
+      propertyPath: deadFeedback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
 --- !u!4 &512273962 stripped
@@ -9401,7 +9429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcaa5e8d12a1c5449e3e8aa7a5d9347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stop_Menu: {fileID: 1187619105}
+  Stop_Menu: {fileID: 1426858758}
   spawnPoints:
   - {fileID: 57656907}
   - {fileID: 1813982698}
@@ -20108,7 +20136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bbf161e4dd0824e9fa36997c071875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 1187619105}
+  panel: {fileID: 1426858758}
 --- !u!114 &1354051938
 MonoBehaviour:
   m_ObjectHideFlags: 0

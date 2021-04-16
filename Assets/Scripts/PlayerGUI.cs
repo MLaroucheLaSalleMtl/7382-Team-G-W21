@@ -20,7 +20,7 @@ public class PlayerGUI : MonoBehaviour
         instance = this;
     }
 
-    /* This is an odd method, PlayerGUI is only for updating the UI, Related to hunger, that ailment is moved to AilmentsManager
+    /* This is an odd method, PlayerGUI is only for updating the UI. Related to hunger, that ailment is moved to AilmentsManager
      * Update is not required since PlayerGUI is for updating UI
      * 
      
