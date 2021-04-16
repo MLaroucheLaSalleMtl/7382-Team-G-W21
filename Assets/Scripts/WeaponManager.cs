@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+//wrote by iris
 public class WeaponManager : MonoBehaviour
 {
     private static WeaponManager instance;

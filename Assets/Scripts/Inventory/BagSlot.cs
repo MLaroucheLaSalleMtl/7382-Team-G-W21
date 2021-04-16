@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-
+//wrote by iris
 public class BagSlot : MonoBehaviour ,IDropHandler,IPointerEnterHandler, IPointerExitHandler
 {
 	public int slotID;

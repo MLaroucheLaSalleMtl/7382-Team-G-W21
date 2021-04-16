@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+//wrote by iris
 public class DescripPanel : MonoBehaviour
 {
 	private float alpha = 0.0f;

@@ -6,7 +6,6 @@ public class PickUp : MonoBehaviour
 {
     int id = -1;
     GameObject TempGo;
-    public Item itemType;
     bool canBePickedUp;
     public GameObject pickUpText;
     GameObject WeaponWindowParent;

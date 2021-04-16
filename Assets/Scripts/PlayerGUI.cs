@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//Wrote by iris, edit by Jinmin
 public class PlayerGUI : MonoBehaviour
 {
     public Image health;

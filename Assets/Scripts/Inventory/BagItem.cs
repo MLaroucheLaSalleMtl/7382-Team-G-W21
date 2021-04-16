@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//wrote by iris
 public class BagItem : GoodItem
 {
     public override void OnBeginDrag(PointerEventData eventData)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//wrote by iris
 public class GoodItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
 	public ItemData itemData;

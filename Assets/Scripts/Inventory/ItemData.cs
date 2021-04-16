@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-
+//wrote by iris
 public class ItemData{
 	public int ID{ get; set; }
 	public int Num{ get; set; }

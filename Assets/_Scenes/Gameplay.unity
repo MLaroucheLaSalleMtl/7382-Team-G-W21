@@ -7686,7 +7686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936791265190088640, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
       propertyPath: IsDebugging
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b0e993e7a384774cb420ccb08b4dadc, type: 3}
@@ -8926,10 +8926,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8be968f186d083847a7a492decc4817c, type: 3}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -10546,7 +10546,7 @@ RectTransform:
   m_GameObject: {fileID: 635955737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50004137, y: 0.6053472, z: 0.7018519}
+  m_LocalScale: {x: 0.75746655, y: 0.9169847, z: 1.0631707}
   m_Children:
   - {fileID: 1589256461}
   - {fileID: 439361009}
@@ -10561,7 +10561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 214.20963, y: -37.151566}
+  m_AnchoredPosition: {x: 302, y: -19}
   m_SizeDelta: {x: 788.0574, y: 531.0751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635955739
@@ -19847,8 +19847,8 @@ MonoBehaviour:
   health: {fileID: 131903773}
   hunger: {fileID: 957437431}
   stamina: {fileID: 227236813}
-  tips: {fileID: 0}
-  globaltips: {fileID: 0}
+  tips: {fileID: 645562384}
+  globaltips: {fileID: 333902009}
 --- !u!1 &1367301694
 GameObject:
   m_ObjectHideFlags: 0
@@ -27459,7 +27459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1964674795
 RectTransform:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
+// this enum by iris
 public enum AnimamalType
 {
     deer,
@@ -61,6 +62,7 @@ public class animalsattack : MonoBehaviour
         HPText.text = HP1 + "/" + Max_HP1;
 
     }
+  //From line 65 to to 98 by iris
     private void Dead()
     {
         if (HP1 <= 0f && !IfDead)
