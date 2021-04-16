@@ -22,4 +22,14 @@ public class DeadPanelManager : MonoBehaviour
     {
         contents.SetActive(false);
     }
+
+    public void OnBtnBackMenuPressed()
+    {
+        SceneController.instance.LoadScene("Main menu");
+    }
+
+    public void OnBtnRestartPressed()
+    {
+        SceneController.instance.LoadScene("Gameplay");
+    }
 }

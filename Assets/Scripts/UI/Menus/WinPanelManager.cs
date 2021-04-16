@@ -22,4 +22,10 @@ public class WinPanelManager : MonoBehaviour
     {
         contents.SetActive(false);
     }
+
+    public void OnBtnBackMenuPressed()
+    {
+        SceneController.instance.LoadScene("Main menu");
+    }
+
 }
