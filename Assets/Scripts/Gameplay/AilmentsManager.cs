@@ -25,9 +25,14 @@ public class AilmentsManager : MonoBehaviour
 
     private void HungerState()
     {
-        hungerLevel -= Time.fixedDeltaTime * hungerRate;
+        if(hungerLevel > 0)
+            hungerLevel -= Time.fixedDeltaTime * hungerRate;
+
         if (PlayerGUI.instance != null)
             PlayerGUI.instance.UpdateHunger(hungerLevel, _hungerMax);
+
+        if (hungerLevel <= 0)
+            Gamemanager.instance.characterCtrl.Character.ReceiveDamage(2);
     }
 
     public void InitAilments()
@@ -39,9 +44,9 @@ public class AilmentsManager : MonoBehaviour
     //copy这个方法来做hp stamina
     public void RecoveryHunger(float food)
     {
-        Debug.LogError(_hungerMax);
+        //Debug.LogError(_hungerMax);
         hungerLevel += food;
         hungerLevel = hungerLevel >= _hungerMax ? _hungerMax : hungerLevel;// to limit the maximum value to 100
-        Debug.LogError(_hungerMax);
+        //Debug.LogError(_hungerMax);
     }
 }

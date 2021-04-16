@@ -19,6 +19,8 @@ public class CharacterAiming : MonoBehaviour
 
     private void Update()
     {
+        if (_characterCtrl.Character.IsDead) return;
+
         if (_characterCtrl.isAiming)
         {
             if (!_isTargeting)

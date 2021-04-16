@@ -105,6 +105,8 @@ public class attack : Enemy
     void Destroyself()
     {
         Destroy(transform.gameObject, 3.0f);
+        if (Gamemanager.instance != null)
+            Gamemanager.instance.TriggerWinningState();
     }
     void Reset_Attack()
     {

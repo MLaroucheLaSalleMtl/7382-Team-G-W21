@@ -70,7 +70,7 @@ public class TaskManager : MonoBehaviour
         }
         if (curtaskId==2)
         {
-            Debug.Log(curtaskId);
+            //Debug.Log(curtaskId);
             if (isEat)
             {
                 taskView.SetActive(true);
@@ -83,7 +83,7 @@ public class TaskManager : MonoBehaviour
         }
         if (curtaskId == 3)
         {
-            Debug.Log(curtaskId);
+            //Debug.Log(curtaskId);
             if (isKill)
             {
                 taskView.SetActive(true);

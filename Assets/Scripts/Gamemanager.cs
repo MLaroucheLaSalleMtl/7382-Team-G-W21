@@ -9,8 +9,18 @@ public class Gamemanager : MonoBehaviour
     private bool In_menu;
     [SerializeField] private GameObject Stop_Menu;
 
+    // Different spawn points for the character
+    public Transform[] spawnPoints;
+    public GameObject player;
+    public CharacterCtrl characterCtrl;
+
+    public static Gamemanager instance;
+
     private void Awake()
     {
+        instance = this;
+
+        characterCtrl = player.GetComponent<CharacterCtrl>();
         // Controlling the loading panel at starting scene
         StartCoroutine(LoadingRoutine());
     }
@@ -25,6 +35,8 @@ public class Gamemanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (characterCtrl.Character.IsDead) return;
+
         if (PressESC)
         {
             Stop_Menu.SetActive(true);
@@ -45,7 +57,27 @@ public class Gamemanager : MonoBehaviour
         LoadingPanelManager.instance.Show();
         LoadingPanelManager.instance.HideSlider();
         LoadingPanelManager.instance.SetContentText("Loading things you can play with");
+
+        int randomPos = Random.Range(0, spawnPoints.Length);
+        player.transform.position = spawnPoints[randomPos].position;
+
         yield return new WaitForSeconds(3f);
         LoadingPanelManager.instance.Hide();
+    }
+
+    public bool IsPlayerDead()
+    {
+        return characterCtrl.Character.IsDead;
+    }
+
+    public void TriggerWinningState()
+    {
+        StartCoroutine(WaitForWin());
+    }
+
+    IEnumerator WaitForWin()
+    {
+        yield return new WaitForSeconds(5f);
+        WinPanelManager.instance.Show();
     }
 }

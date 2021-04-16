@@ -47,6 +47,8 @@ public class CameraController : MonoBehaviour
 
     public void OnMovingMouse(InputAction.CallbackContext context)
     {
+        if (Gamemanager.instance.IsPlayerDead()) return;
+
         Vector2 delta = context.ReadValue<Vector2>();
 
         _sensitivityX = sensitivityX * 0.01f;
@@ -56,17 +58,30 @@ public class CameraController : MonoBehaviour
         thirdPersonCamera.m_YAxis.Value -= delta.y * _sensitivityY;
     }
 
+    /// <summary>
+    /// Function useful for tweening a vector2
+    /// </summary>
+    /// <param name="axis"></param>
     public void FixAxisVector(Vector2 axis)
     {
         thirdPersonCamera.m_XAxis.Value = axis.x;
         thirdPersonCamera.m_YAxis.Value = axis.y;
     }
 
+    /// <summary>
+    /// Function to set the aiming camera
+    /// </summary>
+    /// <param name="targetAngle"></param>
     public void CallAimCamera(float targetAngle)
     {
         StartCoroutine(RoutineToAim(targetAngle));
     }
 
+    /// <summary>
+    /// Routine to control the camera changing
+    /// </summary>
+    /// <param name="targetAngle"></param>
+    /// <returns></returns>
     IEnumerator RoutineToAim(float targetAngle)
     {
         thirdPersonCamera.m_XAxis.m_MinValue = -180f + targetAngle;

@@ -147,9 +147,17 @@ public class Character : MonoBehaviour
     //吃东西恢复血量
     public void Recover()
     {
-        Debug.Log(health);
+        //Debug.Log(health);
         health += 5;
-        Debug.Log(health);
+        if (health >= MaxHealth)
+            health = MaxHealth;
+
+        if (characterType == CharacterType.PLAYER)
+        {
+            if (PlayerGUI.instance != null)
+                PlayerGUI.instance.UpdateHealth(this.health, this._maxHealth);
+        }
+        //Debug.Log(health);
 
     }
 }

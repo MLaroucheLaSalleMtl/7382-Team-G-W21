@@ -103,4 +103,16 @@ public class CharacterCtrl : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _isAction = false;
     }
+
+    public void OnDeath()
+    {
+        StartCoroutine(DeathRoutine());
+    }
+
+    IEnumerator DeathRoutine()
+    {
+        anim.SetTrigger("Dead");
+        yield return new WaitForSeconds(3f);
+        DeadPanelManager.instance.Show();
+    }
 }

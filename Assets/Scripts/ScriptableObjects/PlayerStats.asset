@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseHP: 100
   BaseMana: 10
-  BaseStamina: 1000
+  BaseStamina: 100
   BaseDefense: 10
   basicStats:
   - stat: 3

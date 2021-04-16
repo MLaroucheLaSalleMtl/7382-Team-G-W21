@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//The part that connect the weapon to the inventory is wrote by Iris
-//Also the part that shows the "Curweapon is not equipped" tip is by Iris
-// The rest is by Jinmin:)
+
 public enum WeaponEquipped
 {
     BOW,
@@ -178,7 +176,7 @@ public class CharacterAttack : CharacterAction
                     }
                     else
                     {
-                        GameObject.Find("Manager").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+                        PlayerGUI.instance.Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
@@ -223,7 +221,7 @@ public class CharacterAttack : CharacterAction
                     }
                     else
                     {
-                        GameObject.Find("Manager").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+                        PlayerGUI.instance.Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
@@ -268,7 +266,7 @@ public class CharacterAttack : CharacterAction
                     }
                     else
                     {
-                        GameObject.Find("Manager").GetComponent<PlayerGUI>().Setglobaltips("curWeapon is not crafted");
+                        PlayerGUI.instance.Setglobaltips("curWeapon is not crafted");
                     }
                 }
                 else
