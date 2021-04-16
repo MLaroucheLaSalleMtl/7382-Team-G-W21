@@ -102,6 +102,9 @@ public class Character : MonoBehaviour
         if (!_isDead)
         {
             health -= damage;
+
+            if (health <= 0) health = 0;
+
             if (hpBar != null)
                 hpBar.UpdateBar(this.health);
 

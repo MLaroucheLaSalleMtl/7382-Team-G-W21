@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fe923dab0076d04e9cbf6cffab9a04d, type: 3}
   m_Name: BasicEnemyStats
   m_EditorClassIdentifier: 
-  BaseHP: 10
+  BaseHP: 50
   BaseMana: 10
   BaseStamina: 100
   BaseDefense: 10
