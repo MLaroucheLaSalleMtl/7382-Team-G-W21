@@ -214,7 +214,6 @@ GameObject:
   - component: {fileID: 9654139}
   - component: {fileID: 9654138}
   - component: {fileID: 9654137}
-  - component: {fileID: 9654140}
   m_Layer: 5
   m_Name: main menu
   m_TagString: Untagged
@@ -286,7 +285,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9654140}
+      - m_Target: {fileID: 124398480}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -336,19 +335,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9654135}
   m_CullTransparentMesh: 1
---- !u!114 &9654140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9654135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd82baa668e775e4caffc3ef6b21f4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextScene: Main menu
 --- !u!1 &12943364
 GameObject:
   m_ObjectHideFlags: 0
@@ -3023,6 +3009,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119908008}
   m_CullTransparentMesh: 1
+--- !u!1 &124398478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124398479}
+  - component: {fileID: 124398480}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124398479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124398478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1793272196}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124398480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124398478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd82baa668e775e4caffc3ef6b21f4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextScene: 
 --- !u!1 &127628162
 GameObject:
   m_ObjectHideFlags: 0
@@ -11051,7 +11081,6 @@ GameObject:
   - component: {fileID: 561323584}
   - component: {fileID: 561323583}
   - component: {fileID: 561323582}
-  - component: {fileID: 561323585}
   m_Layer: 5
   m_Name: Main menu
   m_TagString: Untagged
@@ -11123,7 +11152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 561323585}
+      - m_Target: {fileID: 124398480}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -11173,19 +11202,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561323580}
   m_CullTransparentMesh: 1
---- !u!114 &561323585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 561323580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd82baa668e775e4caffc3ef6b21f4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextScene: Main menu
 --- !u!1 &568886550
 GameObject:
   m_ObjectHideFlags: 0
@@ -24893,7 +24909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1426858759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28207,7 +28223,6 @@ GameObject:
   - component: {fileID: 1636647013}
   - component: {fileID: 1636647012}
   - component: {fileID: 1636647011}
-  - component: {fileID: 1636647014}
   m_Layer: 5
   m_Name: restrat
   m_TagString: Untagged
@@ -28279,7 +28294,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1636647014}
+      - m_Target: {fileID: 124398480}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
@@ -28329,19 +28344,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636647009}
   m_CullTransparentMesh: 1
---- !u!114 &1636647014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636647009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd82baa668e775e4caffc3ef6b21f4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextScene: Gameplay
 --- !u!1 &1638845338
 GameObject:
   m_ObjectHideFlags: 0
@@ -30055,6 +30057,7 @@ Transform:
   m_Children:
   - {fileID: 1226993726}
   - {fileID: 1492274775}
+  - {fileID: 124398479}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32723,7 +32726,6 @@ GameObject:
   - component: {fileID: 2016741863}
   - component: {fileID: 2016741862}
   - component: {fileID: 2016741861}
-  - component: {fileID: 2016741860}
   m_Layer: 5
   m_Name: back to the main menu
   m_TagString: Untagged
@@ -32751,19 +32753,6 @@ RectTransform:
   m_AnchoredPosition: {x: 31, y: -59}
   m_SizeDelta: {x: 362.511, y: 62.57}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2016741860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016741858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd82baa668e775e4caffc3ef6b21f4a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NextScene: Main menu
 --- !u!114 &2016741861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32808,7 +32797,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2016741860}
+      - m_Target: {fileID: 124398480}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
