@@ -40,6 +40,7 @@ public class boss : MonoBehaviour
             {
                 magic_list[0].SetActive(true);
                 magic_list[1].SetActive(false);
+                
             }
             if (distance >10.0f && distance < 20.0f)
             {

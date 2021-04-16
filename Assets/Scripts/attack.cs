@@ -24,9 +24,18 @@ public class attack : Enemy
     private bool CanMove;
     [SerializeField] private Image HPimage;
     [SerializeField] private Text HPText;
+    private AudioSource[] Monsterssound;
 
     private bool CanAttack2;
 
+    // Variables to handle the character stats
+    public StatsScriptable statsScriptable;
+    private Character _character;
+
+    // Variable feedback for action trigger
+    [SerializeField] private ActionTrigger meleeTrigger;
+    [SerializeField] private ActionTrigger spellTrigger1;
+    [SerializeField] private ActionTrigger spellTrigger2;
 
     void Start()
     {
@@ -43,11 +52,20 @@ public class attack : Enemy
         max_attack_count = 4;
         IsDead = false;
         CanMove = true;
+        Monsterssound = GetComponents<AudioSource>();
+
+        // Initialize the character
+        _character = GetComponent<Character>();
+        _character.Init(statsScriptable.basicStats, 1, statsScriptable.BaseHP, statsScriptable.BaseMana, statsScriptable.BaseStamina, statsScriptable.BaseDefense);
+        meleeTrigger.actionFeedback.AddListener(_character.DoDamage);
+        spellTrigger1.actionFeedback.AddListener(_character.DoDamage);
+        spellTrigger2.actionFeedback.AddListener(_character.DoDamage);
     }
     void Finish_Attack()
     {
-        Debug.Log("Finish Attack");
         {
+            // Deactivate the action trigger
+            meleeTrigger.gameObject.SetActive(false);
 
             attack_count++;
             if (attack_count == max_attack_count)
@@ -62,12 +80,27 @@ public class attack : Enemy
         HPimage.fillAmount = Hp / Max_hp;
         HPText.text = Hp + "/" + Max_hp;
     }
-    void die()
+    public void die()
     {
 
         anim.SetTrigger("IsDead");
 
         Destroyself();
+    }
+    public void Attackslime()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
+    }
+    public void Turtleattack()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
+    }
+    public void Turtleattack2()
+    {
+        Monsterssound[0].Stop();
+        Monsterssound[1].Play();
     }
     void Destroyself()
     {
@@ -79,13 +112,13 @@ public class attack : Enemy
     }
     void Update()
     {
-        SetHp();
+        //SetHp(); /* Handle by Character.cs*/
         if (!CanMove)
         {
             agent.ResetPath();
         }
 
-        Debug.Log("Attack Count" + attack_count);
+        //Debug.Log("Attack Count" + attack_count);
         enemyoffset = Vector3.Distance(this.transform.position, Target.transform.position);
         if (!canattack)
         {
@@ -103,19 +136,21 @@ public class attack : Enemy
         {
             IsAttack = true;
         }
-        if (Hp < 0)
-        {
-            IsDead = true;
 
-        }
+        /* HP is handled by Character.cs */
+        //if (Hp < 0)
+        //{
+        //    IsDead = true;
+        //}
 
-        if (IsDead)
-        {
-            IsDead = false;
-            Hp = 0f;
-            CanMove = false;
-            die();
-        }
+        /* The dead is handle by Character.cs */
+        //if (IsDead)
+        //{
+        //    IsDead = false;
+        //    Hp = 0f;
+        //    CanMove = false;
+        //    die();
+        //}
     }
     public void OnSpace(InputAction.CallbackContext context)
     {
@@ -136,7 +171,6 @@ public class attack : Enemy
     //}
     private void set_property()
     {
-
         this.Damage = 1;
     }
     private void OnTriggerStay(Collider other)
@@ -153,10 +187,12 @@ public class attack : Enemy
                     if (!CanAttack2)
                     {
                         anim.SetTrigger("Attack1");
+                        meleeTrigger.gameObject.SetActive(true);
                     }
                     if (CanAttack2)
                     {
                         anim.SetTrigger("Attack2");
+                        meleeTrigger.gameObject.SetActive(true);
                         CanAttack2 = false;
                     }
                     canattack = false;

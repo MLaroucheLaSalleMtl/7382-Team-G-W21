@@ -758,10 +758,8 @@ GameObject:
   - component: {fileID: 4496949450407736682}
   - component: {fileID: 4496949450407736693}
   - component: {fileID: 4496949450407736692}
-  - component: {fileID: 4496949450407736687}
   m_Layer: 0
-  m_Name: 'TurtleShellPBR_will run toward you and attack with hp and when you press
-    left click it will decrease hp by 4 '
+  m_Name: TurtleShellPBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -885,29 +883,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4496949450407736687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4498552526261241118}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b79fd8de5be5c48928c656153f1223, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  go:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  index: 0
-  num: 00000000000000000000000000000000000000000000000000000000
-  isRandom: 0
 --- !u!1 &4498560976404120504
 GameObject:
   m_ObjectHideFlags: 0

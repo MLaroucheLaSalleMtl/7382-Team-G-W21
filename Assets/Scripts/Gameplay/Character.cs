@@ -138,7 +138,10 @@ public class Character : MonoBehaviour
     {
         // TODO::Implement correctly the dead feeback
         //deadFeedback.Invoke();
-        Destroy(gameObject);
+        if (deadFeedback != null)
+            deadFeedback.Invoke();
+        else
+            Destroy(gameObject);
     }
 
     //吃东西恢复血量

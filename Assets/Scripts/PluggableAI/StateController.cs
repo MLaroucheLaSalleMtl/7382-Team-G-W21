@@ -20,7 +20,7 @@ public class StateController : MonoBehaviour
     public float searchingTurnSpeed; // This could be set in the basic enemies
     public float searchDuration; // This could be set in the basic enemies
 
-    private bool _aiActive;
+    private bool _aiActive;    
 
     [HideInInspector] public BasicEnemy _enemy;
 
