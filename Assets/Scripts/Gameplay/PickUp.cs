@@ -26,7 +26,7 @@ public class PickUp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
 
         {
-            Debug.Log("B key was pressed.");
+            //Debug.Log("B key was pressed.");
             if (WeaponWindowParent.activeSelf)
             {
                 WeaponWindowParent.SetActive(false);
